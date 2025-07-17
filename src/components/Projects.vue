@@ -26,27 +26,26 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'Certification Web App for Institut De Savoir',
-    description:
-      'Developed a comprehensive certification management system using PHP. The application handles certificate generation, user management, and administrative features for educational institutions.',
-    image: new URL('../assets/logodiplome.svg', import.meta.url).href,
-    technologies: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
-    githubUrl: 'https://github.com/Ahmed-Bousrih/Diplomes',
-    featured: true,
-    year: '2024',
-  },
-  {
-    id: 3,
     title: 'City Trip Mapper',
     description:
       'Interactive travel planning application built with React.js and Mapbox API. Users can plan trips, mark locations, and visualize their travel routes on an interactive map.',
     image: new URL('../assets/citytrip.png', import.meta.url).href,
     technologies: ['React.js', 'Mapbox API', 'JavaScript', 'CSS'],
     githubUrl: 'https://github.com/Ahmed-Bousrih/City-Trip-Mapper',
+    featured: true,
+    year: '2024',
+  },
+  {
+    id: 3,
+    title: 'Certification Web App for Institut De Savoir',
+    description:
+      'Developed a comprehensive certification management system using PHP. The application handles certificate generation, user management, and administrative features for educational institutions.',
+    image: new URL('../assets/logodiplome.svg', import.meta.url).href,
+    technologies: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
+    githubUrl: 'https://github.com/Ahmed-Bousrih/Diplomes',
     featured: false,
     year: '2024',
   },
-  // Others with placeholder images (add your local images later)
   {
     id: 4,
     title: 'CheckMyHTTPS Extension & Mobile App',
@@ -69,7 +68,39 @@ const projects: Project[] = [
     featured: false,
     year: '2023',
   },
-  // ... add the rest similarly
+  {
+    id: 6,
+    title: 'Students Grades App',
+    description:
+      'A web application for managing student grades. Main features include visualizing student results, grades entry, creating classes and creating subjects',
+    image: new URL('../assets/grades.jpg', import.meta.url).href,
+    technologies: ['PHP','MySQL', 'Database', 'HTML', 'CSS', 'JavaScript'],
+    githubUrl: 'https://github.com/Ahmed-Bousrih/Student-Grades-PHP-',
+    featured: false,
+    year: '2020',
+  },
+  {
+    id: 7,
+    title: 'Football Quizz',
+    description:
+      'A single page WEB application with 10 football questions using basic HTML CSS and Javascript.',
+    image: new URL('../assets/quizz.png', import.meta.url).href,
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    githubUrl: 'https://github.com/Ahmed-Bousrih/Football-Quizz-Basic-WEB',
+    featured: false,
+    year: '2019',
+  },
+  {
+    id: 8,
+    title: 'Minesweeper Game',
+    description:
+      'A console version of the old loved game Minesweeper coded in C with no graphics having instructions in english and tunisan arabic version and using system commands.',
+    image: new URL('../assets/mines.jpg', import.meta.url).href,
+    technologies: ['C', 'Console Application'],
+    githubUrl: 'https://github.com/Ahmed-Bousrih/Minesweeper-in-c',
+    featured: false,
+    year: '2020',
+  },
 ]
 
 const featuredProjects = projects.filter((p) => p.featured)
