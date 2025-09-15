@@ -1,90 +1,165 @@
 <script setup lang="ts">
-import { CalendarIcon, BuildingOfficeIcon } from '@heroicons/vue/24/outline'
+import { CalendarIcon, BuildingOfficeIcon } from "@heroicons/vue/24/outline";
 
 interface Experience {
-  id: number
-  company: string
-  position: string
-  period: string
-  description: string
-  technologies: string[]
-  current: boolean
-  achievements: string[]
+  id: number;
+  company: string;
+  position: string;
+  period: string;
+  description: string;
+  technologies: string[];
+  current: boolean;
+  achievements: string[];
+  logo: string;
 }
 
 const experiences: Experience[] = [
   {
     id: 1,
-    company: 'Medtrust Consulting',
-    position: 'Web Development Intern',
-    period: '12/2024 - 06/2025',
-    description: 'Developed a comprehensive recruitment web application called WorkIt. Leading the full-stack development with modern technologies and best practices.',
-    technologies: ['Vue.js', 'Nest.js', 'JWT', 'PostgreSQL', 'Tailwind CSS'],
-    current: false,
+    company: "SW Consulting",
+    position: "Full Stack Developer",
+    period: "08/2025 - Present",
+    description:
+      "Developed scalable APIs and contributed to the refonte of the Credit Win web application for banks, improving system reliability and performance.",
+    technologies: [
+      "TypeScript",
+      "Nest.js",
+      "Next.js",
+      "PostgreSQL",
+      "Jira",
+      "Git",
+    ],
+    current: true,
     achievements: [
-      'Designing and implementing the complete application architecture',
-      'Developing secure authentication system with JWT',
-      'Creating responsive frontend with Vue.js and Tailwind CSS',
-      'Building robust backend API with Nest.js and PostgreSQL'
-    ]
+      "Designed and implemented RESTful APIs in Nest.js for core banking features such as user roles, authentication, and financial entity management",
+      "Optimized Prisma database schema and queries for better performance with large-scale banking data",
+      "Built reusable DTOs, validation pipes, and error handling utilities to standardize backend logic",
+      "Collaborated with frontend teams working in Next.js to ensure smooth API integration and data consistency",
+      "Contributed to agile development with Jira, Git, and code reviews to maintain high code quality",
+    ],
+    logo: "/Portfolio/LogosEntreprises/Sw.jpg",
   },
   {
     id: 2,
-    company: 'HDM Network',
-    position: 'Web Development Intern',
-    period: '04/2023 - 08/2023',
-    description: 'Gained comprehensive experience in web development through diverse projects including task management systems, real estate applications, and innovative VR challenges.',
-    technologies: ['JavaScript', 'PHP', 'HTML', 'CSS', 'A-Frame', 'Web Scraping'],
+    company: "Medtrust Consulting",
+    position: "Web Development Intern",
+    period: "12/2024 - 06/2025",
+    description:
+      "Developed a comprehensive recruitment web application called WorkIt. Leading the full-stack development with modern technologies and best practices.",
+    technologies: ["Vue.js", "Nest.js", "JWT", "PostgreSQL", "Tailwind CSS"],
     current: false,
     achievements: [
-      'Developed a task management application for company dashboard',
-      'Built front-end for real estate rental application',
-      'Created VR game using A-Frame framework',
-      'Implemented web scraper solutions',
-      'Served as Team Leader of the development department'
-    ]
-  }
-]
+      "Designing and implementing the complete application architecture",
+      "Developing secure authentication system with JWT",
+      "Creating responsive frontend with Vue.js and Tailwind CSS",
+      "Building robust backend API with Nest.js and PostgreSQL",
+    ],
+    logo: "/Portfolio/LogosEntreprises/Medtrust.png",
+  },
+  {
+    id: 3,
+    company: "HDM Network",
+    position: "Web Development Intern",
+    period: "04/2023 - 08/2023",
+    description:
+      "Gained comprehensive experience in web development through diverse projects including task management systems, real estate applications, and innovative VR challenges.",
+    technologies: [
+      "JavaScript",
+      "PHP",
+      "HTML",
+      "CSS",
+      "A-Frame",
+      "Web Scraping",
+    ],
+    current: false,
+    achievements: [
+      "Developed a task management application for company dashboard",
+      "Built front-end for real estate rental application",
+      "Created VR game using A-Frame framework",
+      "Implemented web scraper solutions",
+      "Served as Team Leader of the development department",
+    ],
+    logo: "/Portfolio/LogosEntreprises/HDM.jpg",
+  },
+];
 
 const certifications = [
-  { name: 'Front End Development Libraries', provider: 'FreeCodeCamp', date: 'Mars 2023' },
-  { name: 'JavaScript Algorithms and Data Structures', provider: 'FreeCodeCamp', date: 'Décembre 2022' },
-  { name: 'Responsive Web Design', provider: 'FreeCodeCamp', date: 'Avril 2022' },
-  { name: 'Create & Manage Cloud Resources', provider: 'Google Qwicklabs', date: 'Avril 2022' },
-  { name: 'CCNA: Introduction to Networks', provider: 'CISCO', date: 'Décembre 2021' },
-  { name: 'CCNA: Switching, Routing & Wireless Essentials', provider: 'CISCO', date: 'Décembre 2021' }
-]
+  {
+    name: "Front End Development Libraries",
+    provider: "FreeCodeCamp",
+    date: "Mars 2023",
+  },
+  {
+    name: "JavaScript Algorithms and Data Structures",
+    provider: "FreeCodeCamp",
+    date: "Décembre 2022",
+  },
+  {
+    name: "Responsive Web Design",
+    provider: "FreeCodeCamp",
+    date: "Avril 2022",
+  },
+  {
+    name: "Create & Manage Cloud Resources",
+    provider: "Google Qwicklabs",
+    date: "Avril 2022",
+  },
+  {
+    name: "CCNA: Introduction to Networks",
+    provider: "CISCO",
+    date: "Décembre 2021",
+  },
+  {
+    name: "CCNA: Switching, Routing & Wireless Essentials",
+    provider: "CISCO",
+    date: "Décembre 2021",
+  },
+];
 </script>
 
 <template>
   <section id="experience" class="section experience">
     <div class="container">
       <div class="experience__header">
-        <h2 class="experience__title animate-fade-in-up">Professional Experience</h2>
+        <h2 class="experience__title animate-fade-in-up">
+          Professional Experience
+        </h2>
         <p class="experience__subtitle animate-fade-in-up">
           My professional journey and the exciting projects I've worked on
         </p>
       </div>
-      
+
       <div class="experience__timeline">
-        <div 
-          v-for="(exp, index) in experiences" 
+        <div
+          v-for="(exp, index) in experiences"
           :key="exp.id"
           class="timeline-item animate-fade-in-up"
           :class="{ 'timeline-item--current': exp.current }"
         >
           <div class="timeline-marker">
             <div class="timeline-dot"></div>
-            <div v-if="index < experiences.length - 1" class="timeline-line"></div>
+            <div
+              v-if="index < experiences.length - 1"
+              class="timeline-line"
+            ></div>
           </div>
-          
+
           <div class="timeline-content">
             <div class="experience-card">
               <div class="experience-card__header">
                 <div class="experience-card__title">
                   <h3 class="position">{{ exp.position }}</h3>
                   <div class="company">
-                    <BuildingOfficeIcon class="company-icon" />
+                    <div class="company">
+                      <img
+                        v-if="exp.logo"
+                        :src="exp.logo"
+                        :alt="exp.company + ' logo'"
+                        class="company-logo"
+                      />
+                      <BuildingOfficeIcon v-else class="company-icon" />
+                      <span>{{ exp.company }}</span>
+                    </div>
                     <span>{{ exp.company }}</span>
                   </div>
                 </div>
@@ -94,21 +169,24 @@ const certifications = [
                   <span v-if="exp.current" class="current-badge">Current</span>
                 </div>
               </div>
-              
+
               <p class="experience-card__description">{{ exp.description }}</p>
-              
+
               <div class="experience-card__achievements">
                 <h4>Key Achievements:</h4>
                 <ul>
-                  <li v-for="achievement in exp.achievements" :key="achievement">
+                  <li
+                    v-for="achievement in exp.achievements"
+                    :key="achievement"
+                  >
                     {{ achievement }}
                   </li>
                 </ul>
               </div>
-              
+
               <div class="experience-card__technologies">
-                <span 
-                  v-for="tech in exp.technologies" 
+                <span
+                  v-for="tech in exp.technologies"
                   :key="tech"
                   class="tech-tag"
                 >
@@ -119,12 +197,12 @@ const certifications = [
           </div>
         </div>
       </div>
-      
+
       <div class="certifications">
         <h3 class="certifications__title">Certifications & Training</h3>
         <div class="certifications__grid">
-          <div 
-            v-for="cert in certifications" 
+          <div
+            v-for="cert in certifications"
             :key="cert.name"
             class="certification-card animate-fade-in-up"
           >
@@ -139,6 +217,14 @@ const certifications = [
 </template>
 
 <style scoped>
+.company-logo {
+  width: 80px; /* fixed width */
+  height: 80px; /* fixed height */
+  object-fit: contain; /* keeps aspect ratio, fits inside box */
+  background: white; /* optional: makes transparent logos visible */
+  border-radius: 4px; /* optional: rounded edges for consistency */
+  padding: 2px; /* optional: avoids logos touching borders */
+}
 .experience {
   background: var(--bg-primary);
 }
@@ -298,7 +384,7 @@ const certifications = [
 }
 
 .experience-card__achievements li::before {
-  content: '▸';
+  content: "▸";
   position: absolute;
   left: 0;
   color: var(--primary-600);
@@ -374,20 +460,20 @@ const certifications = [
   .experience__timeline {
     padding-left: var(--spacing-2);
   }
-  
+
   .timeline-marker {
     margin-right: var(--spacing-2);
   }
-  
+
   .experience-card__header {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .experience-card__period {
     margin-top: var(--spacing-1);
   }
-  
+
   .certifications__grid {
     grid-template-columns: 1fr;
   }
