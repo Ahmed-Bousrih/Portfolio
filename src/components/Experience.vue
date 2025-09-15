@@ -158,7 +158,6 @@ const certifications = [
                         class="company-logo"
                       />
                       <BuildingOfficeIcon v-else class="company-icon" />
-                      <span>{{ exp.company }}</span>
                     </div>
                     <span>{{ exp.company }}</span>
                   </div>
