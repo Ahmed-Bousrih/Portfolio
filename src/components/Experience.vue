@@ -20,7 +20,7 @@ const experiences: Experience[] = [
     position: "Full Stack Developer",
     period: "08/2025 - Present",
     description:
-      "Developed scalable APIs and contributed to the refonte of the Credit Win web application for banks, improving system reliability and performance.",
+      "Participated in the development of scalable APIs and contributed to the refonte of the Credit Win web application for banks, improving system reliability and performance.",
     technologies: [
       "TypeScript",
       "Nest.js",
@@ -31,7 +31,7 @@ const experiences: Experience[] = [
     ],
     current: true,
     achievements: [
-      "Designed and implemented RESTful APIs in Nest.js for core banking features such as user roles, authentication, and financial entity management",
+      "Designed and implemented RESTful APIs in Nest.js for core banking features such as user roles, OVH mailing system and banking feasibilities calculations with categories",
       "Optimized Prisma database schema and queries for better performance with large-scale banking data",
       "Built reusable DTOs, validation pipes, and error handling utilities to standardize backend logic",
       "Collaborated with frontend teams working in Next.js to ensure smooth API integration and data consistency",

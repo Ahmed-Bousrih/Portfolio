@@ -21,15 +21,21 @@
           <div class="about__details">
             <div class="detail-item">
               <h4>Education</h4>
+                <div class="education-logos">
+                  <img src="/Portfolio/LogoEcoles/LogoEsiea.png" alt="ESIEA Logo" />
+                  <img src="/Portfolio/LogoEcoles/Logoepi.jpg" alt="EPI Logo" />
+                </div>
               <p><strong>Engineering Degree: Computer Science</strong> (08/2019 - 06/2025)</p>
-              <p>ESIEA - Laval + ESIEA - Paris, France</p>
+              <p>ESIEA, France + EPI, Tunisia</p>
               <p><em>Key courses:</em> System Programming, Network Design, Application Architecture and Design, Database Management System, FullStack Development</p>
             </div>
             <div class="detail-item">
               <h4>Languages</h4>
               <p><strong>Arabic:</strong> Native Language</p>
-              <p><strong>French:</strong> Intermediate</p>
-              <p><strong>English:</strong> 870 TOEIC (2023)</p>
+              <p><strong>French:</strong> Fluent</p>
+              <p><strong>English:</strong> Fluent</p>
+              <p><strong>Polish:</strong> Beginner</p>
+              <p><strong>German:</strong> Beginner</p>
             </div>
             <div class="detail-item">
               <h4>Location</h4>
@@ -40,7 +46,7 @@
           <div class="about__stats">
             <div class="stat-item">
               <div class="stat-number">2025</div>
-              <div class="stat-label">Graduate</div>
+              <div class="stat-label">Graduation</div>
             </div>
             <div class="stat-item">
               <div class="stat-number">15+</div>
@@ -253,6 +259,24 @@
   border-radius: 20px;
   z-index: 1;
   opacity: 0.8;
+}
+
+.education-logos {
+  display: flex;
+  gap: 1rem;
+  justify-content: start; /* aligns to left */
+  margin-bottom: 0.5rem;
+}
+
+.education-logos img {
+  width: 50px; /* adjust as needed */
+  height: auto;
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+.education-logos img:hover {
+  transform: scale(1.5);
 }
 
 @media (max-width: 768px) {
