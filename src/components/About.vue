@@ -1,3 +1,7 @@
+<script setup>
+  const logoEPI = '/Portfolio/LogoEcoles/Logoepi.jpg';
+  const logoESIEA = '/Portfolio/LogoEcoles/LogoEsiea.png';
+</script>
 <template>
   <section id="about" class="about">
     <div class="about__container">
@@ -22,8 +26,8 @@
             <div class="detail-item">
               <h4>Education</h4>
                 <div class="education-logos">
-                  <img src="/Portfolio/LogoEcoles/LogoEsiea.png" alt="ESIEA Logo" />
-                  <img src="/Portfolio/LogoEcoles/Logoepi.jpg" alt="EPI Logo" />
+                  <img :src=logoESIEA alt="ESIEA Logo" />
+                  <img :src=logoEPI alt="EPI Logo" />
                 </div>
               <p><strong>Engineering Degree: Computer Science</strong> (08/2019 - 06/2025)</p>
               <p>ESIEA, France + EPI, Tunisia</p>
