@@ -1,97 +1,106 @@
 <script setup lang="ts">
-import { EnvelopeIcon, MapPinIcon } from '@heroicons/vue/24/outline'
+import { EnvelopeIcon, MapPinIcon } from "@heroicons/vue/24/outline";
 
 const contactInfo = [
   {
     icon: EnvelopeIcon,
-    label: 'Email',
-    value: 'ahmed.bousrih@outlook.com',
-    href: 'mailto:ahmed.bousrih@outlook.com'
+    label: "Email",
+    value: "ahmed.bousrih@outlook.com",
+    href: "mailto:ahmed.bousrih@outlook.com",
   },
   {
     icon: MapPinIcon,
-    label: 'Location',
-    value: 'Cachan, Ile de France, 94230',
-    href: '#'
-  }
-]
+    label: "Location",
+    value: "Cachan, Ile de France, 94230",
+    href: "#",
+  },
+  {
+    icon: MapPinIcon,
+    label: "Location",
+    value: "Lamta, Monastir, Tunisia, 5099",
+    href: "#",
+  },
+];
 
 const socialLinks = [
-  { 
-    name: 'GitHub', 
-    url: 'https://github.com/Ahmed-Bousrih', 
-    icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-    </svg>`
+  { name: "GitHub", url: "https://github.com/Ahmed-Bousrih", icon: "🐙" },
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/ahmed-bousrih",
+    icon: "💼",
   },
-  { 
-    name: 'LinkedIn', 
-    url: 'https://linkedin.com/in/ahmed-bousrih', 
-    icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-    </svg>`
-  },
-  { name: 'Email', url: 'mailto:ahmed.bousrih@outlook.com', icon: '📧' }
-]
+  { name: "Email", url: "mailto:ahmed.bousrih@outlook.com", icon: "✉️" },
+];
 
 const interests = [
-  { icon: '🎮', label: 'Gaming' },
-  { icon: '💻', label: 'Competitive Programming' },
-  { icon: '👨‍🏫', label: 'Programming Languages Instructor' },
-  { icon: '🏆', label: 'Event & Competition Facilitator' },
-]
+  { icon: "🎮", label: "Gaming" },
+  { icon: "💻", label: "Competitive Programming" },
+  { icon: "👨‍🏫", label: "Instructor" },
+  { icon: "🏆", label: "Event Orgznizer" },
+];
 </script>
 
 <template>
-  <section id="contact" class="section contact">
+  <section id="contact" class="contact-section">
     <div class="container">
-      <div class="contact__header">
-        <h2 class="contact__title animate-fade-in-up">Get In Touch</h2>
-        <p class="contact__subtitle animate-fade-in-up">
-          I'm always interested in hearing about new opportunities and exciting projects. 
-          Let's work together to create something amazing!
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>
+          I'm always excited to discuss new opportunities and projects. Let's build
+          something amazing together!
         </p>
       </div>
 
-      <div class="contact__content">
-        <div class="contact__info animate-fade-in-left">
-          <div class="contact__details">
+      <div class="cards-wrapper">
+        <!-- Contact Info -->
+        <div class="card contact-card">
+          <h3>Contact Info</h3>
+          <div class="contact-items">
             <div v-for="info in contactInfo" :key="info.label" class="contact-item">
-              <div class="contact-item__icon">
-                <component :is="info.icon" class="w-6 h-6" />
-              </div>
-              <div class="contact-item__content">
-                <div class="contact-item__label">{{ info.label }}</div>
-                <a :href="info.href" class="contact-item__value" target="_blank" rel="noopener noreferrer">{{ info.value }}</a>
+              <component :is="info.icon" class="icon" />
+              <div>
+                <span class="label">{{ info.label }}</span>
+                <a
+                  :href="info.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="value"
+                  >{{ info.value }}</a
+                >
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="contact__social">
-            <h3 class="social__title">Connect With Me</h3>
-            <div class="social__links">
-              <a
-                v-for="social in socialLinks"
-                :key="social.name"
-                :href="social.url"
-                class="social__link"
-                :title="social.name"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="social__icon" v-html="social.icon"></span>
-                <span class="social__name">{{ social.name }}</span>
-              </a>
-            </div>
+        <!-- Social Links -->
+        <div class="card social-card">
+          <h3>Connect With Me</h3>
+          <div class="social-items">
+            <a
+              v-for="social in socialLinks"
+              :key="social.name"
+              :href="social.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+            >
+              <span class="social-icon">{{ social.icon }}</span>
+              <span class="social-name">{{ social.name }}</span>
+            </a>
           </div>
+        </div>
 
-          <div class="contact__interests">
-            <h3 class="interests__title">Interests & Activities</h3>
-            <div class="interests__list">
-              <div v-for="interest in interests" :key="interest.label" class="interest-item">
-                <span class="interest-icon">{{ interest.icon }}</span>
-                <span>{{ interest.label }}</span>
-              </div>
+        <!-- Interests -->
+        <div class="card interests-card">
+          <h3>Interests & Activities</h3>
+          <div class="interests-items">
+            <div
+              v-for="interest in interests"
+              :key="interest.label"
+              class="interest-item"
+            >
+              <span class="interest-icon">{{ interest.icon }}</span>
+              <span class="interest-label">{{ interest.label }}</span>
             </div>
           </div>
         </div>
@@ -101,213 +110,154 @@ const interests = [
 </template>
 
 <style scoped>
-.contact {
+.contact-section {
   background: var(--bg-secondary);
-  padding-bottom: var(--spacing-12);
-}
-
-.contact__header {
-  text-align: center;
-  margin-bottom: var(--spacing-12);
-}
-
-.contact__title {
-  margin-bottom: var(--spacing-3);
+  padding: 6rem 1.5rem;
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 2rem;
 }
 
-.contact__subtitle {
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
   font-size: 1.125rem;
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
-  font-weight: 400;
 }
 
-.contact__content {
-  max-width: 900px;
-  margin: 0 auto;
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
-.contact__details {
-  margin-bottom: var(--spacing-8);
+.card {
+  background: var(--bg-primary);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 0.12);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-600);
+  padding-bottom: 0.5rem;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: var(--spacing-4);
-  margin-bottom: var(--spacing-5);
-  padding: var(--spacing-4);
-  background: white;
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--neutral-200);
-  transition: all 0.3s ease;
-  box-shadow: 0 1px 5px rgb(0 0 0 / 0.05);
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
-.contact-item:hover {
-  transform: translateX(8px);
-  border-color: var(--primary-600);
-  box-shadow: 0 8px 24px rgb(71 85 105 / 0.12);
-}
-
-.contact-item__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: var(--primary-600);
-  border-radius: 50%;
-  color: white;
+.contact-item .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--primary-600);
   flex-shrink: 0;
 }
 
-.contact-item__label {
+.contact-item .label {
+  display: block;
   font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-bottom: 4px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: var(--text-muted);
 }
 
-.contact-item__value {
+.contact-item .value {
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--text-primary);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.125rem;
-  transition: color 0.3s ease;
 }
 
-.contact-item__value:hover {
+.contact-item .value:hover {
   color: var(--primary-600);
   text-decoration: underline;
 }
 
-.contact__social, .contact__interests {
-  background: white;
-  padding: var(--spacing-6);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--neutral-200);
-  margin-bottom: var(--spacing-8);
-  box-shadow: 0 1px 10px rgb(0 0 0 / 0.06);
-}
-
-.social__title, .interests__title {
-  margin-bottom: var(--spacing-5);
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  font-weight: 700;
-  border-bottom: 2px solid var(--primary-600);
-  padding-bottom: var(--spacing-2);
-}
-
-.social__links {
+.social-items {
   display: flex;
-  gap: var(--spacing-4);
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
-.social__link {
+.social-link {
   display: flex;
   align-items: center;
-  gap: var(--spacing-2);
-  padding: var(--spacing-3) var(--spacing-5);
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
   background: var(--bg-secondary);
-  border-radius: var(--border-radius-md);
-  text-decoration: none;
+  border-radius: 0.5rem;
   color: var(--text-secondary);
   font-weight: 600;
-  font-size: 1rem;
+  text-decoration: none;
   transition: all 0.3s ease;
-  border: 1.5px solid transparent;
-  box-shadow: 0 1px 5px rgb(0 0 0 / 0.05);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.05);
 }
 
-.social__link:hover {
+.social-link:hover {
   background: var(--primary-600);
   color: white;
-  border-color: var(--primary-600);
   transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgb(71 85 105 / 0.3);
+  box-shadow: 0 12px 24px rgb(0 0 0 / 0.2);
 }
 
-.social__icon {
+.social-icon {
   font-size: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
 }
 
-.social__name {
-  user-select: none;
-}
-
-.interests__list {
+.interests-items {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-3);
-  justify-content: flex-start;
-  align-items: flex-start;
-  max-width: 300px;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .interest-item {
   display: flex;
   align-items: center;
-  gap: var(--spacing-3);
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
   background: var(--bg-secondary);
-  padding: var(--spacing-3) var(--spacing-5);
-  border-radius: var(--border-radius-md);
-  color: var(--text-secondary);
-  font-size: 1rem;
+  border-radius: 0.5rem;
   font-weight: 600;
-  box-shadow: 0 1px 6px rgb(0 0 0 / 0.05);
-  user-select: none;
-  cursor: default;
-  transition: background-color 0.3s ease;
-  width: 100%; /* full width inside max-width container */
+  color: var(--text-secondary);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .interest-item:hover {
-  background-color: var(--primary-100);
+  background: var(--primary-100);
   color: var(--primary-600);
 }
 
-
 .interest-icon {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 @media (max-width: 768px) {
-  .contact__content {
-    max-width: 100%;
-    padding: 0 var(--spacing-4);
-  }
-  
-  .contact-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .contact-item__icon {
-    margin-bottom: var(--spacing-2);
-  }
-
-  .social__links {
-    justify-content: center;
-  }
-
-  .interests__list {
-    justify-content: center;
+  .cards-wrapper {
+    grid-template-columns: 1fr;
   }
 }
 </style>
