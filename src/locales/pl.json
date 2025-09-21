@@ -55,5 +55,11 @@
       "projects": "10+",
       "projectsLabel": "Projekty"
     }
+  },
+  "skills": {
+    "title": "Umiejętności & Technologie",
+    "subtitle": "Oto technologie i narzędzia, z których korzystam, aby urzeczywistniać pomysły",
+    "fillButton": "Wypełnij Umiejętności",
+    "resetButton": "Resetuj"
   }
 }

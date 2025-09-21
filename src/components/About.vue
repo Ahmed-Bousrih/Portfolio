@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
+import { useI18n } from "vue-i18n";
 
 const logoEPI = "/Portfolio/LogoEcoles/Logoepi.jpg";
 const logoESIEA = "/Portfolio/LogoEcoles/LogoEsiea.png";
@@ -21,7 +21,10 @@ const { t } = useI18n();
         <div class="about__text">
           <div class="about__intro">
             <h3 class="about__intro-title">{{ t("about.intro.title") }}</h3>
-            <p class="about__intro-desc" v-html="t('about.intro.description')"></p>
+            <p
+              class="about__intro-desc"
+              v-html="t('about.intro.description')"
+            ></p>
           </div>
 
           <div class="about__details">
@@ -31,9 +34,14 @@ const { t } = useI18n();
                 <img :src="logoESIEA" alt="ESIEA Logo" />
                 <img :src="logoEPI" alt="EPI Logo" />
               </div>
-              <p><strong>{{ t("about.education.degree") }}</strong> (08/2019 - 06/2025)</p>
+              <p>
+                <strong>{{ t("about.education.degree") }}</strong> (08/2019 -
+                06/2025)
+              </p>
               <p>{{ t("about.education.schools") }}</p>
-              <p><em>{{ t("about.education.keyCourses") }}</em></p>
+              <p>
+                <em>{{ t("about.education.keyCourses") }}</em>
+              </p>
             </div>
 
             <div class="detail-item">
@@ -49,18 +57,24 @@ const { t } = useI18n();
               <h4>{{ t("about.location.title") }}</h4>
               <p>{{ t("about.location.france") }}</p>
               <p>{{ t("about.location.tunisia") }}</p>
-              <p><em>{{ t("about.location.relocation") }}</em></p>
+              <p>
+                <em>{{ t("about.location.relocation") }}</em>
+              </p>
             </div>
           </div>
 
           <div class="about__stats">
             <div class="stat-item">
               <div class="stat-number">{{ t("about.stats.graduation") }}</div>
-              <div class="stat-label">{{ t("about.stats.graduationLabel") }}</div>
+              <div class="stat-label">
+                {{ t("about.stats.graduationLabel") }}
+              </div>
             </div>
             <div class="stat-item">
               <div class="stat-number">{{ t("about.stats.technologies") }}</div>
-              <div class="stat-label">{{ t("about.stats.technologiesLabel") }}</div>
+              <div class="stat-label">
+                {{ t("about.stats.technologiesLabel") }}
+              </div>
             </div>
             <div class="stat-item">
               <div class="stat-number">{{ t("about.stats.projects") }}</div>
@@ -80,8 +94,6 @@ const { t } = useI18n();
     </div>
   </section>
 </template>
-
-
 
 <style scoped>
 .about {

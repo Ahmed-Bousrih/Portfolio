@@ -5,12 +5,15 @@ import {
   ServerIcon,
   PaintBrushIcon,
 } from "@heroicons/vue/24/outline";
+import { useI18n } from 'vue-i18n';
 
 interface Skill {
   name: string;
   level: number;
   category: string;
 }
+
+const { t } = useI18n();
 
 const skills: Skill[] = [
   { name: "JavaScript", level: 90, category: "Frontend" },
@@ -122,19 +125,19 @@ const resetSkills = () => {
   <section id="skills" class="section skills">
     <div class="container">
       <div class="skills__header">
-        <h2 class="skills__title">Skills & Technologies</h2>
+        <h2 class="skills__title">{{ t("skills.title") }}</h2>
         <p class="skills__subtitle">
-          Here are the technologies and tools I work with to bring ideas to life
+          {{ t("skills.subtitle") }}
         </p>
 
         <div
           style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center"
         >
           <button class="fill-button" @click="fillSkills" aria-label="Fill skills">
-            Fill Skills
+             {{ t("skills.fillButton") }}
           </button>
           <button class="reset-button" @click="resetSkills" aria-label="Reset skills">
-            Reset
+           {{ t("skills.resetButton") }}
           </button>
         </div>
       </div>

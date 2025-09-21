@@ -55,5 +55,11 @@
       "projects": "10+",
       "projectsLabel": "Projekte"
     }
+  },
+  "skills": {
+    "title": "Fähigkeiten & Technologien",
+    "subtitle": "Hier sind die Technologien und Werkzeuge, mit denen ich arbeite, um Ideen zum Leben zu erwecken",
+    "fillButton": "Fähigkeiten Füllen",
+    "resetButton": "Zurücksetzen"
   }
 }

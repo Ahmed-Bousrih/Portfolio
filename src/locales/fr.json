@@ -55,5 +55,11 @@
       "projects": "10+",
       "projectsLabel": "Projets"
     }
+  },
+  "skills": {
+    "title": "Compétences & Technologies",
+    "subtitle": "Voici les technologies et outils avec lesquels je travaille pour concrétiser des idées",
+    "fillButton": "Remplir les Compétences",
+    "resetButton": "Réinitialiser"
   }
 }
