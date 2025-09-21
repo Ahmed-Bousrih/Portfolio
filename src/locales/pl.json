@@ -61,5 +61,21 @@
     "subtitle": "Oto technologie i narzędzia, z których korzystam, aby urzeczywistniać pomysły",
     "fillButton": "Wypełnij Umiejętności",
     "resetButton": "Resetuj"
+  },
+  "projects": {
+    "featuredTitle": "Wyróżnione Projekty",
+    "otherTitle": "Inne Projekty",
+    "subtitle": "Wybór projektów, które pokazują moje umiejętności, zdolność rozwiązywania problemów i kreatywność.",
+    "codeLabel": "Kod",
+    "descriptions": {
+      "1": "Platforma rekrutacyjna full-stack z uwierzytelnianiem JWT, backendem PostgreSQL i responsywnym frontendem Vue.js + TailwindCSS dla płynnego zarządzania kandydatami i pracodawcami.",
+      "2": "Interaktywny planer podróży stworzony w React i Mapbox API. Użytkownicy mogą planować podróże, oznaczać miejsca docelowe i wizualizować trasy na dynamicznych mapach.",
+      "3": "Aplikacja webowa do generowania i zarządzania certyfikatami dla instytucji edukacyjnych, z bezpiecznym panelem administratora i systemem zarządzania użytkownikami.",
+      "4": "Rozszerzenie przeglądarki i aplikacja mobilna do weryfikacji certyfikatów SSL/TLS, zapewniające bezpieczne połączenia i ochronę użytkowników przed niebezpiecznymi stronami.",
+      "5": "REST API oparte na TypeScript do zarządzania infrastrukturą IT i elementami konfiguracji, zapewniające skalowalne i niezawodne endpointy dla operacji CMDB.",
+      "6": "Aplikacja webowa dla szkół do zarządzania klasami, przedmiotami i ocenami uczniów, z funkcjami wizualizacji do monitorowania wyników akademickich.",
+      "7": "Jednostronicowa aplikacja quizowa z 10 pytaniami o piłkę nożną, zbudowana w HTML, CSS i JavaScript dla interaktywnej i zabawnej nauki.",
+      "8": "Konsolowa gra Minesweeper napisana w C, z instrukcjami w języku angielskim i tunezyjskim arabskim dla zwiększenia dostępności."
+    }
   }
 }

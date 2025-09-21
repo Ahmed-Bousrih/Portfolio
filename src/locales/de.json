@@ -61,5 +61,21 @@
     "subtitle": "Hier sind die Technologien und Werkzeuge, mit denen ich arbeite, um Ideen zum Leben zu erwecken",
     "fillButton": "Fähigkeiten Füllen",
     "resetButton": "Zurücksetzen"
+  },
+  "projects": {
+    "featuredTitle": "Ausgewählte Projekte",
+    "otherTitle": "Weitere Projekte",
+    "subtitle": "Eine Auswahl von Projekten, die meine Fähigkeiten, Problemlösungsfähigkeiten und Kreativität hervorheben.",
+    "codeLabel": "Code",
+    "descriptions": {
+      "1": "Full-Stack-Rekrutierungsplattform mit JWT-Authentifizierung, PostgreSQL-Backend und responsivem Vue.js + TailwindCSS-Frontend für nahtloses Management von Kandidaten und Arbeitgebern.",
+      "2": "Interaktiver Reiseplaner erstellt mit React und Mapbox API. Benutzer können Reisen planen, Ziele markieren und Routen auf dynamischen Karten visualisieren.",
+      "3": "Webanwendung zur Erstellung und Verwaltung von Zertifikaten für Bildungseinrichtungen, mit sicherem Admin-Dashboard und Benutzerverwaltungssystem.",
+      "4": "Browsererweiterung und mobile App zur Überprüfung von SSL/TLS-Zertifikaten, die sichere Webseitenverbindungen gewährleisten und Benutzer vor unsicheren Seiten schützen.",
+      "5": "REST-API auf TypeScript-Basis zur Verwaltung der IT-Infrastruktur und Konfigurationselementen, mit skalierbaren und zuverlässigen Endpunkten für CMDB-Operationen.",
+      "6": "Webanwendung für Schulen zur Verwaltung von Klassen, Fächern und Schülernoten, mit Visualisierungsfunktionen zur Überwachung der schulischen Leistung.",
+      "7": "Single-Page-Quizanwendung mit 10 Fußballfragen, erstellt mit HTML, CSS und JavaScript für interaktives Lernen und Spaß.",
+      "8": "Konsolenbasiertes Minesweeper-Spiel in C, mit Anleitungen in Englisch und tunesischem Arabisch zur verbesserten Zugänglichkeit."
+    }
   }
 }

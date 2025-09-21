@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { CodeBracketIcon } from "@heroicons/vue/24/outline";
+import { useI18n } from "vue-i18n";
 
 interface Project {
   id: number;
   title: string;
-  description: string;
   image: string;
   technologies: string[];
   githubUrl: string;
@@ -12,22 +12,13 @@ interface Project {
   year: string;
 }
 
+// Translatable descriptions stay in i18n JSON
 const projects: Project[] = [
   {
     id: 1,
     title: "WorkIt - Full-Stack Recruitment App",
-    description:
-      "Full-stack recruitment platform with JWT-based authentication, PostgreSQL backend, and responsive Vue.js + TailwindCSS frontend for seamless candidate and employer management.",
     image: new URL("../assets/logoworkit.jpg", import.meta.url).href,
-    technologies: [
-      "Vue.js",
-      "Nest.js",
-      "JWT",
-      "PostgreSQL",
-      "Tailwind CSS",
-      "TypeScript",
-      "TypeORM",
-    ],
+    technologies: ["Vue.js", "Nest.js", "JWT", "PostgreSQL", "Tailwind CSS", "TypeScript", "TypeORM"],
     githubUrl: "https://github.com/Ahmed-Bousrih/Workit",
     featured: true,
     year: "2024-2025",
@@ -35,8 +26,6 @@ const projects: Project[] = [
   {
     id: 2,
     title: "City Trip Mapper - Interactive Travel Planner",
-    description:
-      "Interactive travel planner built with React and Mapbox API. Users can plan trips, mark destinations, and visualize routes on dynamic maps.",
     image: new URL("../assets/citytrip.png", import.meta.url).href,
     technologies: ["React.js", "Mapbox API", "JavaScript", "CSS"],
     githubUrl: "https://github.com/Ahmed-Bousrih/City-Trip-Mapper",
@@ -46,20 +35,8 @@ const projects: Project[] = [
   {
     id: 3,
     title: "Certification Management System",
-    description:
-      "Web application for generating and managing certificates for educational institutions, featuring a secure admin dashboard and user management system.",
     image: new URL("../assets/logodiplome.svg", import.meta.url).href,
-    technologies: [
-      "PHP",
-      "MySQL",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "PHPMailer",
-      "FTP",
-      "PHP GD Library",
-      "PHPmyAdmin",
-    ],
+    technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "PHPMailer", "FTP", "PHP GD Library", "PHPmyAdmin"],
     githubUrl: "https://github.com/Ahmed-Bousrih/Diplomes",
     featured: false,
     year: "2024",
@@ -67,15 +44,8 @@ const projects: Project[] = [
   {
     id: 4,
     title: "CheckMyHTTPS - SSL/TLS Verifier",
-    description:
-      "Browser extension and mobile app to verify SSL/TLS certificates, ensuring secure website connections and protecting users from insecure sites.",
     image: new URL("../assets/Checkmyhttps.png", import.meta.url).href,
-    technologies: [
-      "JavaScript",
-      "Mobile Development",
-      "Security",
-      "Browser Extensions",
-    ],
+    technologies: ["JavaScript", "Mobile Development", "Security", "Browser Extensions"],
     githubUrl: "https://github.com/checkmyhttps/checkmyhttps",
     featured: false,
     year: "2023",
@@ -83,8 +53,6 @@ const projects: Project[] = [
   {
     id: 5,
     title: "CMDB REST API - IT Infrastructure Manager",
-    description:
-      "TypeScript-based REST API for managing IT infrastructure and configuration items, providing scalable and reliable endpoints for CMDB operations.",
     image: new URL("../assets/CMDBlogo.png", import.meta.url).href,
     technologies: ["TypeScript", "Node.js", "REST API", "Database", "Prisma"],
     githubUrl: "https://github.com/Ahmed-Bousrih/CMBD",
@@ -94,19 +62,8 @@ const projects: Project[] = [
   {
     id: 6,
     title: "Student Grades App - Academic Performance Tracker",
-    description:
-      "Web application for schools to manage classes, subjects, and student grades, with visualization features for monitoring academic performance.",
     image: new URL("../assets/grades.jpg", import.meta.url).href,
-    technologies: [
-      "PHP",
-      "MySQL",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Bootstrap",
-      "PHPmyAdmin",
-      "XAMPP",
-    ],
+    technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap", "PHPmyAdmin", "XAMPP"],
     githubUrl: "https://github.com/Ahmed-Bousrih/Student-Grades-PHP-",
     featured: false,
     year: "2020",
@@ -114,16 +71,8 @@ const projects: Project[] = [
   {
     id: 7,
     title: "Football Quiz - Interactive SPA",
-    description:
-      "Single-page quiz application with 10 football questions, built using vanilla HTML, CSS, and JavaScript for interactive learning and fun.",
     image: new URL("../assets/quizz.png", import.meta.url).href,
-    technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "DOM Manipulation",
-      "Local Storage",
-    ],
+    technologies: ["HTML", "CSS", "JavaScript", "DOM Manipulation", "Local Storage"],
     githubUrl: "https://github.com/Ahmed-Bousrih/Football-Quizz-Basic-WEB",
     featured: false,
     year: "2019",
@@ -131,8 +80,6 @@ const projects: Project[] = [
   {
     id: 8,
     title: "Minesweeper Console Game",
-    description:
-      "Console-based Minesweeper game developed in C, featuring both English and Tunisian Arabic instructions for enhanced accessibility.",
     image: new URL("../assets/mines.jpg", import.meta.url).href,
     technologies: ["C", "Console Application"],
     githubUrl: "https://github.com/Ahmed-Bousrih/Minesweeper-in-c",
@@ -143,19 +90,20 @@ const projects: Project[] = [
 
 const featuredProjects = projects.filter((p) => p.featured);
 const otherProjects = projects.filter((p) => !p.featured);
+
+const { t } = useI18n();
 </script>
 
 <template>
   <section id="projects" class="section projects">
     <div class="container">
+      <!-- Section header -->
       <div class="projects__header">
-        <h2 class="projects__title animate-fade-in-up">Featured Projects</h2>
-        <p class="projects__subtitle animate-fade-in-up">
-          A selection of projects that highlight my skills, problem-solving, and
-          creativity.
-        </p>
+        <h2 class="projects__title animate-fade-in-up">{{ t("projects.featuredTitle") }}</h2>
+        <p class="projects__subtitle animate-fade-in-up">{{ t("projects.subtitle") }}</p>
       </div>
 
+      <!-- Featured Projects -->
       <div class="projects__featured">
         <div
           v-for="project in featuredProjects"
@@ -174,7 +122,7 @@ const otherProjects = projects.filter((p) => !p.featured);
                   rel="noopener"
                 >
                   <CodeBracketIcon class="w-5 h-5" />
-                  <span>Code</span>
+                  <span>{{ t("projects.codeLabel") }}</span>
                 </a>
               </div>
             </div>
@@ -184,13 +132,9 @@ const otherProjects = projects.filter((p) => !p.featured);
               <h3 class="project-card__title">{{ project.title }}</h3>
               <span class="project-card__year">{{ project.year }}</span>
             </div>
-            <p class="project-card__description">{{ project.description }}</p>
+            <p class="project-card__description">{{ t(`projects.descriptions.${project.id}`) }}</p>
             <div class="project-card__technologies">
-              <span
-                v-for="tech in project.technologies"
-                :key="tech"
-                class="tech-tag"
-              >
+              <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
                 {{ tech }}
               </span>
             </div>
@@ -198,8 +142,9 @@ const otherProjects = projects.filter((p) => !p.featured);
         </div>
       </div>
 
+      <!-- Other Projects -->
       <div class="projects__other">
-        <h3 class="projects__other-title">Other Projects</h3>
+        <h3 class="projects__other-title">{{ t("projects.otherTitle") }}</h3>
         <div class="projects__grid">
           <div
             v-for="project in otherProjects"
@@ -218,7 +163,7 @@ const otherProjects = projects.filter((p) => !p.featured);
                     rel="noopener"
                   >
                     <CodeBracketIcon class="w-5 h-5" />
-                    <span>Code</span>
+                    <span>{{ t("projects.codeLabel") }}</span>
                   </a>
                 </div>
               </div>
@@ -228,13 +173,9 @@ const otherProjects = projects.filter((p) => !p.featured);
                 <h4 class="project-card__title">{{ project.title }}</h4>
                 <span class="project-card__year">{{ project.year }}</span>
               </div>
-              <p class="project-card__description">{{ project.description }}</p>
+              <p class="project-card__description">{{ t(`projects.descriptions.${project.id}`) }}</p>
               <div class="project-card__technologies">
-                <span
-                  v-for="tech in project.technologies"
-                  :key="tech"
-                  class="tech-tag"
-                >
+                <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
                   {{ tech }}
                 </span>
               </div>

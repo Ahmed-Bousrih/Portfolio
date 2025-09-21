@@ -61,5 +61,21 @@
     "subtitle": "Here are the technologies and tools I work with to bring ideas to life",
     "fillButton": "Fill Skills",
     "resetButton": "Reset"
+  },
+  "projects": {
+    "featuredTitle": "Featured Projects",
+    "otherTitle": "Other Projects",
+    "subtitle": "A selection of projects that highlight my skills, problem-solving, and creativity.",
+    "codeLabel": "Code",
+    "descriptions": {
+      "1": "Full-stack recruitment platform with JWT-based authentication, PostgreSQL backend, and responsive Vue.js + TailwindCSS frontend for seamless candidate and employer management.",
+      "2": "Interactive travel planner built with React and Mapbox API. Users can plan trips, mark destinations, and visualize routes on dynamic maps.",
+      "3": "Web application for generating and managing certificates for educational institutions, featuring a secure admin dashboard and user management system.",
+      "4": "Browser extension and mobile app to verify SSL/TLS certificates, ensuring secure website connections and protecting users from insecure sites.",
+      "5": "TypeScript-based REST API for managing IT infrastructure and configuration items, providing scalable and reliable endpoints for CMDB operations.",
+      "6": "Web application for schools to manage classes, subjects, and student grades, with visualization features for monitoring academic performance.",
+      "7": "Single-page quiz application with 10 football questions, built using vanilla HTML, CSS, and JavaScript for interactive learning and fun.",
+      "8": "Console-based Minesweeper game developed in C, featuring both English and Tunisian Arabic instructions for enhanced accessibility."
+    }
   }
 }
