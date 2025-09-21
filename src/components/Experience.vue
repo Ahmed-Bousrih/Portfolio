@@ -28,6 +28,8 @@ const experiences: Experience[] = [
       "PostgreSQL",
       "Jira",
       "Git",
+      "Prisma",
+      "Tailwind CSS",
     ],
     current: true,
     achievements: [
@@ -46,7 +48,7 @@ const experiences: Experience[] = [
     period: "12/2024 - 06/2025",
     description:
       "Led full-stack development of WorkIt, a recruitment web app, implementing modern technologies and best practices.",
-    technologies: ["Vue.js", "Nest.js", "JWT", "PostgreSQL", "Tailwind CSS"],
+    technologies: ["Vue.js", "Nest.js", "JWT", "PostgreSQL", "Tailwind CSS", "Git","TypeORM"],
     current: false,
     achievements: [
       "Designed and implemented the complete application architecture",
