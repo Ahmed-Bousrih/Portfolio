@@ -30,13 +30,12 @@ const skills: Skill[] = [
   { name: "SMTP-Mailing", level: 85, category: "Backend" },
   { name: "RESTful APIs", level: 90, category: "Backend" },
 
-
   { name: "MySQL", level: 85, category: "Database" },
   { name: "PostgreSQL", level: 85, category: "Database" },
   { name: "NoSQL", level: 75, category: "Database" },
   { name: "UML", level: 80, category: "Database" },
-  {name: "Prisma", level: 85, category: "Database" },
-  {name: "Supabase", level: 80, category: "Database" },
+  { name: "Prisma", level: 85, category: "Database" },
+  { name: "Supabase", level: 80, category: "Database" },
 
   { name: "Git", level: 90, category: "Tools" },
   { name: "GitHub", level: 90, category: "Tools" },
@@ -50,9 +49,9 @@ const skills: Skill[] = [
 
 const categories = [
   { name: "Frontend", icon: CodeBracketIcon, color: "var(--primary-600)" },
-  { name: "Backend", icon: ServerIcon, color: "var(--primary-700)" },
-  { name: "Database", icon: PaintBrushIcon, color: "var(--primary-500)" },
-  { name: "Tools", icon: DevicePhoneMobileIcon, color: "var(--primary-800)" },
+  { name: "Backend", icon: ServerIcon, color: "var(--primary-600)" },
+  { name: "Database", icon: PaintBrushIcon, color: "var(--primary-600)" },
+  { name: "Tools", icon: DevicePhoneMobileIcon, color: "var(--primary-600)" },
 ];
 
 // Simple helpers
@@ -86,9 +85,7 @@ const fillSkills = () => {
   setTimeout(() => {
     console.log("Filling skills");
 
-    const blocks = Array.from(
-      document.querySelectorAll<HTMLElement>(".skill-circle")
-    );
+    const blocks = Array.from(document.querySelectorAll<HTMLElement>(".skill-circle"));
 
     blocks.forEach((block) => {
       const path = block.querySelector<SVGPathElement>(".circle");
@@ -131,25 +128,12 @@ const resetSkills = () => {
         </p>
 
         <div
-          style="
-            margin-top: 1rem;
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-          "
+          style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center"
         >
-          <button
-            class="fill-button"
-            @click="fillSkills"
-            aria-label="Fill skills"
-          >
+          <button class="fill-button" @click="fillSkills" aria-label="Fill skills">
             Fill Skills
           </button>
-          <button
-            class="reset-button"
-            @click="resetSkills"
-            aria-label="Reset skills"
-          >
+          <button class="reset-button" @click="resetSkills" aria-label="Reset skills">
             Reset
           </button>
         </div>
@@ -163,18 +147,13 @@ const resetSkills = () => {
           :style="{ borderLeftColor: category.color }"
         >
           <div class="category__header">
-            <component
-              :is="category.icon"
-              class="category__icon"
-            />
+            <component :is="category.icon" class="category__icon" />
             <h3 class="category__name">{{ category.name }}</h3>
           </div>
 
           <div class="category__skills">
             <div
-              v-for="skill in skills.filter(
-                (s) => s.category === category.name
-              )"
+              v-for="skill in skills.filter((s) => s.category === category.name)"
               :key="skill.name"
               class="skill-circle"
             >

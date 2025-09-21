@@ -21,14 +21,7 @@ const experiences: Experience[] = [
     period: "08/2025 - Present",
     description:
       "Developed scalable APIs and revamped the Credit Win web application for banks, enhancing system reliability and performance.",
-    technologies: [
-      "TypeScript",
-      "Nest.js",
-      "Next.js",
-      "PostgreSQL",
-      "Jira",
-      "Git",
-    ],
+    technologies: ["TypeScript", "Nest.js", "Next.js", "PostgreSQL", "Jira", "Git"],
     current: true,
     achievements: [
       "Designed and implemented RESTful APIs for core banking features including user roles, OVH mailing system, and banking feasibility calculations",
@@ -63,14 +56,7 @@ const experiences: Experience[] = [
     period: "04/2023 - 08/2023",
     description:
       "Built web applications including task management systems, real estate platforms, and an innovative VR game, gaining diverse development experience.",
-    technologies: [
-      "JavaScript",
-      "PHP",
-      "HTML",
-      "CSS",
-      "A-Frame",
-      "Web Scraping",
-    ],
+    technologies: ["JavaScript", "PHP", "HTML", "CSS", "A-Frame", "Web Scraping"],
     current: false,
     achievements: [
       "Developed a task management application for company dashboard",
@@ -126,11 +112,7 @@ const certifications = [
       </div>
 
       <div class="timeline">
-        <div
-          v-for="exp in experiences"
-          :key="exp.id"
-          class="timeline-item"
-        >
+        <div v-for="exp in experiences" :key="exp.id" class="timeline-item">
           <div class="timeline-dot" :class="{ current: exp.current }"></div>
           <div class="timeline-card">
             <div class="timeline-card-header">
@@ -275,6 +257,9 @@ const certifications = [
   object-fit: contain;
   border-radius: 4px;
   background: var(--bg-primary);
+}
+.company-logo:hover {
+  transform: scale(1.5);
 }
 .company-icon {
   width: 20px;
