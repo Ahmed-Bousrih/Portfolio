@@ -15,20 +15,20 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Recruitment Web App WorkIt',
+    title: 'WorkIt - Full-Stack Recruitment App',
     description:
-      'Developed a comprehensive recruitment web application with modern architecture. Features include user authentication with JWT, PostgreSQL database integration, and responsive Vue.js frontend with Tailwind CSS.',
+      'Full-stack recruitment platform with JWT-based authentication, PostgreSQL backend, and responsive Vue.js + TailwindCSS frontend for seamless candidate and employer management.',
     image: new URL('../assets/logoworkit.jpg', import.meta.url).href,
-    technologies: ['Vue.js', 'Nest.js', 'JWT', 'PostgreSQL', 'Tailwind CSS'],
+    technologies: ['Vue.js', 'Nest.js', 'JWT', 'PostgreSQL', 'Tailwind CSS', 'TypeScript', 'TypeORM'],
     githubUrl: 'https://github.com/Ahmed-Bousrih/Workit',
     featured: true,
     year: '2024-2025',
   },
   {
     id: 2,
-    title: 'City Trip Mapper',
+    title: 'City Trip Mapper - Interactive Travel Planner',
     description:
-      'Interactive travel planning application built with React.js and Mapbox API. Users can plan trips, mark locations, and visualize their travel routes on an interactive map.',
+      'Interactive travel planner built with React and Mapbox API. Users can plan trips, mark destinations, and visualize routes on dynamic maps.',
     image: new URL('../assets/citytrip.png', import.meta.url).href,
     technologies: ['React.js', 'Mapbox API', 'JavaScript', 'CSS'],
     githubUrl: 'https://github.com/Ahmed-Bousrih/City-Trip-Mapper',
@@ -37,64 +37,64 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Certification Web App for Institut De Savoir',
+    title: 'Certification Management System',
     description:
-      'Developed a comprehensive certification management system using PHP. The application handles certificate generation, user management, and administrative features for educational institutions.',
+      'Web application for generating and managing certificates for educational institutions, featuring a secure admin dashboard and user management system.',
     image: new URL('../assets/logodiplome.svg', import.meta.url).href,
-    technologies: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
+    technologies: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'PHPMailer', 'FTP', 'PHP GD Library', 'PHPmyAdmin'],
     githubUrl: 'https://github.com/Ahmed-Bousrih/Diplomes',
     featured: false,
     year: '2024',
   },
   {
     id: 4,
-    title: 'CheckMyHTTPS Extension & Mobile App',
+    title: 'CheckMyHTTPS - SSL/TLS Verifier',
     description:
-      'Security-focused web extension and mobile application for HTTPS certificate verification. Helps users verify the authenticity of SSL certificates.',
+      'Browser extension and mobile app to verify SSL/TLS certificates, ensuring secure website connections and protecting users from insecure sites.',
     image: new URL('../assets/Checkmyhttps.png', import.meta.url).href,
-    technologies: ['JavaScript', 'Mobile Development', 'Security'],
+    technologies: ['JavaScript', 'Mobile Development', 'Security', 'Browser Extensions'],
     githubUrl: 'https://github.com/checkmyhttps/checkmyhttps',
     featured: false,
     year: '2023',
   },
   {
     id: 5,
-    title: 'CMDB API with TypeScript',
+    title: 'CMDB REST API - IT Infrastructure Manager',
     description:
-      'Configuration Management Database API built with TypeScript. Provides RESTful endpoints for managing IT infrastructure and configuration items.',
+      'TypeScript-based REST API for managing IT infrastructure and configuration items, providing scalable and reliable endpoints for CMDB operations.',
     image: new URL('../assets/CMDBlogo.png', import.meta.url).href,
-    technologies: ['TypeScript', 'Node.js', 'REST API', 'Database'],
+    technologies: ['TypeScript', 'Node.js', 'REST API', 'Database', 'Prisma'],
     githubUrl: 'https://github.com/Ahmed-Bousrih/CMBD',
     featured: false,
     year: '2023',
   },
   {
     id: 6,
-    title: 'Students Grades App',
+    title: 'Student Grades App - Academic Performance Tracker',
     description:
-      'A web application for managing student grades. Main features include visualizing student results, grades entry, creating classes and creating subjects',
+      'Web application for schools to manage classes, subjects, and student grades, with visualization features for monitoring academic performance.',
     image: new URL('../assets/grades.jpg', import.meta.url).href,
-    technologies: ['PHP','MySQL', 'Database', 'HTML', 'CSS', 'JavaScript'],
+    technologies: ['PHP','MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHPmyAdmin', 'XAMPP'],
     githubUrl: 'https://github.com/Ahmed-Bousrih/Student-Grades-PHP-',
     featured: false,
     year: '2020',
   },
   {
     id: 7,
-    title: 'Football Quizz',
+    title: 'Football Quiz - Interactive SPA',
     description:
-      'A single page WEB application with 10 football questions using basic HTML CSS and Javascript.',
+      'Single-page quiz application with 10 football questions, built using vanilla HTML, CSS, and JavaScript for interactive learning and fun.',
     image: new URL('../assets/quizz.png', import.meta.url).href,
-    technologies: ['HTML', 'CSS', 'JavaScript'],
+    technologies: ['HTML', 'CSS', 'JavaScript', 'DOM Manipulation', 'Local Storage'],
     githubUrl: 'https://github.com/Ahmed-Bousrih/Football-Quizz-Basic-WEB',
     featured: false,
     year: '2019',
   },
   {
     id: 8,
-    title: 'Minesweeper Game',
+    title: 'Minesweeper Console Game',
     description:
-      'A console version of the old loved game Minesweeper coded in C with no graphics having instructions in english and tunisan arabic version and using system commands.',
+      'Console-based Minesweeper game developed in C, featuring both English and Tunisian Arabic instructions for enhanced accessibility.',
     image: new URL('../assets/mines.jpg', import.meta.url).href,
     technologies: ['C', 'Console Application'],
     githubUrl: 'https://github.com/Ahmed-Bousrih/Minesweeper-in-c',
@@ -102,6 +102,7 @@ const projects: Project[] = [
     year: '2020',
   },
 ]
+
 
 const featuredProjects = projects.filter((p) => p.featured)
 const otherProjects = projects.filter((p) => !p.featured)
@@ -113,7 +114,7 @@ const otherProjects = projects.filter((p) => !p.featured)
       <div class="projects__header">
         <h2 class="projects__title animate-fade-in-up">Featured Projects</h2>
         <p class="projects__subtitle animate-fade-in-up">
-          Here are some of my recent projects that showcase my skills and creativity
+          A selection of projects that highlight my skills, problem-solving, and creativity.
         </p>
       </div>
 
@@ -238,7 +239,7 @@ const otherProjects = projects.filter((p) => !p.featured)
 }
 
 .project-card {
-  background: white;
+  background: var(--bg-primary);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   border: 1px solid var(--neutral-200);
@@ -262,8 +263,8 @@ const otherProjects = projects.filter((p) => !p.featured)
 .project-card__image {
   position: relative;
   overflow: hidden;
-  height: 250px; /* featured */
-  background-color: white;
+  height: 250px;
+  background-color: var(--bg-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -294,10 +295,7 @@ const otherProjects = projects.filter((p) => !p.featured)
 
 .project-card__overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.85);
   display: flex;
   align-items: center;
@@ -336,7 +334,7 @@ const otherProjects = projects.filter((p) => !p.featured)
 
 .action-btn--code:hover {
   background: white;
-  color: var(--text-primary);
+  color: black;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
