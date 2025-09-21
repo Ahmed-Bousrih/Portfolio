@@ -160,16 +160,6 @@ onUnmounted(() => {
               t("header.links.contact")
             }}</a>
           </li>
-
-          <!-- Mobile language menu -->
-          <li class="mobile-lang">
-            <ul class="mobile-lang-menu">
-              <li @click="changeLang('en')"><span>🇬🇧</span> English</li>
-              <li @click="changeLang('fr')"><span>🇫🇷</span> Français</li>
-              <li @click="changeLang('pl')"><span>🇵🇱</span> Polski</li>
-              <li @click="changeLang('de')"><span>🇩🇪</span> Deutsch</li>
-            </ul>
-          </li>
         </ul>
       </div>
     </div>
