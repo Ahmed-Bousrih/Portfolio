@@ -17,7 +17,6 @@ const educationDegree = computed(() => t("about.education.degree"));
 const educationSchools = computed(() => t("about.education.schools"));
 const educationKeyCourses = computed(() => t("about.education.keyCourses"));
 
-
 const locationTitle = computed(() => t("about.location.title"));
 const locationFrance = computed(() => t("about.location.france"));
 const locationTunisia = computed(() => t("about.location.tunisia"));
@@ -31,11 +30,19 @@ const statsTechnologiesLabel = computed(() =>
 );
 const statsProjects = computed(() => t("about.stats.projects"));
 const statsProjectsLabel = computed(() => t("about.stats.projectsLabel"));
-const languagesAr = computed(() => t("about.languages.ar"));
-const languagesFr = computed(() => t("about.languages.fr"));
-const languagesEn = computed(() => t("about.languages.en"));
-const languagesPl = computed(() => t("about.languages.pl"));
-const languagesDe = computed(() => t("about.languages.de"));
+// language names
+const languagesArName = computed(() => t("about.languages.names.ar"));
+const languagesFrName = computed(() => t("about.languages.names.fr"));
+const languagesEnName = computed(() => t("about.languages.names.en"));
+const languagesPlName = computed(() => t("about.languages.names.pl"));
+const languagesDeName = computed(() => t("about.languages.names.de"));
+
+// language levels
+const languagesArLevel = computed(() => t("about.languages.levels.ar"));
+const languagesFrLevel = computed(() => t("about.languages.levels.fr"));
+const languagesEnLevel = computed(() => t("about.languages.levels.en"));
+const languagesPlLevel = computed(() => t("about.languages.levels.pl"));
+const languagesDeLevel = computed(() => t("about.languages.levels.de"));
 </script>
 
 <template>
@@ -73,11 +80,26 @@ const languagesDe = computed(() => t("about.languages.de"));
 
             <div class="detail-item">
               <h4>{{ t("about.languages.title") }}</h4>
-              <p><strong>Arabic:</strong> {{ languagesAr }}</p>
-              <p><strong>French:</strong> {{ languagesFr }}</p>
-              <p><strong>English:</strong> {{ languagesEn }}</p>
-              <p><strong>Polish:</strong> {{ languagesPl }}</p>
-              <p><strong>German:</strong> {{ languagesDe }}</p>
+              <p>
+                <strong>{{ languagesArName }}</strong
+                >: {{ languagesArLevel }}
+              </p>
+              <p>
+                <strong>{{ languagesFrName }}</strong
+                >: {{ languagesFrLevel }}
+              </p>
+              <p>
+                <strong>{{ languagesEnName }}</strong
+                >: {{ languagesEnLevel }}
+              </p>
+              <p>
+                <strong>{{ languagesPlName }}</strong
+                >: {{ languagesPlLevel }}
+              </p>
+              <p>
+                <strong>{{ languagesDeName }}</strong
+                >: {{ languagesDeLevel }}
+              </p>
             </div>
 
             <div class="detail-item">

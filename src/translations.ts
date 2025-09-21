@@ -40,11 +40,20 @@ export const translations = {
       },
       languages: {
         title: "Languages",
-        ar: "Native Language",
-        fr: "Fluent",
-        en: "Fluent",
-        pl: "Beginner",
-        de: "Beginner",
+        names: {
+          ar: "Arabic",
+          fr: "French",
+          en: "English",
+          pl: "Polish",
+          de: "German",
+        },
+        levels: {
+          ar: "Native",
+          fr: "Fluent",
+          en: "Fluent",
+          pl: "Beginner",
+          de: "Beginner",
+        },
       },
       location: {
         title: "Location",
@@ -127,11 +136,20 @@ export const translations = {
       },
       languages: {
         title: "Langues",
-        ar: "Langue maternelle",
-        fr: "Courant",
-        en: "Courant",
-        pl: "Débutant",
-        de: "Débutant",
+        names: {
+          ar: "Arabe",
+          fr: "Français",
+          en: "Anglais",
+          pl: "Polonais",
+          de: "Allemand",
+        },
+        levels: {
+          ar: "Langue maternelle",
+          fr: "Courant",
+          en: "Courant",
+          pl: "Débutant",
+          de: "Débutant",
+        },
       },
       location: {
         title: "Localisation",
@@ -214,11 +232,20 @@ export const translations = {
       },
       languages: {
         title: "Języki",
-        ar: "Język ojczysty",
-        fr: "Biegły",
-        en: "Biegły",
-        pl: "Początkujący",
-        de: "Początkujący",
+        names: {
+          ar: "Arabski",
+          fr: "Francuski",
+          en: "Angielski",
+          pl: "Polski",
+          de: "Niemiecki",
+        },
+        levels: {
+          ar: "Ojczysty",
+          fr: "Biegły",
+          en: "Biegły",
+          pl: "Początkujący",
+          de: "Początkujący",
+        },
       },
       location: {
         title: "Lokalizacja",
@@ -301,11 +328,20 @@ export const translations = {
       },
       languages: {
         title: "Sprachen",
-        ar: "Muttersprache",
-        fr: "Fließend",
-        en: "Fließend",
-        pl: "Anfänger",
-        de: "Anfänger",
+        names: {
+          ar: "Arabisch",
+          fr: "Französisch",
+          en: "Englisch",
+          pl: "Polnisch",
+          de: "Deutsch",
+        },
+        levels: {
+          ar: "Muttersprache",
+          fr: "Fließend",
+          en: "Fließend",
+          pl: "Anfänger",
+          de: "Anfänger",
+        },
       },
       location: {
         title: "Standort",
@@ -357,7 +393,10 @@ export const locale = ref<Locale>("en");
 export const t = (path: string) =>
   path
     .split(".")
-    .reduce((o: any, key: string) => o?.[key], translations[locale.value] as any) ?? path;
+    .reduce(
+      (o: any, key: string) => o?.[key],
+      translations[locale.value] as any
+    ) ?? path;
 export const changeLang = (lang: Locale) => {
   locale.value = lang;
 };

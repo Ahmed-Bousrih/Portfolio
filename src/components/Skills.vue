@@ -5,15 +5,14 @@ import {
   ServerIcon,
   PaintBrushIcon,
 } from "@heroicons/vue/24/outline";
-import { useI18n } from 'vue-i18n';
+import { computed } from "vue";
 
 interface Skill {
   name: string;
   level: number;
   category: string;
 }
-
-const { t } = useI18n();
+import { t } from "../translations";
 
 const skills: Skill[] = [
   { name: "JavaScript", level: 90, category: "Frontend" },
@@ -119,25 +118,30 @@ const resetSkills = () => {
   });
   texts.forEach((t) => (t.textContent = "0%"));
 };
+// Computed translations
+const skillsTitle = computed(() => t("skills.title"));
+const skillsSubtitle = computed(() => t("skills.subtitle"));
+const fillButtonText = computed(() => t("skills.fillButton"));
+const resetButtonText = computed(() => t("skills.resetButton"));
 </script>
 
 <template>
   <section id="skills" class="section skills">
     <div class="container">
       <div class="skills__header">
-        <h2 class="skills__title">{{ t("skills.title") }}</h2>
+        <h2 class="skills__title">{{ skillsTitle}}</h2>
         <p class="skills__subtitle">
-          {{ t("skills.subtitle") }}
+          {{ skillsSubtitle }}
         </p>
 
         <div
           style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center"
         >
           <button class="fill-button" @click="fillSkills" aria-label="Fill skills">
-             {{ t("skills.fillButton") }}
+             {{ fillButtonText }}
           </button>
           <button class="reset-button" @click="resetSkills" aria-label="Reset skills">
-           {{ t("skills.resetButton") }}
+           {{ resetButtonText }}
           </button>
         </div>
       </div>

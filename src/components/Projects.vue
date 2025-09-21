@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { CodeBracketIcon } from "@heroicons/vue/24/outline";
-import { useI18n } from "vue-i18n";
+import { t } from "../translations";
+import { computed } from "vue";
 
 interface Project {
   id: number;
@@ -88,10 +89,20 @@ const projects: Project[] = [
   },
 ];
 
+
+// Filter featured and other projects
 const featuredProjects = projects.filter((p) => p.featured);
 const otherProjects = projects.filter((p) => !p.featured);
 
-const { t } = useI18n();
+// Computed translations
+const projectsFeaturedTitle = computed(() => t("projects.featuredTitle"));
+const projectsOtherTitle = computed(() => t("projects.otherTitle"));
+const projectsSubtitle = computed(() => t("projects.subtitle"));
+const codeLabel = computed(() => t("projects.codeLabel"));
+
+// Computed project descriptions
+const projectDescription = (id: number) => computed(() => t(`projects.descriptions.${id}`));
+
 </script>
 
 <template>
@@ -99,8 +110,8 @@ const { t } = useI18n();
     <div class="container">
       <!-- Section header -->
       <div class="projects__header">
-        <h2 class="projects__title animate-fade-in-up">{{ t("projects.featuredTitle") }}</h2>
-        <p class="projects__subtitle animate-fade-in-up">{{ t("projects.subtitle") }}</p>
+        <h2 class="projects__title animate-fade-in-up">{{ projectsFeaturedTitle }}</h2>
+        <p class="projects__subtitle animate-fade-in-up">{{ projectsSubtitle }}</p>
       </div>
 
       <!-- Featured Projects -->
@@ -122,7 +133,7 @@ const { t } = useI18n();
                   rel="noopener"
                 >
                   <CodeBracketIcon class="w-5 h-5" />
-                  <span>{{ t("projects.codeLabel") }}</span>
+                  <span>{{ codeLabel }}</span>
                 </a>
               </div>
             </div>
@@ -132,7 +143,7 @@ const { t } = useI18n();
               <h3 class="project-card__title">{{ project.title }}</h3>
               <span class="project-card__year">{{ project.year }}</span>
             </div>
-            <p class="project-card__description">{{ t(`projects.descriptions.${project.id}`) }}</p>
+            <p class="project-card__description">{{ projectDescription(project.id) }}</p>
             <div class="project-card__technologies">
               <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
                 {{ tech }}
@@ -144,7 +155,7 @@ const { t } = useI18n();
 
       <!-- Other Projects -->
       <div class="projects__other">
-        <h3 class="projects__other-title">{{ t("projects.otherTitle") }}</h3>
+        <h3 class="projects__other-title">{{ projectsOtherTitle }}</h3>
         <div class="projects__grid">
           <div
             v-for="project in otherProjects"
@@ -173,7 +184,7 @@ const { t } = useI18n();
                 <h4 class="project-card__title">{{ project.title }}</h4>
                 <span class="project-card__year">{{ project.year }}</span>
               </div>
-              <p class="project-card__description">{{ t(`projects.descriptions.${project.id}`) }}</p>
+              <p class="project-card__description">{{ projectDescription(project.id) }}</p>
               <div class="project-card__technologies">
                 <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
                   {{ tech }}
