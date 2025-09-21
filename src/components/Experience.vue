@@ -28,8 +28,6 @@ const experiences: Experience[] = [
       "PostgreSQL",
       "Jira",
       "Git",
-      "Prisma",
-      "Tailwind CSS",
     ],
     current: true,
     achievements: [
@@ -48,7 +46,7 @@ const experiences: Experience[] = [
     period: "12/2024 - 06/2025",
     description:
       "Led full-stack development of WorkIt, a recruitment web app, implementing modern technologies and best practices.",
-    technologies: ["Vue.js", "Nest.js", "JWT", "PostgreSQL", "Tailwind CSS", "Git","TypeORM"],
+    technologies: ["Vue.js", "Nest.js", "JWT", "PostgreSQL", "Tailwind CSS"],
     current: false,
     achievements: [
       "Designed and implemented the complete application architecture",
@@ -127,50 +125,48 @@ const certifications = [
         <p>My professional journey and the exciting projects I've worked on</p>
       </div>
 
-      <div class="experience__timeline">
-        <div v-for="exp in experiences" :key="exp.id" class="timeline-item">
+      <div class="timeline">
+        <div
+          v-for="exp in experiences"
+          :key="exp.id"
+          class="timeline-item"
+        >
           <div class="timeline-dot" :class="{ current: exp.current }"></div>
-          <div class="timeline-content">
-            <div class="experience-card">
-              <div class="experience-card__header">
-                <div>
-                  <h3>{{ exp.position }}</h3>
-                  <div class="company">
-                    <img
-                      v-if="exp.logo"
-                      :src="exp.logo"
-                      :alt="exp.company + ' logo'"
-                      class="company-logo"
-                    />
-                    <BuildingOfficeIcon v-else class="company-icon" />
-                    <span>{{ exp.company }}</span>
-                  </div>
-                </div>
-                <div class="period">
-                  <CalendarIcon class="period-icon" />
-                  <span>{{ exp.period }}</span>
-                  <span v-if="exp.current" class="current-badge">Current</span>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3>{{ exp.position }}</h3>
+                <div class="company">
+                  <img
+                    v-if="exp.logo"
+                    :src="exp.logo"
+                    :alt="exp.company + ' logo'"
+                    class="company-logo"
+                  />
+                  <BuildingOfficeIcon v-else class="company-icon" />
+                  <span>{{ exp.company }}</span>
                 </div>
               </div>
-
-              <p>{{ exp.description }}</p>
-
-              <div class="achievements">
-                <h4>Key Achievements:</h4>
-                <ul>
-                  <li v-for="ach in exp.achievements" :key="ach">{{ ach }}</li>
-                </ul>
+              <div class="period">
+                <CalendarIcon class="period-icon" />
+                <span>{{ exp.period }}</span>
+                <span v-if="exp.current" class="current-badge">Current</span>
               </div>
+            </div>
 
-              <div class="technologies">
-                <span
-                  v-for="tech in exp.technologies"
-                  :key="tech"
-                  class="tech-tag"
-                >
-                  {{ tech }}
-                </span>
-              </div>
+            <p>{{ exp.description }}</p>
+
+            <div class="achievements">
+              <h4>Key Achievements:</h4>
+              <ul>
+                <li v-for="ach in exp.achievements" :key="ach">{{ ach }}</li>
+              </ul>
+            </div>
+
+            <div class="technologies">
+              <span v-for="tech in exp.technologies" :key="tech" class="tech-tag">
+                {{ tech }}
+              </span>
             </div>
           </div>
         </div>
@@ -179,11 +175,7 @@ const certifications = [
       <div class="certifications">
         <h3>Certifications & Training</h3>
         <div class="certifications__grid">
-          <div
-            v-for="cert in certifications"
-            :key="cert.name"
-            class="certification-card"
-          >
+          <div v-for="cert in certifications" :key="cert.name" class="certification-card">
             <h4>{{ cert.name }}</h4>
             <p>{{ cert.provider }}</p>
             <span>{{ cert.date }}</span>
@@ -197,7 +189,7 @@ const certifications = [
 <style scoped>
 .experience {
   background: var(--bg-primary);
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 .container {
   max-width: 900px;
@@ -205,7 +197,7 @@ const certifications = [
 }
 .experience__header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 .experience__header h2 {
   color: var(--text-primary);
@@ -216,15 +208,15 @@ const certifications = [
 }
 
 /* Timeline */
-.experience__timeline {
+.timeline {
   position: relative;
-  margin-left: 20px;
-  padding-left: 20px;
+  margin: 0;
+  padding: 0;
 }
-.experience__timeline::before {
+.timeline::before {
   content: "";
   position: absolute;
-  left: 12px;
+  left: 20px;
   top: 0;
   width: 4px;
   height: 100%;
@@ -232,14 +224,15 @@ const certifications = [
   border-radius: 2px;
 }
 
-/* Timeline item */
+/* Timeline Item */
 .timeline-item {
   position: relative;
   margin-bottom: 50px;
+  padding-left: 60px;
 }
 .timeline-dot {
   position: absolute;
-  left: 0;
+  left: 12px;
   top: 0;
   width: 16px;
   height: 16px;
@@ -252,15 +245,17 @@ const certifications = [
 }
 
 /* Card */
-.timeline-content {
-  margin-left: 40px;
-}
-.experience-card {
+.timeline-card {
   background: var(--bg-secondary);
   padding: 20px;
   border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.experience-card__header {
+.timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.timeline-card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -348,10 +343,10 @@ const certifications = [
 
 /* Responsive */
 @media (max-width: 768px) {
-  .timeline-content {
-    margin-left: 30px;
+  .timeline-item {
+    padding-left: 40px;
   }
-  .experience-card__header {
+  .timeline-card-header {
     flex-direction: column;
     align-items: flex-start;
   }
