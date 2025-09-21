@@ -1,81 +1,208 @@
 <script setup lang="ts">
-import { CodeBracketIcon, DevicePhoneMobileIcon, ServerIcon, PaintBrushIcon } from '@heroicons/vue/24/outline'
+import {
+  CodeBracketIcon,
+  DevicePhoneMobileIcon,
+  ServerIcon,
+  PaintBrushIcon,
+} from "@heroicons/vue/24/outline";
 
 interface Skill {
-  name: string
-  level: number
-  category: string
+  name: string;
+  level: number;
+  category: string;
 }
 
 const skills: Skill[] = [
-  { name: 'JavaScript', level: 90, category: 'Frontend' },
-  { name: 'React.js', level: 85, category: 'Frontend' },
-  { name: 'Vue.js', level: 88, category: 'Frontend' },
-  { name: 'HTML', level: 95, category: 'Frontend' },
-  { name: 'CSS', level: 90, category: 'Frontend' },
-  { name: 'Bootstrap', level: 85, category: 'Frontend' },
-  { name: 'Tailwind CSS', level: 88, category: 'Frontend' },
-  { name: 'Node.js', level: 85, category: 'Backend' },
-  { name: 'PHP', level: 80, category: 'Backend' },
-  { name: 'Python', level: 75, category: 'Backend' },
-  { name: 'Nest.js', level: 82, category: 'Backend' },
-  { name: 'MySQL', level: 85, category: 'Database' },
-  { name: 'PostgreSQL', level: 80, category: 'Database' },
-  { name: 'NoSQL', level: 75, category: 'Database' },
-  { name: 'UML', level: 80, category: 'Database' },
-  { name: 'Git', level: 90, category: 'Tools' },
-  { name: 'GitHub', level: 90, category: 'Tools' },
-  { name: 'GitLab', level: 85, category: 'Tools' },
-  { name: 'Docker', level: 78, category: 'Tools' },
-  { name: 'JWT', level: 80, category: 'Tools' },
-  { name: 'Agile', level: 85, category: 'Tools' }
-]
+  { name: "JavaScript", level: 90, category: "Frontend" },
+  { name: "TypeScript", level: 90, category: "Frontend" },
+  { name: "React.js", level: 85, category: "Frontend" },
+  { name: "Vue.js", level: 90, category: "Frontend" },
+  { name: "HTML", level: 95, category: "Frontend" },
+  { name: "CSS", level: 90, category: "Frontend" },
+  { name: "Bootstrap", level: 85, category: "Frontend" },
+  { name: "Tailwind CSS", level: 88, category: "Frontend" },
+
+  { name: "Node.js", level: 85, category: "Backend" },
+  { name: "PHP", level: 80, category: "Backend" },
+  { name: "Python", level: 75, category: "Backend" },
+  { name: "Nest.js", level: 90, category: "Backend" },
+  { name: "TypeORM", level: 90, category: "Backend" },
+  { name: "SMTP-Mailing", level: 85, category: "Backend" },
+  { name: "RESTful APIs", level: 90, category: "Backend" },
+
+
+  { name: "MySQL", level: 85, category: "Database" },
+  { name: "PostgreSQL", level: 85, category: "Database" },
+  { name: "NoSQL", level: 75, category: "Database" },
+  { name: "UML", level: 80, category: "Database" },
+  {name: "Prisma", level: 85, category: "Database" },
+  {name: "Supabase", level: 80, category: "Database" },
+
+  { name: "Git", level: 90, category: "Tools" },
+  { name: "GitHub", level: 90, category: "Tools" },
+  { name: "Docker", level: 78, category: "Tools" },
+  { name: "JWT", level: 80, category: "Tools" },
+  { name: "Jira", level: 85, category: "Tools" },
+  { name: "Linux", level: 80, category: "Tools" },
+  { name: "Postman", level: 90, category: "Tools" },
+  { name: "VS Code", level: 95, category: "Tools" },
+];
 
 const categories = [
-  { name: 'Frontend', icon: CodeBracketIcon, color: 'var(--primary-600)' },
-  { name: 'Backend', icon: ServerIcon, color: 'var(--primary-700)' },
-  { name: 'Database', icon: PaintBrushIcon, color: 'var(--primary-500)' },
-  { name: 'Tools', icon: DevicePhoneMobileIcon, color: 'var(--primary-800)' },
-]
+  { name: "Frontend", icon: CodeBracketIcon, color: "var(--primary-600)" },
+  { name: "Backend", icon: ServerIcon, color: "var(--primary-700)" },
+  { name: "Database", icon: PaintBrushIcon, color: "var(--primary-500)" },
+  { name: "Tools", icon: DevicePhoneMobileIcon, color: "var(--primary-800)" },
+];
+
+// Simple helpers
+const parsePercent = (s: string | null) => {
+  const n = parseInt(s ?? "0", 10);
+  return isNaN(n) ? 0 : Math.max(0, Math.min(100, n));
+};
+
+// Animate numeric counter inside the SVG <text>
+function animateCounter(el: Element | null, to: number, duration = 900) {
+  if (!el) return;
+  const start = performance.now();
+
+  const step = (now: number) => {
+    const t = Math.min(1, (now - start) / duration);
+    const current = Math.round(t * to);
+    (el as HTMLElement).textContent = `${current}%`;
+
+    if (t < 1) requestAnimationFrame(step);
+  };
+
+  requestAnimationFrame(step);
+}
+
+// Fill all circles (manual trigger)
+const fillSkills = () => {
+  // reset first
+  resetSkills();
+
+  // then trigger filling after a short delay
+  setTimeout(() => {
+    console.log("Filling skills");
+
+    const blocks = Array.from(
+      document.querySelectorAll<HTMLElement>(".skill-circle")
+    );
+
+    blocks.forEach((block) => {
+      const path = block.querySelector<SVGPathElement>(".circle");
+      const text = block.querySelector<SVGTextElement>(".percentage");
+      const percent = parsePercent(path?.dataset.percent ?? null);
+
+      if (path) {
+        // set transition and dasharray
+        path.style.transition = "stroke-dasharray 1.2s ease-out, stroke 0.3s";
+        path.style.strokeDasharray = `${percent} 100`;
+      }
+      animateCounter(text, percent);
+    });
+  }, 300);
+};
+
+// Reset back to zero
+const resetSkills = () => {
+  const paths = Array.from(
+    document.querySelectorAll<SVGPathElement>(".skill-circle .circle")
+  );
+  const texts = Array.from(
+    document.querySelectorAll<SVGTextElement>(".skill-circle .percentage")
+  );
+  paths.forEach((p) => {
+    p.style.transition = "stroke-dasharray 0.5s ease";
+    p.style.strokeDasharray = "0 100";
+  });
+  texts.forEach((t) => (t.textContent = "0%"));
+};
 </script>
 
 <template>
   <section id="skills" class="section skills">
     <div class="container">
       <div class="skills__header">
-        <h2 class="skills__title animate-fade-in-up">Skills & Technologies</h2>
-        <p class="skills__subtitle animate-fade-in-up">
+        <h2 class="skills__title">Skills & Technologies</h2>
+        <p class="skills__subtitle">
           Here are the technologies and tools I work with to bring ideas to life
         </p>
+
+        <div
+          style="
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+          "
+        >
+          <button
+            class="fill-button"
+            @click="fillSkills"
+            aria-label="Fill skills"
+          >
+            Fill Skills
+          </button>
+          <button
+            class="reset-button"
+            @click="resetSkills"
+            aria-label="Reset skills"
+          >
+            Reset
+          </button>
+        </div>
       </div>
 
       <div class="skills__categories">
-        <div 
-          v-for="category in categories" 
+        <div
+          v-for="category in categories"
           :key="category.name"
-          class="category animate-fade-in-up"
+          class="category"
+          :style="{ borderLeftColor: category.color }"
         >
           <div class="category__header">
-            <component :is="category.icon" class="category__icon" />
+            <component
+              :is="category.icon"
+              class="category__icon"
+            />
             <h3 class="category__name">{{ category.name }}</h3>
           </div>
 
           <div class="category__skills">
-            <div 
-              v-for="skill in skills.filter(s => s.category === category.name)" 
+            <div
+              v-for="skill in skills.filter(
+                (s) => s.category === category.name
+              )"
               :key="skill.name"
-              class="skill"
+              class="skill-circle"
             >
-              <div class="skill__header">
-                <span class="skill__name">{{ skill.name }}</span>
-                <span class="skill__level">{{ skill.level }}%</span>
-              </div>
-              <div class="skill__bar">
-                <div 
-                  class="skill__fill" 
-                  :style="{ width: skill.level + '%' }"
-                ></div>
-              </div>
+              <svg
+                viewBox="0 0 36 36"
+                class="circular-chart"
+                role="img"
+                :aria-label="skill.name + ' ' + skill.level + '%'"
+              >
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845
+                     a 15.9155 15.9155 0 0 1 0 31.831
+                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  class="circle"
+                  :stroke="category.color"
+                  d="M18 2.0845
+                     a 15.9155 15.9155 0 0 1 0 31.831
+                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                  :data-percent="skill.level"
+                  stroke-dasharray="0 100"
+                />
+                <text x="18" y="20.35" class="percentage">0%</text>
+              </svg>
+
+              <div class="skill-name">{{ skill.name }}</div>
             </div>
           </div>
         </div>
@@ -85,136 +212,136 @@ const categories = [
 </template>
 
 <style scoped>
-.category__skills {
-  margin-top: var(--spacing-4);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-3);
-}
-.skills {
-  background: var(--bg-primary);
-}
-
-.skills__header {
-  text-align: center;
-  margin-bottom: var(--spacing-12);
-}
-
-.skills__title {
-  margin-bottom: var(--spacing-3);
+/* buttons */
+.fill-button,
+.reset-button {
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
   color: var(--text-primary);
 }
 
+:root.dark .fill-button,
+:root.dark .reset-button {
+  color: #a5b4fc;
+  background: linear-gradient(135deg, var(--neutral-600), var(--neutral-700));
+}
+
+/* layout */
+.skills {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 6rem 0;
+}
+.skills__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.skills__title {
+  font-size: 2rem;
+  font-weight: 700;
+}
 .skills__subtitle {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 720px;
+  margin: 0.4rem auto 0;
 }
 
 .skills__categories {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-4);
-  margin-bottom: var(--spacing-8);
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .category {
   background: var(--bg-secondary);
-  padding: var(--spacing-4);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--neutral-200);
-  transition: all 0.3s ease;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-600);
+  transition: all 0.25s ease;
 }
-
 .category:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary-600);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .category__header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-2);
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
-
 .category__icon {
   width: 24px;
   height: 24px;
-  color: var(--primary-600);
 }
-
 .category__name {
-  margin: 0;
-  color: var(--text-primary);
-  font-size: 1.25rem;
-}
-
-.skills__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-4);
-}
-
-.skill {
-  background: var(--bg-secondary);
-  padding: var(--spacing-3);
-  border-radius: var(--border-radius-md);
-  border: 1px solid var(--neutral-200);
-  transition: all 0.3s ease;
-}
-
-.skill:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.skill__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--spacing-2);
-}
-
-.skill__name {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.skill__level {
-  font-size: 0.875rem;
-  color: var(--primary-600);
+  font-size: 1.05rem;
   font-weight: 600;
+  color: var(--text-primary);
 }
 
-.skill__bar {
-  height: 8px;
-  background: var(--neutral-200);
-  border-radius: 4px;
-  overflow: hidden;
+.category__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
 }
 
-.skill__fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--primary-600), var(--primary-700));
-  border-radius: 4px;
-  transition: width 0.8s ease;
+/* circular meters */
+.skill-circle {
+  width: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.circular-chart {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+.circle-bg {
+  fill: none;
+  stroke: var(--neutral-200);
+  stroke-width: 3.8;
+}
+.circle {
+  fill: none;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  stroke-dasharray: 0 100;
+}
+.percentage {
+  fill: var(--text-primary);
+  font-size: 0.6rem;
+  text-anchor: middle;
+  dominant-baseline: middle;
 }
 
+.skill-name {
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+  color: var(--text-primary);
+}
+
+/* responsiveness */
 @media (max-width: 768px) {
   .skills__categories {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .skills__list {
-    grid-template-columns: 1fr;
-  }
 }
-
 @media (max-width: 480px) {
   .skills__categories {
     grid-template-columns: 1fr;
+  }
+
+  .category__skills {
+    justify-content: center;
   }
 }
 </style>
