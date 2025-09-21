@@ -20,7 +20,7 @@ const experiences: Experience[] = [
     position: "Full Stack Developer",
     period: "08/2025 - Present",
     description:
-      "Participated in the development of scalable APIs and contributed to the refonte of the Credit Win web application for banks, improving system reliability and performance.",
+      "Developed scalable APIs and revamped the Credit Win web application for banks, enhancing system reliability and performance.",
     technologies: [
       "TypeScript",
       "Nest.js",
@@ -31,10 +31,10 @@ const experiences: Experience[] = [
     ],
     current: true,
     achievements: [
-      "Designed and implemented RESTful APIs in Nest.js for core banking features such as user roles, OVH mailing system and banking feasibilities calculations with categories",
-      "Optimized Prisma database schema and queries for better performance with large-scale banking data",
+      "Designed and implemented RESTful APIs for core banking features including user roles, OVH mailing system, and banking feasibility calculations",
+      "Optimized Prisma database schema and queries for large-scale banking data",
       "Built reusable DTOs, validation pipes, and error handling utilities to standardize backend logic",
-      "Collaborated with frontend teams working in Next.js to ensure smooth API integration and data consistency",
+      "Collaborated with frontend teams to ensure smooth Next.js integration and data consistency",
       "Contributed to agile development with Jira, Git, and code reviews to maintain high code quality",
     ],
     logo: "/Portfolio/LogosEntreprises/Sw.jpg",
@@ -45,14 +45,14 @@ const experiences: Experience[] = [
     position: "Web Development Intern",
     period: "12/2024 - 06/2025",
     description:
-      "Developed a comprehensive recruitment web application called WorkIt. Leading the full-stack development with modern technologies and best practices.",
+      "Led full-stack development of WorkIt, a recruitment web app, implementing modern technologies and best practices.",
     technologies: ["Vue.js", "Nest.js", "JWT", "PostgreSQL", "Tailwind CSS"],
     current: false,
     achievements: [
-      "Designing and implementing the complete application architecture",
-      "Developing secure authentication system with JWT",
-      "Creating responsive frontend with Vue.js and Tailwind CSS",
-      "Building robust backend API with Nest.js and PostgreSQL",
+      "Designed and implemented the complete application architecture",
+      "Developed secure authentication system with JWT",
+      "Built responsive frontend with Vue.js and Tailwind CSS",
+      "Created robust backend API with Nest.js and PostgreSQL",
     ],
     logo: "/Portfolio/LogosEntreprises/Medtrust.png",
   },
@@ -62,7 +62,7 @@ const experiences: Experience[] = [
     position: "Web Development Intern",
     period: "04/2023 - 08/2023",
     description:
-      "Gained comprehensive experience in web development through diverse projects including task management systems, real estate applications, and innovative VR challenges.",
+      "Built web applications including task management systems, real estate platforms, and an innovative VR game, gaining diverse development experience.",
     technologies: [
       "JavaScript",
       "PHP",
@@ -74,9 +74,9 @@ const experiences: Experience[] = [
     current: false,
     achievements: [
       "Developed a task management application for company dashboard",
-      "Built front-end for real estate rental application",
-      "Created VR game using A-Frame framework",
-      "Implemented web scraper solutions",
+      "Built frontend for real estate rental application",
+      "Created a VR game using A-Frame framework",
+      "Implemented web scraping solutions for data collection",
       "Served as Team Leader of the development department",
     ],
     logo: "/Portfolio/LogosEntreprises/HDM.jpg",
@@ -87,103 +87,80 @@ const certifications = [
   {
     name: "Front End Development Libraries",
     provider: "FreeCodeCamp",
-    date: "Mars 2023",
+    date: "March 2023",
   },
   {
     name: "JavaScript Algorithms and Data Structures",
     provider: "FreeCodeCamp",
-    date: "Décembre 2022",
+    date: "December 2022",
   },
   {
     name: "Responsive Web Design",
     provider: "FreeCodeCamp",
-    date: "Avril 2022",
+    date: "April 2022",
   },
   {
     name: "Create & Manage Cloud Resources",
     provider: "Google Qwicklabs",
-    date: "Avril 2022",
+    date: "April 2022",
   },
   {
     name: "CCNA: Introduction to Networks",
     provider: "CISCO",
-    date: "Décembre 2021",
+    date: "December 2021",
   },
   {
     name: "CCNA: Switching, Routing & Wireless Essentials",
     provider: "CISCO",
-    date: "Décembre 2021",
+    date: "December 2021",
   },
 ];
 </script>
 
 <template>
-  <section id="experience" class="section experience">
+  <section id="experience" class="experience">
     <div class="container">
       <div class="experience__header">
-        <h2 class="experience__title animate-fade-in-up">
-          Professional Experience
-        </h2>
-        <p class="experience__subtitle animate-fade-in-up">
-          My professional journey and the exciting projects I've worked on
-        </p>
+        <h2>Professional Experience</h2>
+        <p>My professional journey and the exciting projects I've worked on</p>
       </div>
 
       <div class="experience__timeline">
-        <div
-          v-for="(exp, index) in experiences"
-          :key="exp.id"
-          class="timeline-item animate-fade-in-up"
-          :class="{ 'timeline-item--current': exp.current }"
-        >
-          <div class="timeline-marker">
-            <div class="timeline-dot"></div>
-            <div
-              v-if="index < experiences.length - 1"
-              class="timeline-line"
-            ></div>
-          </div>
-
+        <div v-for="exp in experiences" :key="exp.id" class="timeline-item">
+          <div class="timeline-dot" :class="{ current: exp.current }"></div>
           <div class="timeline-content">
             <div class="experience-card">
               <div class="experience-card__header">
-                <div class="experience-card__title">
-                  <h3 class="position">{{ exp.position }}</h3>
+                <div>
+                  <h3>{{ exp.position }}</h3>
                   <div class="company">
-                    <div class="company">
-                      <img
-                        v-if="exp.logo"
-                        :src="exp.logo"
-                        :alt="exp.company + ' logo'"
-                        class="company-logo"
-                      />
-                      <BuildingOfficeIcon v-else class="company-icon" />
-                    </div>
+                    <img
+                      v-if="exp.logo"
+                      :src="exp.logo"
+                      :alt="exp.company + ' logo'"
+                      class="company-logo"
+                    />
+                    <BuildingOfficeIcon v-else class="company-icon" />
                     <span>{{ exp.company }}</span>
                   </div>
                 </div>
-                <div class="experience-card__period">
+                <div class="period">
                   <CalendarIcon class="period-icon" />
                   <span>{{ exp.period }}</span>
                   <span v-if="exp.current" class="current-badge">Current</span>
                 </div>
               </div>
 
-              <p class="experience-card__description">{{ exp.description }}</p>
+              <p>{{ exp.description }}</p>
 
-              <div class="experience-card__achievements">
+              <div class="achievements">
                 <h4>Key Achievements:</h4>
                 <ul>
-                  <li
-                    v-for="achievement in exp.achievements"
-                    :key="achievement"
-                  >
-                    {{ achievement }}
-                  </li>
+                  <li v-for="ach in exp.achievements" :key="ach">{{ ach }}</li>
                 </ul>
               </div>
 
-              <div class="experience-card__technologies">
+              <div class="technologies">
                 <span
                   v-for="tech in exp.technologies"
                   :key="tech"
@@ -198,16 +175,16 @@ const certifications = [
       </div>
 
       <div class="certifications">
-        <h3 class="certifications__title">Certifications & Training</h3>
+        <h3>Certifications & Training</h3>
         <div class="certifications__grid">
           <div
             v-for="cert in certifications"
             :key="cert.name"
-            class="certification-card animate-fade-in-up"
+            class="certification-card"
           >
-            <h4 class="certification-card__name">{{ cert.name }}</h4>
-            <p class="certification-card__provider">{{ cert.provider }}</p>
-            <span class="certification-card__date">{{ cert.date }}</span>
+            <h4>{{ cert.name }}</h4>
+            <p>{{ cert.provider }}</p>
+            <span>{{ cert.date }}</span>
           </div>
         </div>
       </div>
@@ -216,265 +193,165 @@ const certifications = [
 </template>
 
 <style scoped>
-.company-logo {
-  width: 80px; /* fixed width */
-  height: 80px; /* fixed height */
-  object-fit: contain; /* keeps aspect ratio, fits inside box */
-  background: white; /* optional: makes transparent logos visible */
-  border-radius: 4px; /* optional: rounded edges for consistency */
-  padding: 2px; /* optional: avoids logos touching borders */
-}
 .experience {
   background: var(--bg-primary);
+  padding: 40px 20px;
 }
-
-.experience__header {
-  text-align: center;
-  margin-bottom: var(--spacing-12);
-}
-
-.experience__title {
-  margin-bottom: var(--spacing-3);
-  color: var(--text-primary);
-}
-
-.experience__subtitle {
-  font-size: 1.125rem;
-  color: var(--text-secondary);
-  max-width: 600px;
+.container {
+  max-width: 900px;
   margin: 0 auto;
 }
-
-.experience__timeline {
-  max-width: 800px;
-  margin: 0 auto var(--spacing-12);
+.experience__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.experience__header h2 {
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+.experience__header p {
+  color: var(--text-secondary);
 }
 
+/* Timeline */
+.experience__timeline {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+.experience__timeline::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--text-secondary);
+  border-radius: 2px;
+}
+
+/* Timeline item */
 .timeline-item {
   position: relative;
-  display: flex;
-  margin-bottom: var(--spacing-6);
+  margin-bottom: 50px;
 }
-
-.timeline-item--current .timeline-dot {
-  background: var(--primary-600);
-  box-shadow: 0 0 0 4px rgba(71, 85, 105, 0.3);
-}
-
-.timeline-marker {
-  position: relative;
-  margin-right: var(--spacing-4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--neutral-400);
+  background: var(--text-secondary);
   border: 3px solid var(--bg-primary);
-  z-index: 1;
-  transition: all 0.3s ease;
+}
+.timeline-dot.current {
+  background: var(--primary);
 }
 
-.timeline-line {
-  width: 2px;
-  height: 100px;
-  background: var(--neutral-300);
-  margin-top: var(--spacing-1);
-}
-
+/* Card */
 .timeline-content {
-  flex: 1;
+  margin-left: 40px;
 }
-
 .experience-card {
   background: var(--bg-secondary);
-  padding: var(--spacing-4);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--neutral-200);
-  transition: all 0.3s ease;
+  padding: 20px;
+  border-radius: 8px;
 }
-
-.experience-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary-600);
-}
-
 .experience-card__header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: var(--spacing-3);
   flex-wrap: wrap;
-  gap: var(--spacing-2);
+  gap: 10px;
+  margin-bottom: 15px;
 }
-
-.experience-card__title .position {
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-1);
-  font-size: 1.25rem;
-}
-
 .company {
   display: flex;
   align-items: center;
-  gap: var(--spacing-1);
+  gap: 8px;
   color: var(--text-secondary);
-  font-size: 0.875rem;
 }
-
+.company-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: var(--bg-primary);
+}
 .company-icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
-
-.experience-card__period {
+.period {
   display: flex;
   align-items: center;
-  gap: var(--spacing-1);
+  gap: 5px;
   color: var(--text-secondary);
-  font-size: 0.875rem;
 }
-
 .period-icon {
   width: 16px;
   height: 16px;
 }
-
 .current-badge {
-  background: var(--primary-600);
+  background: var(--primary-500);
   color: white;
-  padding: 2px 8px;
-  border-radius: var(--border-radius-sm);
+  padding: 2px 6px;
+  border-radius: 4px;
   font-size: 0.75rem;
-  font-weight: 500;
 }
-
-.experience-card__description {
-  margin-bottom: var(--spacing-3);
-  line-height: 1.6;
-  color: var(--text-secondary);
-}
-
-.experience-card__achievements {
-  margin-bottom: var(--spacing-3);
-}
-
-.experience-card__achievements h4 {
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-2);
-  font-size: 1rem;
-}
-
-.experience-card__achievements ul {
+.achievements ul {
   list-style: none;
-  padding: 0;
+  padding-left: 16px;
 }
-
-.experience-card__achievements li {
-  color: var(--text-secondary);
-  margin-bottom: var(--spacing-1);
-  padding-left: var(--spacing-3);
-  position: relative;
-}
-
-.experience-card__achievements li::before {
+.achievements li::before {
   content: "▸";
-  position: absolute;
-  left: 0;
-  color: var(--primary-600);
-  font-weight: bold;
+  margin-right: 5px;
+  color: var(--primary);
 }
-
-.experience-card__technologies {
+.technologies {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-1);
+  gap: 6px;
+  margin-top: 10px;
 }
-
 .tech-tag {
-  padding: 4px 8px;
-  background: var(--neutral-100);
-  color: var(--primary-600);
-  border-radius: var(--border-radius-sm);
+  background: var(--bg-primary);
+  color: var(--primary);
+  padding: 2px 6px;
+  border-radius: 4px;
   font-size: 0.75rem;
-  font-weight: 500;
 }
 
+/* Certifications */
 .certifications {
-  max-width: 1000px;
-  margin: 0 auto;
+  margin-top: 50px;
 }
-
-.certifications__title {
+.certifications h3 {
   text-align: center;
-  margin-bottom: var(--spacing-6);
   color: var(--text-primary);
-  font-size: 2rem;
+  margin-bottom: 20px;
 }
-
 .certifications__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-4);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
-
 .certification-card {
   background: var(--bg-secondary);
-  padding: var(--spacing-4);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--neutral-200);
-  transition: all 0.3s ease;
+  padding: 20px;
+  border-radius: 8px;
   text-align: center;
 }
 
-.certification-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary-600);
-}
-
-.certification-card__name {
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-2);
-  font-size: 1.125rem;
-}
-
-.certification-card__provider {
-  color: var(--primary-600);
-  margin-bottom: var(--spacing-1);
-  font-weight: 500;
-}
-
-.certification-card__date {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-  .experience__timeline {
-    padding-left: var(--spacing-2);
+  .timeline-content {
+    margin-left: 30px;
   }
-
-  .timeline-marker {
-    margin-right: var(--spacing-2);
-  }
-
   .experience-card__header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .experience-card__period {
-    margin-top: var(--spacing-1);
-  }
-
-  .certifications__grid {
-    grid-template-columns: 1fr;
   }
 }
 </style>

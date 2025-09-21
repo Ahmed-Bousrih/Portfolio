@@ -1,111 +1,148 @@
 <script setup lang="ts">
-import { CodeBracketIcon } from '@heroicons/vue/24/outline'
+import { CodeBracketIcon } from "@heroicons/vue/24/outline";
 
 interface Project {
-  id: number
-  title: string
-  description: string
-  image: string
-  technologies: string[]
-  githubUrl: string
-  featured: boolean
-  year: string
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  githubUrl: string;
+  featured: boolean;
+  year: string;
 }
 
 const projects: Project[] = [
   {
     id: 1,
-    title: 'WorkIt - Full-Stack Recruitment App',
+    title: "WorkIt - Full-Stack Recruitment App",
     description:
-      'Full-stack recruitment platform with JWT-based authentication, PostgreSQL backend, and responsive Vue.js + TailwindCSS frontend for seamless candidate and employer management.',
-    image: new URL('../assets/logoworkit.jpg', import.meta.url).href,
-    technologies: ['Vue.js', 'Nest.js', 'JWT', 'PostgreSQL', 'Tailwind CSS', 'TypeScript', 'TypeORM'],
-    githubUrl: 'https://github.com/Ahmed-Bousrih/Workit',
+      "Full-stack recruitment platform with JWT-based authentication, PostgreSQL backend, and responsive Vue.js + TailwindCSS frontend for seamless candidate and employer management.",
+    image: new URL("../assets/logoworkit.jpg", import.meta.url).href,
+    technologies: [
+      "Vue.js",
+      "Nest.js",
+      "JWT",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "TypeScript",
+      "TypeORM",
+    ],
+    githubUrl: "https://github.com/Ahmed-Bousrih/Workit",
     featured: true,
-    year: '2024-2025',
+    year: "2024-2025",
   },
   {
     id: 2,
-    title: 'City Trip Mapper - Interactive Travel Planner',
+    title: "City Trip Mapper - Interactive Travel Planner",
     description:
-      'Interactive travel planner built with React and Mapbox API. Users can plan trips, mark destinations, and visualize routes on dynamic maps.',
-    image: new URL('../assets/citytrip.png', import.meta.url).href,
-    technologies: ['React.js', 'Mapbox API', 'JavaScript', 'CSS'],
-    githubUrl: 'https://github.com/Ahmed-Bousrih/City-Trip-Mapper',
+      "Interactive travel planner built with React and Mapbox API. Users can plan trips, mark destinations, and visualize routes on dynamic maps.",
+    image: new URL("../assets/citytrip.png", import.meta.url).href,
+    technologies: ["React.js", "Mapbox API", "JavaScript", "CSS"],
+    githubUrl: "https://github.com/Ahmed-Bousrih/City-Trip-Mapper",
     featured: true,
-    year: '2024',
+    year: "2024",
   },
   {
     id: 3,
-    title: 'Certification Management System',
+    title: "Certification Management System",
     description:
-      'Web application for generating and managing certificates for educational institutions, featuring a secure admin dashboard and user management system.',
-    image: new URL('../assets/logodiplome.svg', import.meta.url).href,
-    technologies: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'PHPMailer', 'FTP', 'PHP GD Library', 'PHPmyAdmin'],
-    githubUrl: 'https://github.com/Ahmed-Bousrih/Diplomes',
+      "Web application for generating and managing certificates for educational institutions, featuring a secure admin dashboard and user management system.",
+    image: new URL("../assets/logodiplome.svg", import.meta.url).href,
+    technologies: [
+      "PHP",
+      "MySQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHPMailer",
+      "FTP",
+      "PHP GD Library",
+      "PHPmyAdmin",
+    ],
+    githubUrl: "https://github.com/Ahmed-Bousrih/Diplomes",
     featured: false,
-    year: '2024',
+    year: "2024",
   },
   {
     id: 4,
-    title: 'CheckMyHTTPS - SSL/TLS Verifier',
+    title: "CheckMyHTTPS - SSL/TLS Verifier",
     description:
-      'Browser extension and mobile app to verify SSL/TLS certificates, ensuring secure website connections and protecting users from insecure sites.',
-    image: new URL('../assets/Checkmyhttps.png', import.meta.url).href,
-    technologies: ['JavaScript', 'Mobile Development', 'Security', 'Browser Extensions'],
-    githubUrl: 'https://github.com/checkmyhttps/checkmyhttps',
+      "Browser extension and mobile app to verify SSL/TLS certificates, ensuring secure website connections and protecting users from insecure sites.",
+    image: new URL("../assets/Checkmyhttps.png", import.meta.url).href,
+    technologies: [
+      "JavaScript",
+      "Mobile Development",
+      "Security",
+      "Browser Extensions",
+    ],
+    githubUrl: "https://github.com/checkmyhttps/checkmyhttps",
     featured: false,
-    year: '2023',
+    year: "2023",
   },
   {
     id: 5,
-    title: 'CMDB REST API - IT Infrastructure Manager',
+    title: "CMDB REST API - IT Infrastructure Manager",
     description:
-      'TypeScript-based REST API for managing IT infrastructure and configuration items, providing scalable and reliable endpoints for CMDB operations.',
-    image: new URL('../assets/CMDBlogo.png', import.meta.url).href,
-    technologies: ['TypeScript', 'Node.js', 'REST API', 'Database', 'Prisma'],
-    githubUrl: 'https://github.com/Ahmed-Bousrih/CMBD',
+      "TypeScript-based REST API for managing IT infrastructure and configuration items, providing scalable and reliable endpoints for CMDB operations.",
+    image: new URL("../assets/CMDBlogo.png", import.meta.url).href,
+    technologies: ["TypeScript", "Node.js", "REST API", "Database", "Prisma"],
+    githubUrl: "https://github.com/Ahmed-Bousrih/CMBD",
     featured: false,
-    year: '2023',
+    year: "2023",
   },
   {
     id: 6,
-    title: 'Student Grades App - Academic Performance Tracker',
+    title: "Student Grades App - Academic Performance Tracker",
     description:
-      'Web application for schools to manage classes, subjects, and student grades, with visualization features for monitoring academic performance.',
-    image: new URL('../assets/grades.jpg', import.meta.url).href,
-    technologies: ['PHP','MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHPmyAdmin', 'XAMPP'],
-    githubUrl: 'https://github.com/Ahmed-Bousrih/Student-Grades-PHP-',
+      "Web application for schools to manage classes, subjects, and student grades, with visualization features for monitoring academic performance.",
+    image: new URL("../assets/grades.jpg", import.meta.url).href,
+    technologies: [
+      "PHP",
+      "MySQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap",
+      "PHPmyAdmin",
+      "XAMPP",
+    ],
+    githubUrl: "https://github.com/Ahmed-Bousrih/Student-Grades-PHP-",
     featured: false,
-    year: '2020',
+    year: "2020",
   },
   {
     id: 7,
-    title: 'Football Quiz - Interactive SPA',
+    title: "Football Quiz - Interactive SPA",
     description:
-      'Single-page quiz application with 10 football questions, built using vanilla HTML, CSS, and JavaScript for interactive learning and fun.',
-    image: new URL('../assets/quizz.png', import.meta.url).href,
-    technologies: ['HTML', 'CSS', 'JavaScript', 'DOM Manipulation', 'Local Storage'],
-    githubUrl: 'https://github.com/Ahmed-Bousrih/Football-Quizz-Basic-WEB',
+      "Single-page quiz application with 10 football questions, built using vanilla HTML, CSS, and JavaScript for interactive learning and fun.",
+    image: new URL("../assets/quizz.png", import.meta.url).href,
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "DOM Manipulation",
+      "Local Storage",
+    ],
+    githubUrl: "https://github.com/Ahmed-Bousrih/Football-Quizz-Basic-WEB",
     featured: false,
-    year: '2019',
+    year: "2019",
   },
   {
     id: 8,
-    title: 'Minesweeper Console Game',
+    title: "Minesweeper Console Game",
     description:
-      'Console-based Minesweeper game developed in C, featuring both English and Tunisian Arabic instructions for enhanced accessibility.',
-    image: new URL('../assets/mines.jpg', import.meta.url).href,
-    technologies: ['C', 'Console Application'],
-    githubUrl: 'https://github.com/Ahmed-Bousrih/Minesweeper-in-c',
+      "Console-based Minesweeper game developed in C, featuring both English and Tunisian Arabic instructions for enhanced accessibility.",
+    image: new URL("../assets/mines.jpg", import.meta.url).href,
+    technologies: ["C", "Console Application"],
+    githubUrl: "https://github.com/Ahmed-Bousrih/Minesweeper-in-c",
     featured: false,
-    year: '2020',
+    year: "2020",
   },
-]
+];
 
-
-const featuredProjects = projects.filter((p) => p.featured)
-const otherProjects = projects.filter((p) => !p.featured)
+const featuredProjects = projects.filter((p) => p.featured);
+const otherProjects = projects.filter((p) => !p.featured);
 </script>
 
 <template>
@@ -114,7 +151,8 @@ const otherProjects = projects.filter((p) => !p.featured)
       <div class="projects__header">
         <h2 class="projects__title animate-fade-in-up">Featured Projects</h2>
         <p class="projects__subtitle animate-fade-in-up">
-          A selection of projects that highlight my skills, problem-solving, and creativity.
+          A selection of projects that highlight my skills, problem-solving, and
+          creativity.
         </p>
       </div>
 
@@ -148,7 +186,11 @@ const otherProjects = projects.filter((p) => !p.featured)
             </div>
             <p class="project-card__description">{{ project.description }}</p>
             <div class="project-card__technologies">
-              <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
+              <span
+                v-for="tech in project.technologies"
+                :key="tech"
+                class="tech-tag"
+              >
                 {{ tech }}
               </span>
             </div>
@@ -188,7 +230,11 @@ const otherProjects = projects.filter((p) => !p.featured)
               </div>
               <p class="project-card__description">{{ project.description }}</p>
               <div class="project-card__technologies">
-                <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
+                <span
+                  v-for="tech in project.technologies"
+                  :key="tech"
+                  class="tech-tag"
+                >
                   {{ tech }}
                 </span>
               </div>
