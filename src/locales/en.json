@@ -19,5 +19,41 @@
       "contact": "Get In Touch",
       "projects": "View My Work"
     }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know more about my background and expertise",
+    "intro": {
+      "title": "Software Engineering Graduate",
+      "description": "I am a Software Engineering graduate from ESIEA Paris and EPI Sousse, passionate about designing and developing scalable, innovative applications. I thrive on solving complex problems and turning ideas into real-world solutions. My academic journey and hands-on experience have equipped me with a strong foundation in modern technologies and software development principles, enabling me to contribute to impactful projects that make a difference."
+    },
+    "education": {
+      "title": "Education",
+      "degree": "Engineering Degree: Computer Science",
+      "schools": "ESIEA, France + EPI, Tunisia",
+      "keyCourses": "Key courses: System Programming, Network Design, Application Architecture, Database Management, FullStack Development"
+    },
+    "languages": {
+      "title": "Languages",
+      "ar": "Native Language",
+      "fr": "Fluent",
+      "en": "Fluent",
+      "pl": "Beginner",
+      "de": "Beginner"
+    },
+    "location": {
+      "title": "Location",
+      "france": "Cachan, Île-de-France, 94230, France",
+      "tunisia": "Lamta, Monastir, 5099, Tunisia",
+      "relocation": "Open to relocation worldwide"
+    },
+    "stats": {
+      "graduation": "2025",
+      "graduationLabel": "Graduation",
+      "technologies": "15+",
+      "technologiesLabel": "Technologies",
+      "projects": "10+",
+      "projectsLabel": "Projects"
+    }
   }
 }

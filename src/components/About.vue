@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
 const logoEPI = "/Portfolio/LogoEcoles/Logoepi.jpg";
 const logoESIEA = "/Portfolio/LogoEcoles/LogoEsiea.png";
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -8,76 +12,59 @@ const logoESIEA = "/Portfolio/LogoEcoles/LogoEsiea.png";
     <div class="about__container">
       <!-- Header -->
       <div class="section-header">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">
-          Get to know more about my background and expertise
-        </p>
+        <h2 class="section-title">{{ t("about.title") }}</h2>
+        <p class="section-subtitle">{{ t("about.subtitle") }}</p>
       </div>
 
       <div class="about__content">
         <!-- Text -->
         <div class="about__text">
           <div class="about__intro">
-            <h3 class="about__intro-title">Software Engineering Graduate</h3>
-            <p class="about__intro-desc">
-              I am a Software Engineering graduate from ESIEA Paris and EPI
-              Sousse, passionate about designing and developing scalable,
-              innovative applications. I thrive on solving complex problems and
-              turning ideas into real-world solutions. My academic journey and
-              hands-on experience have equipped me with a strong foundation in
-              modern technologies and software development principles, enabling
-              me to contribute to impactful projects that make a difference.
-            </p>
+            <h3 class="about__intro-title">{{ t("about.intro.title") }}</h3>
+            <p class="about__intro-desc" v-html="t('about.intro.description')"></p>
           </div>
 
           <div class="about__details">
             <div class="detail-item">
-              <h4>Education</h4>
+              <h4>{{ t("about.education.title") }}</h4>
               <div class="education-logos">
                 <img :src="logoESIEA" alt="ESIEA Logo" />
                 <img :src="logoEPI" alt="EPI Logo" />
               </div>
-              <p>
-                <strong>Engineering Degree: Computer Science</strong> (08/2019 -
-                06/2025)
-              </p>
-              <p>ESIEA, France + EPI, Tunisia</p>
-              <p>
-                <em>Key courses:</em> System Programming, Network Design,
-                Application Architecture, Database Management, FullStack
-                Development
-              </p>
+              <p><strong>{{ t("about.education.degree") }}</strong> (08/2019 - 06/2025)</p>
+              <p>{{ t("about.education.schools") }}</p>
+              <p><em>{{ t("about.education.keyCourses") }}</em></p>
             </div>
 
             <div class="detail-item">
-              <h4>Languages</h4>
-              <p><strong>Arabic:</strong> Native Language</p>
-              <p><strong>French:</strong> Fluent</p>
-              <p><strong>English:</strong> Fluent</p>
-              <p><strong>Polish:</strong> Beginner</p>
-              <p><strong>German:</strong> Beginner</p>
+              <h4>{{ t("about.languages.title") }}</h4>
+              <p><strong>Arabic:</strong> {{ t("about.languages.ar") }}</p>
+              <p><strong>French:</strong> {{ t("about.languages.fr") }}</p>
+              <p><strong>English:</strong> {{ t("about.languages.en") }}</p>
+              <p><strong>Polish:</strong> {{ t("about.languages.pl") }}</p>
+              <p><strong>German:</strong> {{ t("about.languages.de") }}</p>
             </div>
 
             <div class="detail-item">
-              <h4>Location</h4>
-              <p>Cachan, Île-de-France, 94230, France</p>
-              <p>Lamta, Monastir, 5099, Tunisia</p>
-              <p><em>Open to relocation worldwide</em></p>
+              <h4>{{ t("about.location.title") }}</h4>
+              <p>{{ t("about.location.france") }}</p>
+              <p>{{ t("about.location.tunisia") }}</p>
+              <p><em>{{ t("about.location.relocation") }}</em></p>
             </div>
           </div>
 
           <div class="about__stats">
             <div class="stat-item">
-              <div class="stat-number">2025</div>
-              <div class="stat-label">Graduation</div>
+              <div class="stat-number">{{ t("about.stats.graduation") }}</div>
+              <div class="stat-label">{{ t("about.stats.graduationLabel") }}</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">15+</div>
-              <div class="stat-label">Technologies</div>
+              <div class="stat-number">{{ t("about.stats.technologies") }}</div>
+              <div class="stat-label">{{ t("about.stats.technologiesLabel") }}</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">10+</div>
-              <div class="stat-label">Projects</div>
+              <div class="stat-number">{{ t("about.stats.projects") }}</div>
+              <div class="stat-label">{{ t("about.stats.projectsLabel") }}</div>
             </div>
           </div>
         </div>
@@ -93,6 +80,8 @@ const logoESIEA = "/Portfolio/LogoEcoles/LogoEsiea.png";
     </div>
   </section>
 </template>
+
+
 
 <style scoped>
 .about {

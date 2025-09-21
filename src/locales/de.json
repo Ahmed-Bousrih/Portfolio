@@ -19,5 +19,41 @@
       "contact": "Kontaktieren",
       "projects": "Meine Arbeiten ansehen"
     }
+  },
+  "about": {
+    "title": "Über mich",
+    "subtitle": "Erfahren Sie mehr über meinen Hintergrund und meine Expertise",
+    "intro": {
+      "title": "Absolvent der Softwaretechnik",
+      "description": "Ich bin Absolvent der Softwaretechnik von ESIEA Paris und EPI Sousse, leidenschaftlich daran interessiert, skalierbare, innovative Anwendungen zu entwerfen und zu entwickeln. Ich löse gern komplexe Probleme und verwandle Ideen in reale Lösungen. Mein akademischer Werdegang und praktische Erfahrung haben mir eine solide Grundlage in modernen Technologien und Softwareentwicklungsprinzipien vermittelt, sodass ich zu wirkungsvollen Projekten beitragen kann."
+    },
+    "education": {
+      "title": "Ausbildung",
+      "degree": "Ingenieurabschluss: Informatik",
+      "schools": "ESIEA, Frankreich + EPI, Tunesien",
+      "keyCourses": "Kernfächer: Systemprogrammierung, Netzwerkdesign, Anwendungsarchitektur, Datenbankmanagement, FullStack-Entwicklung"
+    },
+    "languages": {
+      "title": "Sprachen",
+      "ar": "Muttersprache",
+      "fr": "Fließend",
+      "en": "Fließend",
+      "pl": "Anfänger",
+      "de": "Anfänger"
+    },
+    "location": {
+      "title": "Standort",
+      "france": "Cachan, Île-de-France, 94230, Frankreich",
+      "tunisia": "Lamta, Monastir, 5099, Tunesien",
+      "relocation": "Offen für weltweite Umzüge"
+    },
+    "stats": {
+      "graduation": "2025",
+      "graduationLabel": "Abschluss",
+      "technologies": "15+",
+      "technologiesLabel": "Technologien",
+      "projects": "10+",
+      "projectsLabel": "Projekte"
+    }
   }
 }

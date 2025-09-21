@@ -19,5 +19,41 @@
       "contact": "Skontaktuj się",
       "projects": "Zobacz moje projekty"
     }
+  },
+  "about": {
+    "title": "O mnie",
+    "subtitle": "Poznaj mój dorobek i doświadczenie",
+    "intro": {
+      "title": "Absolwent Inżynierii Oprogramowania",
+      "description": "Jestem absolwentem inżynierii oprogramowania z ESIEA Paris i EPI Sousse, pasjonuję się projektowaniem i tworzeniem skalowalnych, innowacyjnych aplikacji. Lubię rozwiązywać skomplikowane problemy i zamieniać pomysły w realne rozwiązania. Moja ścieżka edukacyjna i praktyczne doświadczenie pozwoliły mi zdobyć solidne podstawy w nowoczesnych technologiach i zasadach tworzenia oprogramowania, dzięki czemu mogę przyczyniać się do projektów mających realny wpływ."
+    },
+    "education": {
+      "title": "Edukacja",
+      "degree": "Dyplom inżyniera: Informatyka",
+      "schools": "ESIEA, Francja + EPI, Tunezja",
+      "keyCourses": "Kluczowe przedmioty: Programowanie systemowe, Projektowanie sieci, Architektura aplikacji, Zarządzanie bazami danych, Programowanie FullStack"
+    },
+    "languages": {
+      "title": "Języki",
+      "ar": "Język ojczysty",
+      "fr": "Biegły",
+      "en": "Biegły",
+      "pl": "Początkujący",
+      "de": "Początkujący"
+    },
+    "location": {
+      "title": "Lokalizacja",
+      "france": "Cachan, Île-de-France, 94230, Francja",
+      "tunisia": "Lamta, Monastir, 5099, Tunezja",
+      "relocation": "Otwarte na przeprowadzki na całym świecie"
+    },
+    "stats": {
+      "graduation": "2025",
+      "graduationLabel": "Ukończenie",
+      "technologies": "15+",
+      "technologiesLabel": "Technologie",
+      "projects": "10+",
+      "projectsLabel": "Projekty"
+    }
   }
 }
