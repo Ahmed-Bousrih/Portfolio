@@ -1,8 +1,16 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed } from "vue";
+import { t } from "../translations";
 
-const { t } = useI18n();
+// Optional: computed version if you want reactive updates
+const heroGreeting = computed(() => t("hero.greeting"));
+const heroName = computed(() => t("hero.name"));
+const heroSubtitle = computed(() => t("hero.subtitle"));
+const heroDescription = computed(() => t("hero.description"));
+const heroCtaContact = computed(() => t("hero.cta.contact"));
+const heroCtaProjects = computed(() => t("hero.cta.projects"));
 </script>
+
 <template>
   <section id="home" class="hero">
     <div class="hero__container">
@@ -10,14 +18,14 @@ const { t } = useI18n();
         <!-- Text -->
         <div class="hero__text">
           <h1 class="hero__title">
-            <span class="hero__greeting">{{ t("hero.greeting") }}</span>
-            <span class="hero__name">{{ t("hero.name") }}</span>
+            <span class="hero__greeting">{{ heroGreeting }}</span>
+            <span class="hero__name">{{ heroName }}</span>
           </h1>
-          <p class="hero__subtitle">{{ t("hero.subtitle") }}</p>
-          <p class="hero__description" v-html="t('hero.description')"></p>
+          <p class="hero__subtitle">{{ heroSubtitle }}</p>
+          <p class="hero__description" v-html="heroDescription"></p>
           <div class="hero__actions">
-            <a href="#contact" class="btn btn--primary">{{ t("hero.cta.contact") }}</a>
-            <a href="#projects" class="btn btn--secondary">{{ t("hero.cta.projects") }}</a>
+            <a href="#contact" class="btn btn--primary">{{ heroCtaContact }}</a>
+            <a href="#projects" class="btn btn--secondary">{{ heroCtaProjects }}</a>
           </div>
         </div>
 
@@ -33,7 +41,6 @@ const { t } = useI18n();
   </section>
 </template>
 
-<script setup lang="ts"></script>
 
 <style scoped>
 .hero {

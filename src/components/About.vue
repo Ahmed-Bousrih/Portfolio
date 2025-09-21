@@ -1,10 +1,41 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { computed } from "vue";
+import { t } from "../translations"; // import your translations
 
 const logoEPI = "/Portfolio/LogoEcoles/Logoepi.jpg";
 const logoESIEA = "/Portfolio/LogoEcoles/LogoEsiea.png";
 
-const { t } = useI18n();
+// Computed properties for reactivity
+const aboutTitle = computed(() => t("about.title"));
+const aboutSubtitle = computed(() => t("about.subtitle"));
+
+const aboutIntroTitle = computed(() => t("about.intro.title"));
+const aboutIntroDesc = computed(() => t("about.intro.description"));
+
+const educationTitle = computed(() => t("about.education.title"));
+const educationDegree = computed(() => t("about.education.degree"));
+const educationSchools = computed(() => t("about.education.schools"));
+const educationKeyCourses = computed(() => t("about.education.keyCourses"));
+
+
+const locationTitle = computed(() => t("about.location.title"));
+const locationFrance = computed(() => t("about.location.france"));
+const locationTunisia = computed(() => t("about.location.tunisia"));
+const locationRelocation = computed(() => t("about.location.relocation"));
+
+const statsGraduation = computed(() => t("about.stats.graduation"));
+const statsGraduationLabel = computed(() => t("about.stats.graduationLabel"));
+const statsTechnologies = computed(() => t("about.stats.technologies"));
+const statsTechnologiesLabel = computed(() =>
+  t("about.stats.technologiesLabel")
+);
+const statsProjects = computed(() => t("about.stats.projects"));
+const statsProjectsLabel = computed(() => t("about.stats.projectsLabel"));
+const languagesAr = computed(() => t("about.languages.ar"));
+const languagesFr = computed(() => t("about.languages.fr"));
+const languagesEn = computed(() => t("about.languages.en"));
+const languagesPl = computed(() => t("about.languages.pl"));
+const languagesDe = computed(() => t("about.languages.de"));
 </script>
 
 <template>
@@ -12,73 +43,65 @@ const { t } = useI18n();
     <div class="about__container">
       <!-- Header -->
       <div class="section-header">
-        <h2 class="section-title">{{ t("about.title") }}</h2>
-        <p class="section-subtitle">{{ t("about.subtitle") }}</p>
+        <h2 class="section-title">{{ aboutTitle }}</h2>
+        <p class="section-subtitle">{{ aboutSubtitle }}</p>
       </div>
 
       <div class="about__content">
         <!-- Text -->
         <div class="about__text">
           <div class="about__intro">
-            <h3 class="about__intro-title">{{ t("about.intro.title") }}</h3>
-            <p
-              class="about__intro-desc"
-              v-html="t('about.intro.description')"
-            ></p>
+            <h3 class="about__intro-title">{{ aboutIntroTitle }}</h3>
+            <p class="about__intro-desc" v-html="aboutIntroDesc"></p>
           </div>
 
           <div class="about__details">
             <div class="detail-item">
-              <h4>{{ t("about.education.title") }}</h4>
+              <h4>{{ educationTitle }}</h4>
               <div class="education-logos">
                 <img :src="logoESIEA" alt="ESIEA Logo" />
                 <img :src="logoEPI" alt="EPI Logo" />
               </div>
               <p>
-                <strong>{{ t("about.education.degree") }}</strong> (08/2019 -
-                06/2025)
+                <strong>{{ educationDegree }}</strong> (08/2019 - 06/2025)
               </p>
-              <p>{{ t("about.education.schools") }}</p>
+              <p>{{ educationSchools }}</p>
               <p>
-                <em>{{ t("about.education.keyCourses") }}</em>
+                <em>{{ educationKeyCourses }}</em>
               </p>
             </div>
 
             <div class="detail-item">
               <h4>{{ t("about.languages.title") }}</h4>
-              <p><strong>Arabic:</strong> {{ t("about.languages.ar") }}</p>
-              <p><strong>French:</strong> {{ t("about.languages.fr") }}</p>
-              <p><strong>English:</strong> {{ t("about.languages.en") }}</p>
-              <p><strong>Polish:</strong> {{ t("about.languages.pl") }}</p>
-              <p><strong>German:</strong> {{ t("about.languages.de") }}</p>
+              <p><strong>Arabic:</strong> {{ languagesAr }}</p>
+              <p><strong>French:</strong> {{ languagesFr }}</p>
+              <p><strong>English:</strong> {{ languagesEn }}</p>
+              <p><strong>Polish:</strong> {{ languagesPl }}</p>
+              <p><strong>German:</strong> {{ languagesDe }}</p>
             </div>
 
             <div class="detail-item">
-              <h4>{{ t("about.location.title") }}</h4>
-              <p>{{ t("about.location.france") }}</p>
-              <p>{{ t("about.location.tunisia") }}</p>
+              <h4>{{ locationTitle }}</h4>
+              <p>{{ locationFrance }}</p>
+              <p>{{ locationTunisia }}</p>
               <p>
-                <em>{{ t("about.location.relocation") }}</em>
+                <em>{{ locationRelocation }}</em>
               </p>
             </div>
           </div>
 
           <div class="about__stats">
             <div class="stat-item">
-              <div class="stat-number">{{ t("about.stats.graduation") }}</div>
-              <div class="stat-label">
-                {{ t("about.stats.graduationLabel") }}
-              </div>
+              <div class="stat-number">{{ statsGraduation }}</div>
+              <div class="stat-label">{{ statsGraduationLabel }}</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">{{ t("about.stats.technologies") }}</div>
-              <div class="stat-label">
-                {{ t("about.stats.technologiesLabel") }}
-              </div>
+              <div class="stat-number">{{ statsTechnologies }}</div>
+              <div class="stat-label">{{ statsTechnologiesLabel }}</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">{{ t("about.stats.projects") }}</div>
-              <div class="stat-label">{{ t("about.stats.projectsLabel") }}</div>
+              <div class="stat-number">{{ statsProjects }}</div>
+              <div class="stat-label">{{ statsProjectsLabel }}</div>
             </div>
           </div>
         </div>
