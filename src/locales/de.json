@@ -1,0 +1,13 @@
+{
+  "header": {
+    "brand": "Ahmed Bousrih",
+    "links": {
+      "home": "Start",
+      "about": "Über mich",
+      "skills": "Fähigkeiten",
+      "projects": "Projekte",
+      "experience": "Erfahrung",
+      "contact": "Kontakt"
+    }
+  }
+}

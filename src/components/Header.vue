@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
+import { useI18n } from "vue-i18n";
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
 const isDarkMode = ref(document.documentElement.classList.contains("dark"));
+const isLangMenuOpen = ref(false);
+
+const { locale, t } = useI18n();
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
@@ -11,19 +15,18 @@ const handleScroll = () => {
 
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
+  if (element) element.scrollIntoView({ behavior: "smooth" });
   isMobileMenuOpen.value = false;
 };
 
 const toggleDarkMode = () => {
   isDarkMode.value = !isDarkMode.value;
-  if (isDarkMode.value) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
+  document.documentElement.classList.toggle("dark", isDarkMode.value);
+};
+
+const changeLang = (lang: string) => {
+  locale.value = lang;
+  isLangMenuOpen.value = false;
 };
 
 onMounted(() => {
@@ -42,38 +45,69 @@ onUnmounted(() => {
         <!-- Brand -->
         <div class="nav__brand">
           <h2 class="nav__brand-text" @click="scrollToSection('home')">
-            Ahmed Bousrih
+            {{ t("header.brand") }}
           </h2>
         </div>
 
         <!-- Desktop Links -->
         <ul class="nav__links">
-          <li><a @click="scrollToSection('home')" href="#home">Home</a></li>
-          <li><a @click="scrollToSection('about')" href="#about">About</a></li>
           <li>
-            <a @click="scrollToSection('skills')" href="#skills">Skills</a>
+            <a @click="scrollToSection('home')">{{ t("header.links.home") }}</a>
           </li>
           <li>
-            <a @click="scrollToSection('projects')" href="#projects"
-              >Projects</a
-            >
+            <a @click="scrollToSection('about')">{{
+              t("header.links.about")
+            }}</a>
           </li>
           <li>
-            <a @click="scrollToSection('experience')" href="#experience"
-              >Experience</a
-            >
+            <a @click="scrollToSection('skills')">{{
+              t("header.links.skills")
+            }}</a>
           </li>
           <li>
-            <a @click="scrollToSection('contact')" href="#contact">Contact</a>
+            <a @click="scrollToSection('projects')">{{
+              t("header.links.projects")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('experience')">{{
+              t("header.links.experience")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('contact')">{{
+              t("header.links.contact")
+            }}</a>
           </li>
         </ul>
+
+        <!-- Language Dropdown -->
+        <div class="nav__lang-dropdown">
+          <button class="lang-btn" @click="isLangMenuOpen = !isLangMenuOpen">
+            🌐 {{ locale.toUpperCase() }}
+          </button>
+          <ul v-show="isLangMenuOpen" class="lang-menu">
+            <li @click="changeLang('en')">
+              <span class="fi fi-gb fis"></span> English
+            </li>
+            <li @click="changeLang('fr')">
+              <span class="fi fi-fr fis"></span> Français
+            </li>
+            <li @click="changeLang('pl')">
+              <span class="fi fi-pl fis"></span> Polski
+            </li>
+            <li @click="changeLang('de')">
+              <span class="fi fi-de fis"></span> Deutsch
+            </li>
+          </ul>
+        </div>
 
         <!-- Dark Mode Toggle -->
         <button class="nav__dark-toggle" @click="toggleDarkMode">
           {{ isDarkMode ? "🌙" : "☀️" }}
         </button>
 
-        <!-- Mobile Toggle (Hamburger) -->
+        <!-- Mobile Toggle -->
         <button
           class="nav__mobile-toggle"
           @click="isMobileMenuOpen = !isMobileMenuOpen"
@@ -81,16 +115,16 @@ onUnmounted(() => {
           :aria-expanded="isMobileMenuOpen"
         >
           <span
-            class="line"
             :class="{ 'line--top': true, open: isMobileMenuOpen }"
+            class="line"
           ></span>
           <span
-            class="line"
             :class="{ 'line--middle': true, open: isMobileMenuOpen }"
+            class="line"
           ></span>
           <span
-            class="line"
             :class="{ 'line--bottom': true, open: isMobileMenuOpen }"
+            class="line"
           ></span>
         </button>
       </nav>
@@ -98,23 +132,43 @@ onUnmounted(() => {
       <!-- Mobile Menu -->
       <div :class="['nav__mobile', { 'nav__mobile--open': isMobileMenuOpen }]">
         <ul class="nav__mobile-links">
-          <li><a @click="scrollToSection('home')" href="#home">Home</a></li>
-          <li><a @click="scrollToSection('about')" href="#about">About</a></li>
           <li>
-            <a @click="scrollToSection('skills')" href="#skills">Skills</a>
+            <a @click="scrollToSection('home')">{{ t("header.links.home") }}</a>
           </li>
           <li>
-            <a @click="scrollToSection('projects')" href="#projects"
-              >Projects</a
-            >
+            <a @click="scrollToSection('about')">{{
+              t("header.links.about")
+            }}</a>
           </li>
           <li>
-            <a @click="scrollToSection('experience')" href="#experience"
-              >Experience</a
-            >
+            <a @click="scrollToSection('skills')">{{
+              t("header.links.skills")
+            }}</a>
           </li>
           <li>
-            <a @click="scrollToSection('contact')" href="#contact">Contact</a>
+            <a @click="scrollToSection('projects')">{{
+              t("header.links.projects")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('experience')">{{
+              t("header.links.experience")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('contact')">{{
+              t("header.links.contact")
+            }}</a>
+          </li>
+
+          <!-- Mobile language menu -->
+          <li class="mobile-lang">
+            <ul class="mobile-lang-menu">
+              <li @click="changeLang('en')"><span>🇬🇧</span> English</li>
+              <li @click="changeLang('fr')"><span>🇫🇷</span> Français</li>
+              <li @click="changeLang('pl')"><span>🇵🇱</span> Polski</li>
+              <li @click="changeLang('de')"><span>🇩🇪</span> Deutsch</li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -313,5 +367,58 @@ onUnmounted(() => {
   .nav__mobile-toggle {
     display: block;
   }
+}
+/* Language Dropdown */
+.nav__lang-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 1rem;
+}
+.lang-btn {
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+:root.dark .lang-btn {
+  border-color: #374151;
+  color: #f9fafb;
+}
+.lang-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+  min-width: 120px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2000;
+}
+:root.dark .lang-menu {
+  background: #1f2937;
+  border-color: #374151;
+}
+.lang-menu li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.lang-menu li:hover {
+  background: #f3f4f6;
+}
+:root.dark .lang-menu li:hover {
+  background: #374151;
 }
 </style>
