@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+</script>
 <template>
   <section id="home" class="hero">
     <div class="hero__container">
@@ -5,20 +10,14 @@
         <!-- Text -->
         <div class="hero__text">
           <h1 class="hero__title">
-            <span class="hero__greeting">Hello, I'm</span>
-            <span class="hero__name">Ahmed Bousrih</span>
+            <span class="hero__greeting">{{ t("hero.greeting") }}</span>
+            <span class="hero__name">{{ t("hero.name") }}</span>
           </h1>
-          <p class="hero__subtitle">Software Engineer & Web Developer</p>
-          <p class="hero__description">
-            I am a passionate Software Engineering graduate from
-            <strong>ESIEA Paris</strong> and <strong>EPI Sousse</strong>,
-            dedicated to building scalable web applications and delivering
-            innovative solutions. Outside of development, I enjoy sharpening my
-            mind as a chess enthusiast.
-          </p>
+          <p class="hero__subtitle">{{ t("hero.subtitle") }}</p>
+          <p class="hero__description" v-html="t('hero.description')"></p>
           <div class="hero__actions">
-            <a href="#contact" class="btn btn--primary">Get In Touch</a>
-            <a href="#projects" class="btn btn--secondary">View My Work</a>
+            <a href="#contact" class="btn btn--primary">{{ t("hero.cta.contact") }}</a>
+            <a href="#projects" class="btn btn--secondary">{{ t("hero.cta.projects") }}</a>
           </div>
         </div>
 

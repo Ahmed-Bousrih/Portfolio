@@ -9,5 +9,15 @@
       "experience": "Doświadczenie",
       "contact": "Kontakt"
     }
+  },
+  "hero": {
+    "greeting": "Cześć, jestem",
+    "name": "Ahmed Bousrih",
+    "subtitle": "Inżynier Oprogramowania & Web Developer",
+    "description": "Jestem pasjonatem inżynierii oprogramowania, absolwentem ESIEA Paris i EPI Sousse, poświęconym tworzeniu skalowalnych aplikacji webowych i dostarczaniu innowacyjnych rozwiązań. Poza programowaniem lubię rozwijać swój umysł jako entuzjasta szachów.",
+    "cta": {
+      "contact": "Skontaktuj się",
+      "projects": "Zobacz moje projekty"
+    }
   }
 }

@@ -9,5 +9,15 @@
       "experience": "Erfahrung",
       "contact": "Kontakt"
     }
+  },
+  "hero": {
+    "greeting": "Hallo, ich bin",
+    "name": "Ahmed Bousrih",
+    "subtitle": "Softwareentwickler & Webentwickler",
+    "description": "Ich bin ein leidenschaftlicher Absolvent der Softwaretechnik von der ESIEA Paris und der EPI Sousse, der sich darauf spezialisiert hat, skalierbare Webanwendungen zu entwickeln und innovative Lösungen zu liefern. Außerhalb der Entwicklung genieße ich es, als Schach-Enthusiast meinen Geist zu schärfen.",
+    "cta": {
+      "contact": "Kontaktieren",
+      "projects": "Meine Arbeiten ansehen"
+    }
   }
 }

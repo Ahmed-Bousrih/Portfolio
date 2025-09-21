@@ -9,5 +9,15 @@
       "experience": "Experience",
       "contact": "Contact"
     }
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Ahmed Bousrih",
+    "subtitle": "Software Engineer & Web Developer",
+    "description": "I am a passionate Software Engineering graduate from ESIEA Paris and EPI Sousse, dedicated to building scalable web applications and delivering innovative solutions. Outside of development, I enjoy sharpening my mind as a chess enthusiast.",
+    "cta": {
+      "contact": "Get In Touch",
+      "projects": "View My Work"
+    }
   }
 }

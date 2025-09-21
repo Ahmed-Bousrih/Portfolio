@@ -9,5 +9,15 @@
       "experience": "Expérience",
       "contact": "Contact"
     }
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "name": "Ahmed Bousrih",
+    "subtitle": "Ingénieur Logiciel & Développeur Web",
+    "description": "Je suis diplômé en ingénierie logicielle de l'ESIEA Paris et de l'EPI Sousse, passionné par la création d'applications web évolutives et la livraison de solutions innovantes. En dehors du développement, j'aime stimuler mon esprit en tant que passionné d'échecs.",
+    "cta": {
+      "contact": "Me Contacter",
+      "projects": "Voir Mes Réalisations"
+    }
   }
 }
