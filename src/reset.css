@@ -1,0 +1,31 @@
+/* global.css */
+
+/* Reset margins, paddings, and box-sizing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set consistent font and line-height */
+html,
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure anchor tags have no default styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Default background & text colors */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}

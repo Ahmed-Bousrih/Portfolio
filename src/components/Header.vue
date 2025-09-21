@@ -1,38 +1,38 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from "vue";
 
-const isScrolled = ref(false)
-const isMobileMenuOpen = ref(false)
-const isDarkMode = ref(document.documentElement.classList.contains('dark'))
+const isScrolled = ref(false);
+const isMobileMenuOpen = ref(false);
+const isDarkMode = ref(document.documentElement.classList.contains("dark"));
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50
-}
+  isScrolled.value = window.scrollY > 50;
+};
 
 const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId)
+  const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
+    element.scrollIntoView({ behavior: "smooth" });
   }
-  isMobileMenuOpen.value = false
-}
+  isMobileMenuOpen.value = false;
+};
 
 const toggleDarkMode = () => {
-  isDarkMode.value = !isDarkMode.value
+  isDarkMode.value = !isDarkMode.value;
   if (isDarkMode.value) {
-    document.documentElement.classList.add('dark')
+    document.documentElement.classList.add("dark");
   } else {
-    document.documentElement.classList.remove('dark')
+    document.documentElement.classList.remove("dark");
   }
-}
+};
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
+  window.addEventListener("scroll", handleScroll);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>
 
 <template>
@@ -41,22 +41,36 @@ onUnmounted(() => {
       <nav class="nav" role="navigation" aria-label="Main Navigation">
         <!-- Brand -->
         <div class="nav__brand">
-          <h2 class="nav__brand-text" @click="scrollToSection('home')">BOUSRIH Ahmed</h2>
+          <h2 class="nav__brand-text" @click="scrollToSection('home')">
+            Ahmed Bousrih
+          </h2>
         </div>
 
         <!-- Desktop Links -->
         <ul class="nav__links">
           <li><a @click="scrollToSection('home')" href="#home">Home</a></li>
           <li><a @click="scrollToSection('about')" href="#about">About</a></li>
-          <li><a @click="scrollToSection('skills')" href="#skills">Skills</a></li>
-          <li><a @click="scrollToSection('projects')" href="#projects">Projects</a></li>
-          <li><a @click="scrollToSection('experience')" href="#experience">Experience</a></li>
-          <li><a @click="scrollToSection('contact')" href="#contact">Contact</a></li>
+          <li>
+            <a @click="scrollToSection('skills')" href="#skills">Skills</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('projects')" href="#projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a @click="scrollToSection('experience')" href="#experience"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a @click="scrollToSection('contact')" href="#contact">Contact</a>
+          </li>
         </ul>
 
         <!-- Dark Mode Toggle -->
         <button class="nav__dark-toggle" @click="toggleDarkMode">
-          {{ isDarkMode ? '🌙' : '☀️' }}
+          {{ isDarkMode ? "🌙" : "☀️" }}
         </button>
 
         <!-- Mobile Toggle (Hamburger) -->
@@ -66,9 +80,18 @@ onUnmounted(() => {
           aria-label="Toggle menu"
           :aria-expanded="isMobileMenuOpen"
         >
-          <span class="line" :class="{ 'line--top': true, 'open': isMobileMenuOpen }"></span>
-          <span class="line" :class="{ 'line--middle': true, 'open': isMobileMenuOpen }"></span>
-          <span class="line" :class="{ 'line--bottom': true, 'open': isMobileMenuOpen }"></span>
+          <span
+            class="line"
+            :class="{ 'line--top': true, open: isMobileMenuOpen }"
+          ></span>
+          <span
+            class="line"
+            :class="{ 'line--middle': true, open: isMobileMenuOpen }"
+          ></span>
+          <span
+            class="line"
+            :class="{ 'line--bottom': true, open: isMobileMenuOpen }"
+          ></span>
         </button>
       </nav>
 
@@ -77,10 +100,22 @@ onUnmounted(() => {
         <ul class="nav__mobile-links">
           <li><a @click="scrollToSection('home')" href="#home">Home</a></li>
           <li><a @click="scrollToSection('about')" href="#about">About</a></li>
-          <li><a @click="scrollToSection('skills')" href="#skills">Skills</a></li>
-          <li><a @click="scrollToSection('projects')" href="#projects">Projects</a></li>
-          <li><a @click="scrollToSection('experience')" href="#experience">Experience</a></li>
-          <li><a @click="scrollToSection('contact')" href="#contact">Contact</a></li>
+          <li>
+            <a @click="scrollToSection('skills')" href="#skills">Skills</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('projects')" href="#projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a @click="scrollToSection('experience')" href="#experience"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a @click="scrollToSection('contact')" href="#contact">Contact</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -102,7 +137,7 @@ onUnmounted(() => {
 }
 .header--scrolled {
   background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 :root.dark .header {
   background: rgba(15, 23, 42, 0.95);
@@ -128,28 +163,28 @@ onUnmounted(() => {
   font-weight: 700;
   cursor: pointer;
   background: linear-gradient(135deg, #4f46e5, #4338ca);
-  background-clip: text;          /* standard property */
-  -webkit-background-clip: text;  /* vendor-prefixed for Safari */
+  background-clip: text; /* standard property */
+  -webkit-background-clip: text; /* vendor-prefixed for Safari */
   -webkit-text-fill-color: transparent;
 }
 .nav__brand-text:hover {
   background: linear-gradient(135deg, #6366f1, #4f46e5);
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
-  background-clip: text; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-/* Dark mode brand */ 
-:root.dark .nav__brand-text { 
-  background: linear-gradient(135deg, #a5b4fc, #c7d2fe); 
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
-  background-clip: text; 
-} 
-:root.dark .nav__brand-text:hover { 
-  background: linear-gradient(135deg, #dbeafe, #e0e7ff); 
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
-  background-clip: text; 
+/* Dark mode brand */
+:root.dark .nav__brand-text {
+  background: linear-gradient(135deg, #a5b4fc, #c7d2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+:root.dark .nav__brand-text:hover {
+  background: linear-gradient(135deg, #dbeafe, #e0e7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Desktop links */
