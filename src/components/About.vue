@@ -1,38 +1,54 @@
-<script setup>
-  const logoEPI = '/Portfolio/LogoEcoles/Logoepi.jpg';
-  const logoESIEA = '/Portfolio/LogoEcoles/LogoEsiea.png';
+<script setup lang="ts">
+const logoEPI = "/Portfolio/LogoEcoles/Logoepi.jpg";
+const logoESIEA = "/Portfolio/LogoEcoles/LogoEsiea.png";
 </script>
+
 <template>
   <section id="about" class="about">
     <div class="about__container">
+      <!-- Header -->
       <div class="section-header">
         <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">Get to know more about my background and expertise</p>
+        <p class="section-subtitle">
+          Get to know more about my background and expertise
+        </p>
       </div>
-      
+
       <div class="about__content">
+        <!-- Text -->
         <div class="about__text">
           <div class="about__intro">
-            <h3>Software Engineering Graduate</h3>
-            <p>
-              I am a recent graduate in Software Engineering from ESIEA Paris, passionate about 
-              creating innovative solutions and contributing to meaningful projects. My academic 
-              journey has equipped me with a solid foundation in software development principles 
-              and modern technologies.
+            <h3 class="about__intro-title">Software Engineering Graduate</h3>
+            <p class="about__intro-desc">
+              I am a Software Engineering graduate from ESIEA Paris and EPI
+              Sousse, passionate about designing and developing scalable,
+              innovative applications. I thrive on solving complex problems and
+              turning ideas into real-world solutions. My academic journey and
+              hands-on experience have equipped me with a strong foundation in
+              modern technologies and software development principles, enabling
+              me to contribute to impactful projects that make a difference.
             </p>
           </div>
-          
+
           <div class="about__details">
             <div class="detail-item">
               <h4>Education</h4>
-                <div class="education-logos">
-                  <img :src=logoESIEA alt="ESIEA Logo" />
-                  <img :src=logoEPI alt="EPI Logo" />
-                </div>
-              <p><strong>Engineering Degree: Computer Science</strong> (08/2019 - 06/2025)</p>
+              <div class="education-logos">
+                <img :src="logoESIEA" alt="ESIEA Logo" />
+                <img :src="logoEPI" alt="EPI Logo" />
+              </div>
+              <p>
+                <strong>Engineering Degree: Computer Science</strong> (08/2019 -
+                06/2025)
+              </p>
               <p>ESIEA, France + EPI, Tunisia</p>
-              <p><em>Key courses:</em> System Programming, Network Design, Application Architecture and Design, Database Management System, FullStack Development</p>
+              <p>
+                <em>Key courses:</em> System Programming, Network Design,
+                Application Architecture, Database Management, FullStack
+                Development
+              </p>
             </div>
+
             <div class="detail-item">
               <h4>Languages</h4>
               <p><strong>Arabic:</strong> Native Language</p>
@@ -41,12 +57,15 @@
               <p><strong>Polish:</strong> Beginner</p>
               <p><strong>German:</strong> Beginner</p>
             </div>
+
             <div class="detail-item">
               <h4>Location</h4>
-              <p>Cachan, Ile de France, 94230</p>
+              <p>Cachan, Île-de-France, 94230, France</p>
+              <p>Lamta, Monastir, 5099, Tunisia</p>
+              <p><em>Open to relocation worldwide</em></p>
             </div>
           </div>
-          
+
           <div class="about__stats">
             <div class="stat-item">
               <div class="stat-number">2025</div>
@@ -62,7 +81,8 @@
             </div>
           </div>
         </div>
-        
+
+        <!-- Image -->
         <div class="about__image">
           <div class="about__image-container">
             <img src="/image.png" alt="BOUSRIH Ahmed" class="about__photo" />
@@ -79,17 +99,6 @@
   padding: 6rem 0;
   background: var(--bg-secondary);
   position: relative;
-}
-
-.about::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, transparent 0%, var(--neutral-100) 50%, transparent 100%);
-  opacity: 0.7;
 }
 
 .about__container {
@@ -109,12 +118,13 @@
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 1rem;
   position: relative;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -130,6 +140,8 @@
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.2s forwards;
 }
 
 .about__content {
@@ -139,44 +151,45 @@
   align-items: center;
 }
 
-.about__intro h3 {
+.about__intro-title {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--primary-600);
   margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.4s forwards;
 }
 
-.about__intro p {
+.about__intro-desc {
   font-size: 1.125rem;
   line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: 2rem;
-}
-
-.about__details {
-  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.6s forwards;
 }
 
 .detail-item {
   margin-bottom: 1.5rem;
   padding: 1.5rem;
-  background: white;
+  background: var(--card-bg);
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   border-left: 4px solid var(--primary-600);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.detail-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.8s forwards;
 }
 
 .detail-item h4 {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--primary-600);
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
+}
+
+:root.dark .detail-item h4 {
+  color: var(--primary-300); /* or any accent for dark mode */
 }
 
 .detail-item p {
@@ -185,33 +198,27 @@
   margin-bottom: 0.5rem;
 }
 
-.detail-item p:last-child {
-  margin-bottom: 0;
-}
-
 .about__stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .stat-item {
   text-align: center;
   padding: 1.5rem;
-  background: white;
+  background: var(--card-bg);
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.stat-item:hover {
-  transform: translateY(-5px);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1s forwards;
 }
 
 .stat-number {
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  background: linear-gradient(135deg, var(--primary-300), var(--primary-700));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -230,6 +237,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.2s forwards;
 }
 
 .about__image-container {
@@ -268,12 +277,11 @@
 .education-logos {
   display: flex;
   gap: 1rem;
-  justify-content: start; /* aligns to left */
   margin-bottom: 0.5rem;
 }
 
 .education-logos img {
-  width: 50px; /* adjust as needed */
+  width: 50px;
   height: auto;
   border-radius: 4px;
   transition: transform 0.2s;
@@ -283,30 +291,36 @@
   transform: scale(1.5);
 }
 
-@media (max-width: 768px) {
-  .about {
-    padding: 4rem 0;
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .about__content {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
   .about__image {
     order: -1;
   }
-  
   .about__image-container {
     width: 250px;
     height: 320px;
+    margin: 0 auto;
   }
-  
   .about__stats {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
   .section-title {
     font-size: 2rem;
   }
@@ -316,16 +330,11 @@
   .about__container {
     padding: 0 1rem;
   }
-  
   .about__image-container {
     width: 200px;
     height: 280px;
   }
-  
-  .detail-item {
-    padding: 1rem;
-  }
-  
+  .detail-item,
   .stat-item {
     padding: 1rem;
   }
