@@ -177,6 +177,24 @@ export const translations = {
         },
       },
     },
+    contact: {
+      title: "Get In Touch",
+      subtitle:
+        "I'm always excited to discuss new opportunities and projects. Let's build something amazing together!",
+      infoTitle: "Contact Info",
+      connectTitle: "Connect With Me",
+      interestsTitle: "Interests & Activities",
+      labels: {
+        email: "Email",
+        location: "Location",
+      },
+      interests: {
+        gaming: "Gaming",
+        programming: "Competitive Programming",
+        instructor: "Instructor",
+        organizer: "Event Organizer",
+      },
+    },
   },
 
   fr: {
@@ -354,6 +372,24 @@ export const translations = {
           provider: "CISCO",
           date: "Décembre 2021",
         },
+      },
+    },
+    contact: {
+      title: "Contactez-moi",
+      subtitle:
+        "Je suis toujours enthousiaste à l’idée de discuter de nouvelles opportunités et projets. Construisons quelque chose d’extraordinaire ensemble !",
+      infoTitle: "Informations de Contact",
+      connectTitle: "Réseaux & Liens",
+      interestsTitle: "Centres d’intérêt & Activités",
+      labels: {
+        email: "E-mail",
+        location: "Localisation",
+      },
+      interests: {
+        gaming: "Jeux vidéo",
+        programming: "Programmation compétitive",
+        instructor: "Formateur",
+        organizer: "Organisateur d’événements",
       },
     },
   },
@@ -535,6 +571,24 @@ export const translations = {
         },
       },
     },
+    contact: {
+      title: "Skontaktuj się ze mną",
+      subtitle:
+        "Zawsze chętnie omawiam nowe możliwości i projekty. Zbudujmy coś niesamowitego razem!",
+      infoTitle: "Informacje kontaktowe",
+      connectTitle: "Połącz się ze mną",
+      interestsTitle: "Zainteresowania i Aktywności",
+      labels: {
+        email: "E-mail",
+        location: "Lokalizacja",
+      },
+      interests: {
+        gaming: "Gry",
+        programming: "Programowanie konkurencyjne",
+        instructor: "Instruktor",
+        organizer: "Organizator wydarzeń",
+      },
+    },
   },
 
   de: {
@@ -712,6 +766,24 @@ export const translations = {
           provider: "CISCO",
           date: "Dezember 2021",
         },
+      },
+    },
+    contact: {
+      title: "Kontakt aufnehmen",
+      subtitle:
+        "Ich freue mich immer, neue Möglichkeiten und Projekte zu besprechen. Lassen Sie uns gemeinsam etwas Großartiges schaffen!",
+      infoTitle: "Kontaktinformationen",
+      connectTitle: "Vernetze dich mit mir",
+      interestsTitle: "Interessen & Aktivitäten",
+      labels: {
+        email: "E-Mail",
+        location: "Standort",
+      },
+      interests: {
+        gaming: "Gaming",
+        programming: "Wettbewerbsprogrammierung",
+        instructor: "Dozent",
+        organizer: "Event-Organisator",
       },
     },
   },

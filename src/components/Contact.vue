@@ -1,72 +1,76 @@
 <script setup lang="ts">
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/vue/24/outline";
+import { computed } from "vue";
+import { t } from "../translations";
 
-const contactInfo = [
+// Section titles
+const contactTitle = computed(() => t("contact.title"));
+const contactSubtitle = computed(() => t("contact.subtitle"));
+const infoTitle = computed(() => t("contact.infoTitle"));
+const connectTitle = computed(() => t("contact.connectTitle"));
+const interestsTitle = computed(() => t("contact.interestsTitle"));
+
+// Contact Info (labels are reactive)
+const contactInfo = computed(() => [
   {
     icon: EnvelopeIcon,
-    label: "Email",
+    label: t("contact.labels.email"),
     value: "ahmed.bousrih@outlook.com",
     href: "mailto:ahmed.bousrih@outlook.com",
   },
   {
     icon: MapPinIcon,
-    label: "Location",
+    label: t("contact.labels.location"),
     value: "Cachan, Ile de France, 94230",
     href: "#",
   },
   {
     icon: MapPinIcon,
-    label: "Location",
+    label: t("contact.labels.location"),
     value: "Lamta, Monastir, Tunisia, 5099",
     href: "#",
   },
-];
+]);
 
+// Social Links (names remain static)
 const socialLinks = [
   { name: "GitHub", url: "https://github.com/Ahmed-Bousrih", icon: "🐙" },
-  {
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/ahmed-bousrih",
-    icon: "💼",
-  },
+  { name: "LinkedIn", url: "https://linkedin.com/in/ahmed-bousrih", icon: "💼" },
   { name: "Email", url: "mailto:ahmed.bousrih@outlook.com", icon: "✉️" },
 ];
 
-const interests = [
-  { icon: "🎮", label: "Gaming" },
-  { icon: "💻", label: "Competitive Programming" },
-  { icon: "👨‍🏫", label: "Instructor" },
-  { icon: "🏆", label: "Event Orgznizer" },
-];
+// Interests (labels are reactive)
+const interests = computed(() => {
+  const labels = t("contact.interests");
+  return [
+    { icon: "🎮", label: labels.gaming },
+    { icon: "💻", label: labels.programming },
+    { icon: "👨‍🏫", label: labels.instructor },
+    { icon: "🏆", label: labels.organizer },
+  ];
+});
 </script>
 
 <template>
   <section id="contact" class="contact-section">
     <div class="container">
       <div class="section-header">
-        <h2>Get In Touch</h2>
-        <p>
-          I'm always excited to discuss new opportunities and projects. Let's build
-          something amazing together!
-        </p>
+        <h2>{{ contactTitle }}</h2>
+        <p>{{ contactSubtitle }}</p>
       </div>
 
       <div class="cards-wrapper">
         <!-- Contact Info -->
         <div class="card contact-card">
-          <h3>Contact Info</h3>
+          <h3>{{ infoTitle }}</h3>
           <div class="contact-items">
-            <div v-for="info in contactInfo" :key="info.label" class="contact-item">
+            <div v-for="info in contactInfo" :key="info.value" class="contact-item">
               <component :is="info.icon" class="icon" />
               <div>
                 <span class="label">{{ info.label }}</span>
-                <a
-                  :href="info.href"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="value"
-                  >{{ info.value }}</a
-                >
+                <a :href="info.href" target="_blank" rel="noopener noreferrer" class="value">
+                  {{ info.value }}
+                </a>
               </div>
             </div>
           </div>
@@ -74,16 +78,9 @@ const interests = [
 
         <!-- Social Links -->
         <div class="card social-card">
-          <h3>Connect With Me</h3>
+          <h3>{{ connectTitle }}</h3>
           <div class="social-items">
-            <a
-              v-for="social in socialLinks"
-              :key="social.name"
-              :href="social.url"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-link"
-            >
+            <a v-for="social in socialLinks" :key="social.name" :href="social.url" target="_blank" rel="noopener noreferrer" class="social-link">
               <span class="social-icon">{{ social.icon }}</span>
               <span class="social-name">{{ social.name }}</span>
             </a>
@@ -92,13 +89,9 @@ const interests = [
 
         <!-- Interests -->
         <div class="card interests-card">
-          <h3>Interests & Activities</h3>
+          <h3>{{ interestsTitle }}</h3>
           <div class="interests-items">
-            <div
-              v-for="interest in interests"
-              :key="interest.label"
-              class="interest-item"
-            >
+            <div v-for="interest in interests" :key="interest.label" class="interest-item">
               <span class="interest-icon">{{ interest.icon }}</span>
               <span class="interest-label">{{ interest.label }}</span>
             </div>
