@@ -195,6 +195,20 @@ export const translations = {
         organizer: "Event Organizer",
       },
     },
+    footer: {
+      tagline: "Software Engineering Graduate",
+      description:
+        "Passionate about creating innovative solutions and contributing to meaningful projects.",
+      navigation: "Navigation",
+      connect: "Connect",
+      backToTop: "Back to Top ↑",
+      rights: "All rights reserved.",
+      home: "Home",
+      about: "About",
+      skills: "Skills",
+      projects: "Projects",
+      contact: "Contact",
+    },
   },
 
   fr: {
@@ -391,6 +405,20 @@ export const translations = {
         instructor: "Formateur",
         organizer: "Organisateur d’événements",
       },
+    },
+    footer: {
+      tagline: "Diplômé en ingénierie logicielle",
+      description:
+        "Passionné par la création de solutions innovantes et la contribution à des projets significatifs.",
+      navigation: "Navigation",
+      connect: "Contact",
+      backToTop: "Haut de page ↑",
+      rights: "Tous droits réservés.",
+      home: "Accueil",
+      about: "À propos",
+      skills: "Compétences",
+      projects: "Projets",
+      contact: "Contact",
     },
   },
 
@@ -589,6 +617,20 @@ export const translations = {
         organizer: "Organizator wydarzeń",
       },
     },
+    footer: {
+      tagline: "Absolwent inżynierii oprogramowania",
+      description:
+        "Pasja do tworzenia innowacyjnych rozwiązań i wniesienia wkładu w znaczące projekty.",
+      navigation: "Nawigacja",
+      connect: "Kontakt",
+      backToTop: "Do góry ↑",
+      rights: "Wszelkie prawa zastrzeżone.",
+      home: "Strona główna",
+      about: "O mnie",
+      skills: "Umiejętności",
+      projects: "Projekty",
+      contact: "Kontakt",
+    },
   },
 
   de: {
@@ -785,6 +827,20 @@ export const translations = {
         instructor: "Dozent",
         organizer: "Event-Organisator",
       },
+    },
+    footer: {
+      tagline: "Absolvent der Softwaretechnik",
+      description:
+        "Leidenschaftlich daran interessiert, innovative Lösungen zu schaffen und zu bedeutenden Projekten beizutragen.",
+      navigation: "Navigation",
+      connect: "Kontakt",
+      backToTop: "Nach oben ↑",
+      rights: "Alle Rechte vorbehalten.",
+      home: "Startseite",
+      about: "Über mich",
+      skills: "Fähigkeiten",
+      projects: "Projekte",
+      contact: "Kontakt",
     },
   },
 } as const;
