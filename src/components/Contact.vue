@@ -139,6 +139,7 @@ const interests = [
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  justify-items: center;
 }
 
 .card {
@@ -147,6 +148,8 @@ const interests = [
   padding: 2rem;
   box-shadow: 0 4px 20px rgb(0 0 0 / 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 400px;
+  width: 100%;
 }
 
 .card:hover {

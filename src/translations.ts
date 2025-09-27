@@ -94,6 +94,89 @@ export const translations = {
         "8": "Console-based Minesweeper game developed in C, featuring both English and Tunisian Arabic instructions for enhanced accessibility.",
       },
     },
+    experience: {
+      title: "Professional Experience",
+      subtitle:
+        "My professional journey and the exciting projects I've worked on",
+      currentBadge: "Current",
+      achievementsTitle: "Key Achievements:",
+      certificationsTitle: "Certifications & Training",
+      experiences: {
+        "1": {
+          company: "SW Consulting",
+          position: "Full Stack Developer",
+          period: "08/2025 - Present",
+          description:
+            "Developed scalable APIs and revamped the Credit Win web application for banks, enhancing system reliability and performance.",
+          achievements: [
+            "Designed and implemented RESTful APIs for core banking features including user roles, OVH mailing system, and banking feasibility calculations",
+            "Optimized Prisma database schema and queries for large-scale banking data",
+            "Built reusable DTOs, validation pipes, and error handling utilities to standardize backend logic",
+            "Collaborated with frontend teams to ensure smooth Next.js integration and data consistency",
+            "Contributed to agile development with Jira, Git, and code reviews to maintain high code quality",
+          ],
+        },
+        "2": {
+          company: "Medtrust Consulting",
+          position: "Web Development Intern",
+          period: "12/2024 - 06/2025",
+          description:
+            "Led full-stack development of WorkIt, a recruitment web app, implementing modern technologies and best practices.",
+          achievements: [
+            "Designed and implemented the complete application architecture",
+            "Developed secure authentication system with JWT",
+            "Built responsive frontend with Vue.js and Tailwind CSS",
+            "Created robust backend API with Nest.js and PostgreSQL",
+          ],
+        },
+        "3": {
+          company: "HDM Network",
+          position: "Web Development Intern",
+          period: "04/2023 - 08/2023",
+          description:
+            "Built web applications including task management systems, real estate platforms, and an innovative VR game, gaining diverse development experience.",
+          achievements: [
+            "Developed a task management application for company dashboard",
+            "Built frontend for real estate rental application",
+            "Created a VR game using A-Frame framework",
+            "Implemented web scraping solutions for data collection",
+            "Served as Team Leader of the development department",
+          ],
+        },
+      },
+      certifications: {
+        "1": {
+          name: "Front End Development Libraries",
+          provider: "FreeCodeCamp",
+          date: "March 2023",
+        },
+        "2": {
+          name: "JavaScript Algorithms and Data Structures",
+          provider: "FreeCodeCamp",
+          date: "December 2022",
+        },
+        "3": {
+          name: "Responsive Web Design",
+          provider: "FreeCodeCamp",
+          date: "April 2022",
+        },
+        "4": {
+          name: "Create & Manage Cloud Resources",
+          provider: "Google Qwicklabs",
+          date: "April 2022",
+        },
+        "5": {
+          name: "CCNA: Introduction to Networks",
+          provider: "CISCO",
+          date: "December 2021",
+        },
+        "6": {
+          name: "CCNA: Switching, Routing & Wireless Essentials",
+          provider: "CISCO",
+          date: "December 2021",
+        },
+      },
+    },
   },
 
   fr: {
@@ -188,6 +271,89 @@ export const translations = {
         "6": "Application web pour les écoles afin de gérer les classes, les matières et les notes des élèves, avec des fonctionnalités de visualisation pour suivre les performances académiques.",
         "7": "Application de quiz en page unique avec 10 questions de football, construite avec HTML, CSS et JavaScript pour un apprentissage interactif et ludique.",
         "8": "Jeu de démineur en console développé en C, avec instructions en anglais et en arabe tunisien pour une accessibilité améliorée.",
+      },
+    },
+    experience: {
+      title: "Expérience Professionnelle",
+      subtitle:
+        "Mon parcours professionnel et les projets passionnants sur lesquels j’ai travaillé",
+      currentBadge: "Actuel",
+      achievementsTitle: "Réalisations clés :",
+      certificationsTitle: "Certifications & Formations",
+      experiences: {
+        "1": {
+          company: "SW Consulting",
+          position: "Développeur Full Stack",
+          period: "08/2025 - Présent",
+          description:
+            "Développement d’API évolutives et refonte de l’application web Credit Win pour les banques, améliorant la fiabilité et les performances du système.",
+          achievements: [
+            "Conception et implémentation d’API RESTful pour des fonctionnalités bancaires clés incluant la gestion des rôles utilisateurs, le système de mailing OVH et les calculs de faisabilité bancaire",
+            "Optimisation du schéma de base de données Prisma et des requêtes pour de grandes volumétries de données bancaires",
+            "Création de DTO réutilisables, de pipes de validation et d’outils de gestion des erreurs pour standardiser la logique backend",
+            "Collaboration avec les équipes frontend pour assurer une intégration fluide avec Next.js et une cohérence des données",
+            "Contribution au développement agile avec Jira, Git et revues de code pour maintenir une haute qualité de code",
+          ],
+        },
+        "2": {
+          company: "Medtrust Consulting",
+          position: "Stagiaire en Développement Web",
+          period: "12/2024 - 06/2025",
+          description:
+            "Développement full-stack de WorkIt, une application web de recrutement, en appliquant des technologies modernes et les meilleures pratiques.",
+          achievements: [
+            "Conception et implémentation de l’architecture complète de l’application",
+            "Développement d’un système d’authentification sécurisé avec JWT",
+            "Création d’un frontend responsive avec Vue.js et Tailwind CSS",
+            "Mise en place d’une API backend robuste avec Nest.js et PostgreSQL",
+          ],
+        },
+        "3": {
+          company: "HDM Network",
+          position: "Stagiaire en Développement Web",
+          period: "04/2023 - 08/2023",
+          description:
+            "Développement d’applications web incluant des systèmes de gestion de tâches, des plateformes immobilières et un jeu VR innovant, acquérant ainsi une expérience diversifiée.",
+          achievements: [
+            "Développement d’une application de gestion de tâches pour le tableau de bord de l’entreprise",
+            "Création du frontend pour une application de location immobilière",
+            "Développement d’un jeu VR avec le framework A-Frame",
+            "Mise en place de solutions de web scraping pour la collecte de données",
+            "Responsable de l’équipe de développement en tant que Chef d’équipe",
+          ],
+        },
+      },
+      certifications: {
+        "1": {
+          name: "Front End Development Libraries",
+          provider: "FreeCodeCamp",
+          date: "Mars 2023",
+        },
+        "2": {
+          name: "JavaScript Algorithms and Data Structures",
+          provider: "FreeCodeCamp",
+          date: "Décembre 2022",
+        },
+        "3": {
+          name: "Responsive Web Design",
+          provider: "FreeCodeCamp",
+          date: "Avril 2022",
+        },
+        "4": {
+          name: "Create & Manage Cloud Resources",
+          provider: "Google Qwicklabs",
+          date: "Avril 2022",
+        },
+        "5": {
+          name: "CCNA: Introduction to Networks",
+          provider: "CISCO",
+          date: "Décembre 2021",
+        },
+        "6": {
+          name: "CCNA: Switching, Routing & Wireless Essentials",
+          provider: "CISCO",
+          date: "Décembre 2021",
+        },
       },
     },
   },
@@ -286,6 +452,89 @@ export const translations = {
         "8": "Konsolowa gra Minesweeper napisana w C, z instrukcjami w języku angielskim i tunezyjskim arabskim dla zwiększenia dostępności.",
       },
     },
+    experience: {
+      title: "Doświadczenie Zawodowe",
+      subtitle:
+        "Moja ścieżka zawodowa i ekscytujące projekty, nad którymi pracowałem",
+      currentBadge: "Obecnie",
+      achievementsTitle: "Kluczowe osiągnięcia:",
+      certificationsTitle: "Certyfikaty i Szkolenia",
+      experiences: {
+        "1": {
+          company: "SW Consulting",
+          position: "Full Stack Developer",
+          period: "08/2025 - Obecnie",
+          description:
+            "Tworzenie skalowalnych API oraz modernizacja aplikacji Credit Win dla banków, zwiększając niezawodność i wydajność systemu.",
+          achievements: [
+            "Projektowanie i wdrażanie RESTful API dla kluczowych funkcji bankowych, w tym ról użytkowników, systemu mailingowego OVH oraz obliczeń wykonalności bankowej",
+            "Optymalizacja schematu bazy danych Prisma i zapytań dla dużych zbiorów danych bankowych",
+            "Budowa wielokrotnego użytku DTO, potoków walidacyjnych i narzędzi obsługi błędów w celu standaryzacji logiki backendu",
+            "Współpraca z zespołami frontendowymi w celu zapewnienia płynnej integracji z Next.js i spójności danych",
+            "Udział w rozwoju zwinnym z wykorzystaniem Jira, Git i przeglądów kodu w celu utrzymania wysokiej jakości kodu",
+          ],
+        },
+        "2": {
+          company: "Medtrust Consulting",
+          position: "Stażeysta – Web Developer",
+          period: "12/2024 - 06/2025",
+          description:
+            "Prowadzenie pełnego rozwoju WorkIt, aplikacji rekrutacyjnej typu web, z zastosowaniem nowoczesnych technologii i najlepszych praktyk.",
+          achievements: [
+            "Projekt i wdrożenie kompletnej architektury aplikacji",
+            "Stworzenie bezpiecznego systemu uwierzytelniania opartego na JWT",
+            "Budowa responsywnego frontendu z użyciem Vue.js i Tailwind CSS",
+            "Tworzenie solidnego backendowego API przy użyciu Nest.js i PostgreSQL",
+          ],
+        },
+        "3": {
+          company: "HDM Network",
+          position: "Stażeysta – Web Developer",
+          period: "04/2023 - 08/2023",
+          description:
+            "Budowa aplikacji internetowych, w tym systemów zarządzania zadaniami, platform nieruchomości oraz innowacyjnej gry VR, zdobywając różnorodne doświadczenie.",
+          achievements: [
+            "Opracowanie aplikacji do zarządzania zadaniami dla panelu firmowego",
+            "Budowa frontendu aplikacji do wynajmu nieruchomości",
+            "Stworzenie gry VR przy użyciu frameworka A-Frame",
+            "Implementacja rozwiązań web scrapingowych do zbierania danych",
+            "Pełnienie funkcji lidera zespołu działu rozwoju",
+          ],
+        },
+      },
+      certifications: {
+        "1": {
+          name: "Front End Development Libraries",
+          provider: "FreeCodeCamp",
+          date: "Marzec 2023",
+        },
+        "2": {
+          name: "JavaScript Algorithms and Data Structures",
+          provider: "FreeCodeCamp",
+          date: "Grudzień 2022",
+        },
+        "3": {
+          name: "Responsive Web Design",
+          provider: "FreeCodeCamp",
+          date: "Kwiecień 2022",
+        },
+        "4": {
+          name: "Create & Manage Cloud Resources",
+          provider: "Google Qwicklabs",
+          date: "Kwiecień 2022",
+        },
+        "5": {
+          name: "CCNA: Introduction to Networks",
+          provider: "CISCO",
+          date: "Grudzień 2021",
+        },
+        "6": {
+          name: "CCNA: Switching, Routing & Wireless Essentials",
+          provider: "CISCO",
+          date: "Grudzień 2021",
+        },
+      },
+    },
   },
 
   de: {
@@ -380,6 +629,89 @@ export const translations = {
         "6": "Webanwendung für Schulen zur Verwaltung von Klassen, Fächern und Schülernoten, mit Visualisierungsfunktionen zur Überwachung der schulischen Leistung.",
         "7": "Single-Page-Quizanwendung mit 10 Fußballfragen, erstellt mit HTML, CSS und JavaScript für interaktives Lernen und Spaß.",
         "8": "Konsolenbasiertes Minesweeper-Spiel in C, mit Anleitungen in Englisch und tunesischem Arabisch zur verbesserten Zugänglichkeit.",
+      },
+    },
+    experience: {
+      title: "Berufserfahrung",
+      subtitle:
+        "Mein beruflicher Werdegang und die spannenden Projekte, an denen ich gearbeitet habe",
+      currentBadge: "Aktuell",
+      achievementsTitle: "Wichtige Erfolge:",
+      certificationsTitle: "Zertifizierungen & Schulungen",
+      experiences: {
+        "1": {
+          company: "SW Consulting",
+          position: "Full Stack Entwickler",
+          period: "08/2025 - Gegenwart",
+          description:
+            "Entwicklung skalierbarer APIs und Überarbeitung der Credit Win Webanwendung für Banken zur Verbesserung der Zuverlässigkeit und Leistung.",
+          achievements: [
+            "Entwurf und Implementierung von RESTful APIs für zentrale Bankfunktionen einschließlich Benutzerrollen, OVH-Mailsystem und Machbarkeitsberechnungen",
+            "Optimierung des Prisma-Datenbankschemas und der Abfragen für umfangreiche Bankdaten",
+            "Erstellung wiederverwendbarer DTOs, Validierungspipelines und Fehlerbehandlungs-Utilities zur Standardisierung der Backend-Logik",
+            "Zusammenarbeit mit Frontend-Teams zur Sicherstellung einer reibungslosen Integration mit Next.js und Datenkonsistenz",
+            "Beitrag zur agilen Entwicklung mit Jira, Git und Code-Reviews zur Sicherung hoher Codequalität",
+          ],
+        },
+        "2": {
+          company: "Medtrust Consulting",
+          position: "Webentwicklungspraktikant",
+          period: "12/2024 - 06/2025",
+          description:
+            "Leitung der Full-Stack-Entwicklung von WorkIt, einer Recruiting-Webanwendung, unter Einsatz moderner Technologien und Best Practices.",
+          achievements: [
+            "Entwurf und Implementierung der vollständigen Anwendungsarchitektur",
+            "Entwicklung eines sicheren Authentifizierungssystems mit JWT",
+            "Erstellung eines responsiven Frontends mit Vue.js und Tailwind CSS",
+            "Aufbau einer robusten Backend-API mit Nest.js und PostgreSQL",
+          ],
+        },
+        "3": {
+          company: "HDM Network",
+          position: "Webentwicklungspraktikant",
+          period: "04/2023 - 08/2023",
+          description:
+            "Entwicklung von Webanwendungen wie Aufgabenverwaltungssystemen, Immobilienplattformen und einem innovativen VR-Spiel, wodurch vielseitige Erfahrungen gesammelt wurden.",
+          achievements: [
+            "Entwicklung einer Aufgabenverwaltungsanwendung für das Unternehmens-Dashboard",
+            "Aufbau des Frontends für eine Immobilienmietanwendung",
+            "Entwicklung eines VR-Spiels mit dem A-Frame-Framework",
+            "Implementierung von Web-Scraping-Lösungen zur Datenerfassung",
+            "Übernahme der Rolle als Teamleiter der Entwicklungsabteilung",
+          ],
+        },
+      },
+      certifications: {
+        "1": {
+          name: "Front End Development Libraries",
+          provider: "FreeCodeCamp",
+          date: "März 2023",
+        },
+        "2": {
+          name: "JavaScript Algorithms and Data Structures",
+          provider: "FreeCodeCamp",
+          date: "Dezember 2022",
+        },
+        "3": {
+          name: "Responsive Web Design",
+          provider: "FreeCodeCamp",
+          date: "April 2022",
+        },
+        "4": {
+          name: "Create & Manage Cloud Resources",
+          provider: "Google Qwicklabs",
+          date: "April 2022",
+        },
+        "5": {
+          name: "CCNA: Introduction to Networks",
+          provider: "CISCO",
+          date: "Dezember 2021",
+        },
+        "6": {
+          name: "CCNA: Switching, Routing & Wireless Essentials",
+          provider: "CISCO",
+          date: "Dezember 2021",
+        },
       },
     },
   },

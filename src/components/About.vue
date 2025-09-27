@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { t } from "../translations"; // import your translations
+import { t } from "../translations";
 
 const logoEPI = "/Portfolio/LogoEcoles/Logoepi.jpg";
 const logoESIEA = "/Portfolio/LogoEcoles/LogoEsiea.png";

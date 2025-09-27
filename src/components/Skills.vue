@@ -5,7 +5,7 @@ import {
   ServerIcon,
   PaintBrushIcon,
 } from "@heroicons/vue/24/outline";
-import { computed } from "vue";
+import { computed, onBeforeUnmount, onMounted } from "vue";
 
 interface Skill {
   name: string;
@@ -85,7 +85,6 @@ const fillSkills = () => {
 
   // then trigger filling after a short delay
   setTimeout(() => {
-    console.log("Filling skills");
 
     const blocks = Array.from(document.querySelectorAll<HTMLElement>(".skill-circle"));
 
@@ -103,6 +102,30 @@ const fillSkills = () => {
     });
   }, 300);
 };
+
+let observer: IntersectionObserver | null = null;
+
+onMounted(() => {
+  const section = document.querySelector("#skills");
+  if (!section) return;
+
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          fillSkills();
+        }
+      });
+    },
+    { threshold: 0.3 } // 30% visible triggers
+  );
+
+  observer.observe(section);
+});
+
+onBeforeUnmount(() => {
+  if (observer) observer.disconnect();
+});
 
 // Reset back to zero
 const resetSkills = () => {

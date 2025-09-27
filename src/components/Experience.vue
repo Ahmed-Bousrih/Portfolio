@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { CalendarIcon, BuildingOfficeIcon } from "@heroicons/vue/24/outline";
+import { computed } from "vue";
+import { t } from "../translations";
 
 interface Experience {
-  id: number;
+  id: string;
   company: string;
   position: string;
   period: string;
@@ -13,102 +15,50 @@ interface Experience {
   logo: string;
 }
 
-const experiences: Experience[] = [
-  {
-    id: 1,
-    company: "SW Consulting",
-    position: "Full Stack Developer",
-    period: "08/2025 - Present",
-    description:
-      "Developed scalable APIs and revamped the Credit Win web application for banks, enhancing system reliability and performance.",
-    technologies: ["TypeScript", "Nest.js", "Next.js", "PostgreSQL", "Jira", "Git"],
-    current: true,
-    achievements: [
-      "Designed and implemented RESTful APIs for core banking features including user roles, OVH mailing system, and banking feasibility calculations",
-      "Optimized Prisma database schema and queries for large-scale banking data",
-      "Built reusable DTOs, validation pipes, and error handling utilities to standardize backend logic",
-      "Collaborated with frontend teams to ensure smooth Next.js integration and data consistency",
-      "Contributed to agile development with Jira, Git, and code reviews to maintain high code quality",
-    ],
-    logo: "/Portfolio/LogosEntreprises/Sw.jpg",
-  },
-  {
-    id: 2,
-    company: "Medtrust Consulting",
-    position: "Web Development Intern",
-    period: "12/2024 - 06/2025",
-    description:
-      "Led full-stack development of WorkIt, a recruitment web app, implementing modern technologies and best practices.",
-    technologies: ["Vue.js", "Nest.js", "JWT", "PostgreSQL", "Tailwind CSS"],
-    current: false,
-    achievements: [
-      "Designed and implemented the complete application architecture",
-      "Developed secure authentication system with JWT",
-      "Built responsive frontend with Vue.js and Tailwind CSS",
-      "Created robust backend API with Nest.js and PostgreSQL",
-    ],
-    logo: "/Portfolio/LogosEntreprises/Medtrust.png",
-  },
-  {
-    id: 3,
-    company: "HDM Network",
-    position: "Web Development Intern",
-    period: "04/2023 - 08/2023",
-    description:
-      "Built web applications including task management systems, real estate platforms, and an innovative VR game, gaining diverse development experience.",
-    technologies: ["JavaScript", "PHP", "HTML", "CSS", "A-Frame", "Web Scraping"],
-    current: false,
-    achievements: [
-      "Developed a task management application for company dashboard",
-      "Built frontend for real estate rental application",
-      "Created a VR game using A-Frame framework",
-      "Implemented web scraping solutions for data collection",
-      "Served as Team Leader of the development department",
-    ],
-    logo: "/Portfolio/LogosEntreprises/HDM.jpg",
-  },
-];
+// Section titles
+const expTitle = computed(() => t("experience.title"));
+const expSubtitle = computed(() => t("experience.subtitle"));
+const expAchievementsTitle = computed(() => t("experience.achievementsTitle"));
+const expCertificationsTitle = computed(() =>
+  t("experience.certificationsTitle")
+);
+const expCurrent = computed(() => t("experience.currentBadge"));
 
-const certifications = [
-  {
-    name: "Front End Development Libraries",
-    provider: "FreeCodeCamp",
-    date: "March 2023",
-  },
-  {
-    name: "JavaScript Algorithms and Data Structures",
-    provider: "FreeCodeCamp",
-    date: "December 2022",
-  },
-  {
-    name: "Responsive Web Design",
-    provider: "FreeCodeCamp",
-    date: "April 2022",
-  },
-  {
-    name: "Create & Manage Cloud Resources",
-    provider: "Google Qwicklabs",
-    date: "April 2022",
-  },
-  {
-    name: "CCNA: Introduction to Networks",
-    provider: "CISCO",
-    date: "December 2021",
-  },
-  {
-    name: "CCNA: Switching, Routing & Wireless Essentials",
-    provider: "CISCO",
-    date: "December 2021",
-  },
-];
+// Experiences from translations
+const experiences = computed<Experience[]>(() => {
+  return Object.entries(t("experience.experiences") as Record<string, any>).map(
+    ([id, exp]) => ({
+      id,
+      ...exp,
+      logo:
+        id === "1"
+          ? "/Portfolio/LogosEntreprises/Sw.jpg"
+          : id === "2"
+          ? "/Portfolio/LogosEntreprises/Medtrust.png"
+          : "/Portfolio/LogosEntreprises/HDM.jpg",
+      technologies:
+        id === "1"
+          ? ["TypeScript", "Nest.js", "Next.js", "PostgreSQL", "Jira", "Git"]
+          : id === "2"
+          ? ["Vue.js", "Nest.js", "JWT", "PostgreSQL", "Tailwind CSS"]
+          : ["JavaScript", "PHP", "HTML", "CSS", "A-Frame", "Web Scraping"],
+      current: id === "1", // mark only first as current
+    })
+  );
+});
+
+// Certifications from translations
+const certifications = computed(() =>
+  Object.values(t("experience.certifications") as Record<string, any>)
+);
 </script>
 
 <template>
   <section id="experience" class="experience">
     <div class="container">
       <div class="experience__header">
-        <h2>Professional Experience</h2>
-        <p>My professional journey and the exciting projects I've worked on</p>
+        <h2>{{ expTitle }}</h2>
+        <p>{{ expSubtitle }}</p>
       </div>
 
       <div class="timeline">
@@ -132,21 +82,27 @@ const certifications = [
               <div class="period">
                 <CalendarIcon class="period-icon" />
                 <span>{{ exp.period }}</span>
-                <span v-if="exp.current" class="current-badge">Current</span>
+                <span v-if="exp.current" class="current-badge">
+                  {{ expCurrent }}
+                </span>
               </div>
             </div>
 
             <p>{{ exp.description }}</p>
 
             <div class="achievements">
-              <h4>Key Achievements:</h4>
+              <h4 class="achievements-title">{{ expAchievementsTitle }}</h4>
               <ul>
                 <li v-for="ach in exp.achievements" :key="ach">{{ ach }}</li>
               </ul>
             </div>
 
             <div class="technologies">
-              <span v-for="tech in exp.technologies" :key="tech" class="tech-tag">
+              <span
+                v-for="tech in exp.technologies"
+                :key="tech"
+                class="tech-tag"
+              >
                 {{ tech }}
               </span>
             </div>
@@ -155,9 +111,13 @@ const certifications = [
       </div>
 
       <div class="certifications">
-        <h3>Certifications & Training</h3>
+        <h3>{{ expCertificationsTitle }}</h3>
         <div class="certifications__grid">
-          <div v-for="cert in certifications" :key="cert.name" class="certification-card">
+          <div
+            v-for="cert in certifications"
+            :key="cert.name"
+            class="certification-card"
+          >
             <h4>{{ cert.name }}</h4>
             <p>{{ cert.provider }}</p>
             <span>{{ cert.date }}</span>
@@ -169,6 +129,13 @@ const certifications = [
 </template>
 
 <style scoped>
+.achievements-title {
+  font-size: 1rem; /* smaller than default h4 */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  padding-top: 10px;
+}
 .experience {
   background: var(--bg-primary);
   padding: 50px 20px;
