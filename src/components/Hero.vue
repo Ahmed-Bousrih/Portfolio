@@ -30,10 +30,10 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
   </div>
 
   <div class="cv-buttons">
-    <a href="/resume-en.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--cv">
+    <a href="/Portfolio/resume-en.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--cv">
       🇬🇧 English CV
     </a>
-    <a href="/resume-fr.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--cv">
+    <a href="/Portfolio/resume-fr.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--cv">
       🇫🇷 CV Français
     </a>
   </div>
