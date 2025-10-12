@@ -1,4 +1,3 @@
-// src/translations.ts
 export const translations = {
   en: {
     header: {
@@ -841,6 +840,213 @@ export const translations = {
       skills: "Fähigkeiten",
       projects: "Projekte",
       contact: "Kontakt",
+    },
+  },
+  es: {
+    header: {
+      brand: "Ahmed Bousrih",
+      links: {
+        home: "Inicio",
+        about: "Sobre mí",
+        skills: "Habilidades",
+        projects: "Proyectos",
+        experience: "Experiencia",
+        contact: "Contacto",
+      },
+    },
+    hero: {
+      greeting: "Hola, soy",
+      name: "Ahmed Bousrih",
+      subtitle: "Ingeniero de Software & Desarrollador Web",
+      description:
+        "Soy un apasionado de la ingeniería de software, graduado de ESIEA París y EPI Sousse, dedicado a crear aplicaciones web escalables y a ofrecer soluciones innovadoras. Además de programar, disfruto desarrollar mi mente como entusiasta del ajedrez.",
+      cta: {
+        contact: "Contáctame",
+        projects: "Ver mis proyectos",
+      },
+    },
+    about: {
+      title: "Sobre mí",
+      subtitle: "Conoce mi trayectoria y experiencia",
+      intro: {
+        title: "Graduado en Ingeniería de Software",
+        description:
+          "Soy graduado en ingeniería de software por ESIEA París y EPI Sousse, y me apasiona diseñar y desarrollar aplicaciones innovadoras y escalables. Mi formación académica y experiencia práctica me han proporcionado una base sólida en tecnologías modernas y buenas prácticas de desarrollo, lo que me permite contribuir a proyectos con impacto real.",
+      },
+      education: {
+        title: "Educación",
+        degree: "Título de Ingeniero: Informática",
+        schools: "ESIEA, Francia + EPI, Túnez",
+        keyCourses:
+          "Cursos clave: Programación de sistemas, Diseño de redes, Arquitectura de aplicaciones, Gestión de bases de datos, Programación FullStack",
+      },
+      languages: {
+        title: "Idiomas",
+        names: {
+          ar: "Árabe",
+          fr: "Francés",
+          en: "Inglés",
+          pl: "Polaco",
+          de: "Alemán",
+        },
+        levels: {
+          ar: "Nativo",
+          fr: "Avanzado",
+          en: "Avanzado",
+          pl: "Principiante",
+          de: "Principiante",
+        },
+      },
+      location: {
+        title: "Ubicación",
+        france: "Cachan, Île-de-France, 94230, Francia",
+        tunisia: "Lamta, Monastir, 5099, Túnez",
+        relocation: "Disponible para reubicación global",
+      },
+      stats: {
+        graduation: "2025",
+        graduationLabel: "Graduación",
+        technologies: "15+",
+        technologiesLabel: "Tecnologías",
+        projects: "10+",
+        projectsLabel: "Proyectos",
+      },
+    },
+    skills: {
+      title: "Habilidades & Tecnologías",
+      subtitle:
+        "Estas son las tecnologías y herramientas que uso para hacer realidad ideas",
+      fillButton: "Llenar Habilidades",
+      resetButton: "Restablecer",
+    },
+    projects: {
+      featuredTitle: "Proyectos Destacados",
+      otherTitle: "Otros Proyectos",
+      subtitle:
+        "Selección de proyectos que muestran mis habilidades, resolución de problemas y creatividad.",
+      codeLabel: "Código",
+      descriptions: {
+        "1": "Plataforma de reclutamiento full-stack con autenticación JWT, backend PostgreSQL y frontend responsivo en Vue.js + TailwindCSS para una gestión fluida de candidatos y empleadores.",
+        "2": "Planificador de viajes interactivo desarrollado en React y Mapbox API. Los usuarios pueden planificar viajes, marcar destinos y visualizar rutas en mapas dinámicos.",
+        "3": "Aplicación web para generar y gestionar certificados para instituciones educativas, con panel de administración seguro y sistema de gestión de usuarios.",
+        "4": "Extensión de navegador y app móvil para verificar certificados SSL/TLS, garantizando conexiones seguras y protección contra sitios peligrosos.",
+        "5": "API REST en TypeScript para gestionar infraestructura IT y elementos de configuración, proporcionando endpoints escalables y confiables para operaciones CMDB.",
+        "6": "Aplicación web escolar para gestionar clases, materias y calificaciones, con funciones de visualización para monitorear el desempeño académico.",
+        "7": "Aplicación de quiz de una sola página con 10 preguntas de fútbol, construida en HTML, CSS y JavaScript para un aprendizaje interactivo y divertido.",
+        "8": "Juego de consola Minesweeper escrito en C, con instrucciones en inglés y árabe tunecino para mejorar la accesibilidad.",
+      },
+    },
+    experience: {
+      title: "Experiencia Profesional",
+      subtitle:
+        "Mi trayectoria profesional y proyectos emocionantes en los que he trabajado",
+      currentBadge: "Actualmente",
+      achievementsTitle: "Logros clave:",
+      certificationsTitle: "Certificaciones y Formación",
+      experiences: {
+        "1": {
+          company: "SW Consulting",
+          position: "Desarrollador Full Stack",
+          period: "08/2025 - Actualidad",
+          description:
+            "Desarrollo de APIs escalables y modernización de la aplicación Credit Win para bancos, aumentando la confiabilidad y rendimiento del sistema.",
+          achievements: [
+            "Diseño e implementación de API RESTful para funciones clave bancarias, incluyendo roles de usuario, sistema de correo OVH y cálculos de viabilidad bancaria",
+            "Optimización del esquema de base de datos Prisma y consultas para grandes volúmenes de datos bancarios",
+            "Construcción de DTOs reutilizables, pipelines de validación y herramientas de manejo de errores para estandarizar la lógica backend",
+            "Colaboración con equipos frontend para asegurar integración fluida con Next.js y consistencia de datos",
+            "Participación en desarrollo ágil usando Jira, Git y revisiones de código para mantener alta calidad de software",
+          ],
+        },
+        "2": {
+          company: "Medtrust Consulting",
+          position: "Becario de desarrollo web",
+          period: "12/2024 - 06/2025",
+          description:
+            "Desarrollo completo de WorkIt, una aplicación web de reclutamiento, usando tecnologías modernas y buenas prácticas.",
+          achievements: [
+            "Diseño e implementación de la arquitectura completa de la aplicación",
+            "Creación de un sistema seguro de autenticación basado en JWT",
+            "Construcción de un frontend responsivo usando Vue.js y Tailwind CSS",
+            "Desarrollo de API backend sólida usando Nest.js y PostgreSQL",
+          ],
+        },
+        "3": {
+          company: "HDM Network",
+          position: "Becario de desarrollo web",
+          period: "04/2023 - 08/2023",
+          description:
+            "Desarrollo de aplicaciones web, incluyendo sistemas de gestión de tareas, plataformas inmobiliarias y un juego VR innovador, obteniendo experiencia diversa.",
+          achievements: [
+            "Desarrollo de aplicación de gestión de tareas para panel empresarial",
+            "Construcción del frontend de aplicación de alquileres inmobiliarios",
+            "Creación de juego VR usando A-Frame",
+            "Implementación de soluciones de web scraping para recopilación de datos",
+            "Liderazgo del equipo de desarrollo",
+          ],
+        },
+      },
+      certifications: {
+        "1": {
+          name: "Front End Development Libraries",
+          provider: "FreeCodeCamp",
+          date: "Marzo 2023",
+        },
+        "2": {
+          name: "JavaScript Algorithms and Data Structures",
+          provider: "FreeCodeCamp",
+          date: "Diciembre 2022",
+        },
+        "3": {
+          name: "Responsive Web Design",
+          provider: "FreeCodeCamp",
+          date: "Abril 2022",
+        },
+        "4": {
+          name: "Create & Manage Cloud Resources",
+          provider: "Google Qwicklabs",
+          date: "Abril 2022",
+        },
+        "5": {
+          name: "CCNA: Introduction to Networks",
+          provider: "CISCO",
+          date: "Diciembre 2021",
+        },
+        "6": {
+          name: "CCNA: Switching, Routing & Wireless Essentials",
+          provider: "CISCO",
+          date: "Diciembre 2021",
+        },
+      },
+    },
+    contact: {
+      title: "Contáctame",
+      subtitle:
+        "Siempre estoy abierto a nuevas oportunidades y proyectos. ¡Construyamos algo increíble juntos!",
+      infoTitle: "Información de contacto",
+      connectTitle: "Conéctate conmigo",
+      interestsTitle: "Intereses y Actividades",
+      labels: { email: "E-mail", location: "Ubicación" },
+      interests: {
+        gaming: "Videojuegos",
+        programming: "Programación competitiva",
+        instructor: "Instructor",
+        organizer: "Organizador de eventos",
+      },
+    },
+    footer: {
+      tagline: "Graduado en Ingeniería de Software",
+      description:
+        "Apasionado por crear soluciones innovadoras y contribuir a proyectos significativos.",
+      navigation: "Navegación",
+      connect: "Contacto",
+      backToTop: "Volver ↑",
+      rights: "Todos los derechos reservados.",
+      home: "Inicio",
+      about: "Sobre mí",
+      skills: "Habilidades",
+      projects: "Proyectos",
+      contact: "Contacto",
     },
   },
 } as const;

@@ -23,10 +23,21 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
           </h1>
           <p class="hero__subtitle">{{ heroSubtitle }}</p>
           <p class="hero__description" v-html="heroDescription"></p>
-          <div class="hero__actions">
-            <a href="#contact" class="btn btn--primary">{{ heroCtaContact }}</a>
-            <a href="#projects" class="btn btn--secondary">{{ heroCtaProjects }}</a>
-          </div>
+<div class="hero__actions">
+  <div class="cta-buttons">
+    <a href="#contact" class="btn btn--main">{{ heroCtaContact }}</a>
+    <a href="#projects" class="btn btn--outline">{{ heroCtaProjects }}</a>
+  </div>
+
+  <div class="cv-buttons">
+    <a href="/resume-en.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--cv">
+      🇬🇧 English CV
+    </a>
+    <a href="/resume-fr.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--cv">
+      🇫🇷 CV Français
+    </a>
+  </div>
+</div>
         </div>
 
         <!-- Image -->
@@ -40,7 +51,6 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
     </div>
   </section>
 </template>
-
 
 <style scoped>
 .hero {
@@ -78,8 +88,6 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
   font-size: 1.25rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
-
-  /* visible before animation */
   color: var(--text-primary) !important;
   opacity: 1 !important;
 }
@@ -93,16 +101,11 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   margin-bottom: 1rem;
-  opacity: 1 !important;
   animation: fadeInUp 1s ease-out 0.4s forwards;
-
-  /* gradient text cross-browser */
   background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text !important;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
   color: var(--primary-700) !important;
 }
 
@@ -110,7 +113,6 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  opacity: 1;
   animation: fadeInUp 1s ease-out 0.6s forwards;
   color: var(--text-secondary);
 }
@@ -120,20 +122,113 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
   line-height: 1.7;
   margin-bottom: 2.5rem;
   max-width: 500px;
-  opacity: 0;
   animation: fadeInUp 1s ease-out 0.8s forwards;
   color: var(--text-secondary);
 }
 
 .hero__actions {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 1rem;
-  flex-wrap: wrap;
-  opacity: 0;
   animation: fadeInUp 1s ease-out 1s forwards;
+  margin-top: 1rem;
 }
 
-/* Image */
+/* === CTA and CV button grouping === */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cv-buttons {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+/* === Base button === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Main CTA (Get in Touch) === */
+.btn--main {
+  background: linear-gradient(135deg, #6366f1, #4338ca);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.btn--main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+
+/* === Outline CTA (View My Work) === */
+.btn--outline {
+  background: transparent;
+  color: #6366f1;
+  border: 2px solid #6366f1;
+}
+
+.btn--outline:hover {
+  background: linear-gradient(135deg, #6366f1, #4338ca);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+
+/* === CV Buttons === */
+.btn--cv {
+  font-size: 0.9rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 2px solid #818cf8;
+  color: #818cf8;
+  background: transparent;
+}
+
+.btn--cv:hover {
+  background: linear-gradient(135deg, #6366f1, #4338ca);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* === Dark Mode Adjustments === */
+:root.dark .btn--main {
+  background: linear-gradient(135deg, #818cf8, #4f46e5);
+  box-shadow: 0 4px 15px rgba(129, 140, 248, 0.4);
+}
+
+:root.dark .btn--outline {
+  color: #a5b4fc;
+  border-color: #a5b4fc;
+}
+
+:root.dark .btn--cv {
+  border-color: #a5b4fc;
+  color: #a5b4fc;
+}
+
+/* === Image === */
 .hero__image {
   display: flex;
   justify-content: center;
@@ -175,70 +270,12 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
   animation: pulse 3s ease-in-out infinite;
 }
 
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.875rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s ease;
-}
-
-.btn:hover::before {
-  left: 100%;
-}
-
-.btn--primary {
-  background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
-  color: white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.btn--primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-.btn--secondary {
-  background: transparent;
-  color: var(--primary-500);
-  border-color: var(--primary-500);
-}
-
-.btn--secondary:hover {
-  background: var(--primary-500);
-  color: white;
-  transform: translateY(-2px);
-}
-
-/* Animations */
+/* === Animations === */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -250,7 +287,6 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
     opacity: 0;
     transform: translateX(-50px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
@@ -262,7 +298,6 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
     opacity: 0;
     transform: translateX(50px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
@@ -270,19 +305,17 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
 }
 
 @keyframes pulse {
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
     opacity: 0.7;
   }
-
   50% {
     transform: scale(1.05);
     opacity: 0.9;
   }
 }
 
-/* Responsive */
+/* === Responsive === */
 @media (max-width: 768px) {
   .hero {
     padding-top: 120px;
@@ -304,6 +337,12 @@ const heroCtaProjects = computed(() => t("hero.cta.projects"));
   }
 
   .hero__actions {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-buttons,
+  .cv-buttons {
     justify-content: center;
   }
 

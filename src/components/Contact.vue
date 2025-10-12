@@ -68,7 +68,12 @@ const interests = computed(() => {
               <component :is="info.icon" class="icon" />
               <div>
                 <span class="label">{{ info.label }}</span>
-                <a :href="info.href" target="_blank" rel="noopener noreferrer" class="value">
+                <a
+                  :href="info.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="value"
+                >
                   {{ info.value }}
                 </a>
               </div>
@@ -80,7 +85,14 @@ const interests = computed(() => {
         <div class="card social-card">
           <h3>{{ connectTitle }}</h3>
           <div class="social-items">
-            <a v-for="social in socialLinks" :key="social.name" :href="social.url" target="_blank" rel="noopener noreferrer" class="social-link">
+            <a
+              v-for="social in socialLinks"
+              :key="social.name"
+              :href="social.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+            >
               <span class="social-icon">{{ social.icon }}</span>
               <span class="social-name">{{ social.name }}</span>
             </a>
@@ -91,7 +103,11 @@ const interests = computed(() => {
         <div class="card interests-card">
           <h3>{{ interestsTitle }}</h3>
           <div class="interests-items">
-            <div v-for="interest in interests" :key="interest.label" class="interest-item">
+            <div
+              v-for="interest in interests"
+              :key="interest.label"
+              class="interest-item"
+            >
               <span class="interest-icon">{{ interest.icon }}</span>
               <span class="interest-label">{{ interest.label }}</span>
             </div>

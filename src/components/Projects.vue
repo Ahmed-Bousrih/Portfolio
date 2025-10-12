@@ -13,7 +13,6 @@ interface Project {
   year: string;
 }
 
-// Translatable descriptions stay in i18n JSON
 const projects: Project[] = [
   {
     id: 1,

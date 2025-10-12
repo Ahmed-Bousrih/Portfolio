@@ -55,12 +55,34 @@ onUnmounted(() => {
 
         <!-- Desktop Links -->
         <ul class="nav__links">
-          <li><a @click="scrollToSection('home')">{{ t("header.links.home") }}</a></li>
-          <li><a @click="scrollToSection('about')">{{ t("header.links.about") }}</a></li>
-          <li><a @click="scrollToSection('skills')">{{ t("header.links.skills") }}</a></li>
-          <li><a @click="scrollToSection('projects')">{{ t("header.links.projects") }}</a></li>
-          <li><a @click="scrollToSection('experience')">{{ t("header.links.experience") }}</a></li>
-          <li><a @click="scrollToSection('contact')">{{ t("header.links.contact") }}</a></li>
+          <li>
+            <a @click="scrollToSection('home')">{{ t("header.links.home") }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('about')">{{
+              t("header.links.about")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('skills')">{{
+              t("header.links.skills")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('projects')">{{
+              t("header.links.projects")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('experience')">{{
+              t("header.links.experience")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('contact')">{{
+              t("header.links.contact")
+            }}</a>
+          </li>
         </ul>
 
         <!-- Language Dropdown -->
@@ -69,10 +91,21 @@ onUnmounted(() => {
             🌐 {{ locale.toUpperCase() }}
           </button>
           <ul v-show="isLangMenuOpen" class="lang-menu">
-            <li @click="changeLang('en')"><span class="fi fi-gb fis"></span> English</li>
-            <li @click="changeLang('fr')"><span class="fi fi-fr fis"></span> Français</li>
-            <li @click="changeLang('pl')"><span class="fi fi-pl fis"></span> Polski</li>
-            <li @click="changeLang('de')"><span class="fi fi-de fis"></span> Deutsch</li>
+            <li @click="changeLang('en')">
+              <span class="fi fi-gb fis"></span> English
+            </li>
+            <li @click="changeLang('fr')">
+              <span class="fi fi-fr fis"></span> Français
+            </li>
+            <li @click="changeLang('pl')">
+              <span class="fi fi-pl fis"></span> Polski
+            </li>
+            <li @click="changeLang('de')">
+              <span class="fi fi-de fis"></span> Deutsch
+            </li>
+            <li @click="changeLang('es')">
+              <span class="fi fi-es fis"></span> Español
+            </li>
           </ul>
         </div>
 
@@ -88,27 +121,57 @@ onUnmounted(() => {
           aria-label="Toggle menu"
           :aria-expanded="isMobileMenuOpen"
         >
-          <span :class="{ 'line--top': true, open: isMobileMenuOpen }" class="line"></span>
-          <span :class="{ 'line--middle': true, open: isMobileMenuOpen }" class="line"></span>
-          <span :class="{ 'line--bottom': true, open: isMobileMenuOpen }" class="line"></span>
+          <span
+            :class="{ 'line--top': true, open: isMobileMenuOpen }"
+            class="line"
+          ></span>
+          <span
+            :class="{ 'line--middle': true, open: isMobileMenuOpen }"
+            class="line"
+          ></span>
+          <span
+            :class="{ 'line--bottom': true, open: isMobileMenuOpen }"
+            class="line"
+          ></span>
         </button>
       </nav>
 
       <!-- Mobile Menu -->
       <div :class="['nav__mobile', { 'nav__mobile--open': isMobileMenuOpen }]">
         <ul class="nav__mobile-links">
-          <li><a @click="scrollToSection('home')">{{ t("header.links.home") }}</a></li>
-          <li><a @click="scrollToSection('about')">{{ t("header.links.about") }}</a></li>
-          <li><a @click="scrollToSection('skills')">{{ t("header.links.skills") }}</a></li>
-          <li><a @click="scrollToSection('projects')">{{ t("header.links.projects") }}</a></li>
-          <li><a @click="scrollToSection('experience')">{{ t("header.links.experience") }}</a></li>
-          <li><a @click="scrollToSection('contact')">{{ t("header.links.contact") }}</a></li>
+          <li>
+            <a @click="scrollToSection('home')">{{ t("header.links.home") }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('about')">{{
+              t("header.links.about")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('skills')">{{
+              t("header.links.skills")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('projects')">{{
+              t("header.links.projects")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('experience')">{{
+              t("header.links.experience")
+            }}</a>
+          </li>
+          <li>
+            <a @click="scrollToSection('contact')">{{
+              t("header.links.contact")
+            }}</a>
+          </li>
         </ul>
       </div>
     </div>
   </header>
 </template>
-
 
 <style scoped>
 /* Header */
