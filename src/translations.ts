@@ -14,9 +14,9 @@ export const translations = {
     hero: {
       greeting: "Hello, I'm",
       name: "Ahmed Bousrih",
-      subtitle: "Software Engineer & Web Developer",
+      subtitle: "Backend Developer & Software Engineer",
       description:
-        "I am a passionate Software Engineering graduate from ESIEA Paris and EPI Sousse, dedicated to building scalable web applications and delivering innovative solutions. Outside of development, I enjoy sharpening my mind as a chess enthusiast.",
+        "Backend Developer with 1 year of hands-on experience building scalable web applications. Software Engineering graduate from ESIEA Paris and EPI Sousse, passionate about clean architecture, performance, and delivering impactful solutions. Chess enthusiast in my free time.",
       cta: {
         contact: "Get In Touch",
         projects: "View My Work",
@@ -225,9 +225,9 @@ export const translations = {
     hero: {
       greeting: "Bonjour, je suis",
       name: "Ahmed Bousrih",
-      subtitle: "Ingénieur Logiciel & Développeur Web",
+      subtitle: "Développeur Backend & Ingénieur Logiciel",
       description:
-        "Je suis diplômé en ingénierie logicielle de l'ESIEA Paris et de l'EPI Sousse, passionné par la création d'applications web évolutives et la livraison de solutions innovantes. En dehors du développement, j'aime stimuler mon esprit en tant que passionné d'échecs.",
+        "Développeur Backend avec 1 an d’expérience dans la conception et le développement d’applications web évolutives. Diplômé en ingénierie logicielle de l’ESIEA Paris et de l’EPI Sousse, passionné par l’architecture logicielle, la performance et la création de solutions à fort impact. Passionné d’échecs pendant mon temps libre.",
       cta: {
         contact: "Me Contacter",
         projects: "Voir Mes Réalisations",
@@ -436,9 +436,9 @@ export const translations = {
     hero: {
       greeting: "Cześć, jestem",
       name: "Ahmed Bousrih",
-      subtitle: "Inżynier Oprogramowania & Web Developer",
+      subtitle: "Backend Developer & Inżynier Oprogramowania",
       description:
-        "Jestem pasjonatem inżynierii oprogramowania, absolwentem ESIEA Paris i EPI Sousse, poświęconym tworzeniu skalowalnych aplikacji webowych i dostarczaniu innowacyjnych rozwiązań. Poza programowaniem lubię rozwijać swój umysł jako entuzjasta szachów.",
+        "Backend Developer z 1 rokiem doświadczenia w projektowaniu i tworzeniu skalowalnych aplikacji webowych. Absolwent inżynierii oprogramowania ESIEA Paris oraz EPI Sousse, pasjonujący się czystą architekturą, wydajnością i tworzeniem realnych rozwiązań. W wolnym czasie miłośnik szachów.",
       cta: {
         contact: "Skontaktuj się",
         projects: "Zobacz moje projekty",
@@ -647,12 +647,12 @@ export const translations = {
     hero: {
       greeting: "Hallo, ich bin",
       name: "Ahmed Bousrih",
-      subtitle: "Softwareentwickler & Webentwickler",
+      subtitle: "Backend Developer & Softwareingenieur",
       description:
-        "Ich bin ein leidenschaftlicher Absolvent der Softwaretechnik von der ESIEA Paris und der EPI Sousse, der sich darauf spezialisiert hat, skalierbare Webanwendungen zu entwickeln und innovative Lösungen zu liefern. Außerhalb der Entwicklung genieße ich es, als Schach-Enthusiast meinen Geist zu schärfen.",
+        "Backend Developer mit 1 Jahr praktischer Erfahrung in der Entwicklung skalierbarer Webanwendungen. Absolvent der Softwaretechnik an der ESIEA Paris und der EPI Sousse, mit besonderem Fokus auf saubere Architektur, Performance und zuverlässige Backend-Systeme. In meiner Freizeit spiele ich gerne Schach.",
       cta: {
-        contact: "Kontaktieren",
-        projects: "Meine Arbeiten ansehen",
+        contact: "Kontakt aufnehmen",
+        projects: "Meine Projekte ansehen",
       },
     },
     about: {
@@ -857,9 +857,9 @@ export const translations = {
     hero: {
       greeting: "Hola, soy",
       name: "Ahmed Bousrih",
-      subtitle: "Ingeniero de Software & Desarrollador Web",
+      subtitle: "Desarrollador Backend & Ingeniero de Software",
       description:
-        "Soy un apasionado de la ingeniería de software, graduado de ESIEA París y EPI Sousse, dedicado a crear aplicaciones web escalables y a ofrecer soluciones innovadoras. Además de programar, disfruto desarrollar mi mente como entusiasta del ajedrez.",
+        "Desarrollador Backend con 1 año de experiencia en el diseño y desarrollo de aplicaciones web escalables. Graduado en Ingeniería de Software por ESIEA París y EPI Sousse, con interés en la arquitectura limpia, el rendimiento y la creación de soluciones de alto impacto. Aficionado al ajedrez en mi tiempo libre.",
       cta: {
         contact: "Contáctame",
         projects: "Ver mis proyectos",

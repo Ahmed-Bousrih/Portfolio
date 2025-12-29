@@ -2,6 +2,14 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import { t, locale, changeLang as changeLocale } from "../translations";
 
+const langFlags: Record<string, string> = {
+  en: "fi fi-gb",
+  fr: "fi fi-fr",
+  pl: "fi fi-pl",
+  de: "fi fi-de",
+  es: "fi fi-es",
+};
+
 // Reactive states
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
@@ -88,7 +96,12 @@ onUnmounted(() => {
         <!-- Language Dropdown -->
         <div class="nav__lang-dropdown">
           <button class="lang-btn" @click="isLangMenuOpen = !isLangMenuOpen">
-            🌐 {{ locale.toUpperCase() }}
+            <span
+              v-if="langFlags[locale]"
+              :class="['fis', langFlags[locale]]"
+            ></span>
+            <span v-else>🌐</span>
+            {{ locale.toUpperCase() }}
           </button>
           <ul v-show="isLangMenuOpen" class="lang-menu">
             <li @click="changeLang('en')">
