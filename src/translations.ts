@@ -104,7 +104,7 @@ export const translations = {
         "1": {
           company: "SW Consulting",
           position: "Full Stack Developer",
-          period: "08/2025 - Present",
+          period: "08/2025 - 12/2025",
           description:
             "Developed scalable APIs and revamped the Credit Win web application for banks, enhancing system reliability and performance.",
           achievements: [

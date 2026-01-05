@@ -12,7 +12,7 @@ interface Experience {
   technologies: string[];
   current: boolean;
   achievements: string[];
-  logo: string;
+  logo?: string;
 }
 
 // Section titles
@@ -25,26 +25,63 @@ const expCertificationsTitle = computed(() =>
 const expCurrent = computed(() => t("experience.currentBadge"));
 
 // Experiences from translations
+const experienceConfig: Record<
+  string,
+  {
+    logo: string;
+    technologies: string[];
+    current?: boolean;
+  }
+> = {
+  "1": {
+    logo: "/Portfolio/LogosEntreprises/Sw.jpg",
+    technologies: [
+      "TypeScript",
+      "Nest.js",
+      "Next.js",
+      "PostgreSQL",
+      "Jira",
+      "Git",
+    ],
+  },
+  "2": {
+    logo: "/Portfolio/LogosEntreprises/Medtrust.png",
+    technologies: [
+      "Vue.js",
+      "Nest.js",
+      "JWT",
+      "PostgreSQL",
+      "Tailwind CSS",
+    ],
+  },
+  "3": {
+    logo: "/Portfolio/LogosEntreprises/HDM.jpg",
+    technologies: [
+      "JavaScript",
+      "PHP",
+      "HTML",
+      "CSS",
+      "A-Frame",
+      "Web Scraping",
+    ],
+  },
+};
 const experiences = computed<Experience[]>(() => {
-  return Object.entries(t("experience.experiences") as Record<string, any>).map(
-    ([id, exp]) => ({
+  const translatedExperiences = t(
+    "experience.experiences"
+  ) as Record<string, any>;
+
+  return Object.entries(translatedExperiences).map(([id, exp]) => {
+    const config = experienceConfig[id];
+
+    return {
       id,
       ...exp,
-      logo:
-        id === "1"
-          ? "/Portfolio/LogosEntreprises/Sw.jpg"
-          : id === "2"
-          ? "/Portfolio/LogosEntreprises/Medtrust.png"
-          : "/Portfolio/LogosEntreprises/HDM.jpg",
-      technologies:
-        id === "1"
-          ? ["TypeScript", "Nest.js", "Next.js", "PostgreSQL", "Jira", "Git"]
-          : id === "2"
-          ? ["Vue.js", "Nest.js", "JWT", "PostgreSQL", "Tailwind CSS"]
-          : ["JavaScript", "PHP", "HTML", "CSS", "A-Frame", "Web Scraping"],
-      current: id === "1", // mark only first as current
-    })
-  );
+      logo: config?.logo,
+      technologies: config?.technologies ?? [],
+      current: config?.current ?? false,
+    };
+  });
 });
 
 // Certifications from translations
