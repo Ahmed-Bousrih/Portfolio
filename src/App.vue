@@ -15,9 +15,9 @@ import Footer from "./components/Footer.vue";
     <main>
       <Hero />
       <About />
-      <Skills />
-      <Projects />
       <Experience />
+      <Projects />
+      <Skills />
       <Contact />
     </main>
     <Footer />
