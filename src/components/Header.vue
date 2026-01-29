@@ -72,8 +72,8 @@ onUnmounted(() => {
             }}</a>
           </li>
           <li>
-            <a @click="scrollToSection('skills')">{{
-              t("header.links.skills")
+            <a @click="scrollToSection('experience')">{{
+              t("header.links.experience")
             }}</a>
           </li>
           <li>
@@ -82,8 +82,8 @@ onUnmounted(() => {
             }}</a>
           </li>
           <li>
-            <a @click="scrollToSection('experience')">{{
-              t("header.links.experience")
+            <a @click="scrollToSection('skills')">{{
+              t("header.links.skills")
             }}</a>
           </li>
           <li>
@@ -161,8 +161,8 @@ onUnmounted(() => {
             }}</a>
           </li>
           <li>
-            <a @click="scrollToSection('skills')">{{
-              t("header.links.skills")
+            <a @click="scrollToSection('experience')">{{
+              t("header.links.experience")
             }}</a>
           </li>
           <li>
@@ -171,8 +171,8 @@ onUnmounted(() => {
             }}</a>
           </li>
           <li>
-            <a @click="scrollToSection('experience')">{{
-              t("header.links.experience")
+            <a @click="scrollToSection('skills')">{{
+              t("header.links.skills")
             }}</a>
           </li>
           <li>
