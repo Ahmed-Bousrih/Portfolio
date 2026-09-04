@@ -34,6 +34,14 @@ const experienceConfig: Record<
   }
 > = {
   "1": {
+    logo: "/Portfolio/LogosEntreprises/Diverso.jpg",
+    technologies: [
+      "Wavesoft",
+      "Microsoft Excel",
+      "Microsoft Word",
+    ],
+  },
+  "2": {
     logo: "/Portfolio/LogosEntreprises/Sw.jpg",
     technologies: [
       "TypeScript",
@@ -44,7 +52,7 @@ const experienceConfig: Record<
       "Git",
     ],
   },
-  "2": {
+  "3": {
     logo: "/Portfolio/LogosEntreprises/Medtrust.png",
     technologies: [
       "Vue.js",
@@ -54,7 +62,7 @@ const experienceConfig: Record<
       "Tailwind CSS",
     ],
   },
-  "3": {
+  "4": {
     logo: "/Portfolio/LogosEntreprises/HDM.jpg",
     technologies: [
       "JavaScript",

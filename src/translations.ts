@@ -102,6 +102,19 @@ export const translations = {
       certificationsTitle: "Certifications & Training",
       experiences: {
         "1": {
+          company: "Diverso Gros",
+          position: "Sales & Invoicing | IT Support",
+          period: "05/2026 - 08/2026",
+          description:
+            "Managed daily sales and invoicing activities while supporting the maintenance of management software and computer equipment. Contributed to the organization and day-to-day operations of the wholesale store, including customer service and product promotion.",
+          achievements: [
+            "Created and managed sales invoices using Wavesoft management software",
+            "Contributed to the organization of the wholesale store and assisted business customers with their purchases",
+            "Supported the promotion and marketing of new and existing products to increase their visibility and sales",
+            "Assisted with the maintenance and troubleshooting of management software and computer equipment",
+          ],
+        },
+        "2": {
           company: "SW Consulting",
           position: "Full Stack Developer",
           period: "08/2025 - 12/2025",
@@ -115,7 +128,7 @@ export const translations = {
             "Contributed to agile development with Jira, Git, and code reviews to maintain high code quality",
           ],
         },
-        "2": {
+        "3": {
           company: "Medtrust Consulting",
           position: "Web Development Intern",
           period: "12/2024 - 06/2025",
@@ -128,7 +141,7 @@ export const translations = {
             "Created robust backend API with Nest.js and PostgreSQL",
           ],
         },
-        "3": {
+        "4": {
           company: "HDM Network",
           position: "Web Development Intern",
           period: "04/2023 - 08/2023",
@@ -313,9 +326,22 @@ export const translations = {
       certificationsTitle: "Certifications & Formations",
       experiences: {
         "1": {
+          company: "Diverso Gros",
+          position: "Ventes & Facturation | Support IT",
+          period: "05/2026 - 08/2026",
+          description:
+            "Gestion des activités quotidiennes de vente et de facturation, ainsi que de la maintenance des logiciels de gestion et du matériel informatique. Contribution à l’organisation et au fonctionnement quotidien du magasin de vente en gros, notamment à l’accueil des clients professionnels et à la promotion des produits.",
+          achievements: [
+            "Création et gestion des factures de vente à l’aide du logiciel de gestion Wavesoft",
+            "Contribution à l’organisation du magasin de vente en gros et accompagnement des clients professionnels dans leurs achats",
+            "Participation à la promotion et à la mise en avant des produits nouveaux et existants afin d’accroître leur visibilité et leurs ventes",
+            "Maintenance et résolution des problèmes liés aux logiciels de gestion et au matériel informatique",
+          ],
+        },
+        "2": {
           company: "SW Consulting",
           position: "Développeur Full Stack",
-          period: "08/2025 - Présent",
+          period: "08/2025 - 12/2025",
           description:
             "Développement d’API évolutives et refonte de l’application web Credit Win pour les banques, améliorant la fiabilité et les performances du système.",
           achievements: [
@@ -326,7 +352,7 @@ export const translations = {
             "Contribution au développement agile avec Jira, Git et revues de code pour maintenir une haute qualité de code",
           ],
         },
-        "2": {
+        "3": {
           company: "Medtrust Consulting",
           position: "Stagiaire en Développement Web",
           period: "12/2024 - 06/2025",
@@ -339,7 +365,7 @@ export const translations = {
             "Mise en place d’une API backend robuste avec Nest.js et PostgreSQL",
           ],
         },
-        "3": {
+        "4": {
           company: "HDM Network",
           position: "Stagiaire en Développement Web",
           period: "04/2023 - 08/2023",
@@ -524,9 +550,22 @@ export const translations = {
       certificationsTitle: "Certyfikaty i Szkolenia",
       experiences: {
         "1": {
+          company: "Diverso Gros",
+          position: "Sprzedaż i Faktury | Wsparcie IT",
+          period: "05/2026 - 08/2026",
+          description:
+            "Zarządzanie codziennymi procesami sprzedaży i fakturowania oraz wsparcie w utrzymaniu oprogramowania do zarządzania i sprzętu komputerowego. Udział w organizacji i codziennym funkcjonowaniu hurtowni, w tym obsłudze klientów biznesowych i promocji produktów.",
+          achievements: [
+            "Tworzenie i zarządzanie fakturami sprzedaży za pomocą oprogramowania Wavesoft",
+            "Udział w organizacji hurtowni oraz pomoc klientom biznesowym w dokonywaniu zakupów",
+            "Wsparcie w promocji i marketingu nowych oraz istniejących produktów w celu zwiększenia ich widoczności i sprzedaży",
+            "Wsparcie w utrzymaniu i rozwiązywaniu problemów związanych z oprogramowaniem do zarządzania i sprzętem komputerowym",
+          ],
+        },
+        "2": {
           company: "SW Consulting",
           position: "Full Stack Developer",
-          period: "08/2025 - Obecnie",
+          period: "08/2025 - 12/2025",
           description:
             "Tworzenie skalowalnych API oraz modernizacja aplikacji Credit Win dla banków, zwiększając niezawodność i wydajność systemu.",
           achievements: [
@@ -537,7 +576,7 @@ export const translations = {
             "Udział w rozwoju zwinnym z wykorzystaniem Jira, Git i przeglądów kodu w celu utrzymania wysokiej jakości kodu",
           ],
         },
-        "2": {
+        "3": {
           company: "Medtrust Consulting",
           position: "Stażeysta – Web Developer",
           period: "12/2024 - 06/2025",
@@ -550,7 +589,7 @@ export const translations = {
             "Tworzenie solidnego backendowego API przy użyciu Nest.js i PostgreSQL",
           ],
         },
-        "3": {
+        "4": {
           company: "HDM Network",
           position: "Stażeysta – Web Developer",
           period: "04/2023 - 08/2023",
@@ -735,9 +774,22 @@ export const translations = {
       certificationsTitle: "Zertifizierungen & Schulungen",
       experiences: {
         "1": {
+          company: "Diverso Gros",
+          position: "Verkauf & Rechnungswesen | IT-Support",
+          period: "05/2026 - 08/2026",
+          description:
+            "Verwaltung der täglichen Verkaufs- und Rechnungsprozesse sowie Unterstützung bei der Wartung von Verwaltungssoftware und Computergeräten. Mitwirkung bei der Organisation und im täglichen Betrieb des Großhandelsgeschäfts, einschließlich der Betreuung von Geschäftskunden und der Produktwerbung.",
+          achievements: [
+            "Erstellung und Verwaltung von Verkaufsrechnungen mit der Verwaltungssoftware Wavesoft",
+            "Mitwirkung bei der Organisation des Großhandelsgeschäfts und Unterstützung von Geschäftskunden bei ihren Einkäufen",
+            "Unterstützung bei der Vermarktung und Bewerbung neuer und bestehender Produkte zur Steigerung ihrer Sichtbarkeit und ihres Verkaufs",
+            "Unterstützung bei der Wartung und Fehlerbehebung von Verwaltungssoftware und Computergeräten",
+          ],
+        },
+        "2": {
           company: "SW Consulting",
           position: "Full Stack Entwickler",
-          period: "08/2025 - Gegenwart",
+          period: "08/2025 - 12/2025",
           description:
             "Entwicklung skalierbarer APIs und Überarbeitung der Credit Win Webanwendung für Banken zur Verbesserung der Zuverlässigkeit und Leistung.",
           achievements: [
@@ -748,7 +800,7 @@ export const translations = {
             "Beitrag zur agilen Entwicklung mit Jira, Git und Code-Reviews zur Sicherung hoher Codequalität",
           ],
         },
-        "2": {
+        "3": {
           company: "Medtrust Consulting",
           position: "Webentwicklungspraktikant",
           period: "12/2024 - 06/2025",
@@ -761,7 +813,7 @@ export const translations = {
             "Aufbau einer robusten Backend-API mit Nest.js und PostgreSQL",
           ],
         },
-        "3": {
+        "4": {
           company: "HDM Network",
           position: "Webentwicklungspraktikant",
           period: "04/2023 - 08/2023",
@@ -945,9 +997,22 @@ export const translations = {
       certificationsTitle: "Certificaciones y Formación",
       experiences: {
         "1": {
+          company: "Diverso Gros",
+          position: "Ventas y Facturación | Soporte IT",
+          period: "05/2026 - 08/2026",
+          description:
+            "Gestión de las actividades diarias de ventas y facturación, así como apoyo en el mantenimiento del software de gestión y de los equipos informáticos. Participación en la organización y el funcionamiento diario del establecimiento mayorista, incluyendo la atención a clientes profesionales y la promoción de productos.",
+          achievements: [
+            "Creación y gestión de facturas de venta mediante el software de gestión Wavesoft",
+            "Colaboración en la organización del establecimiento mayorista y asistencia a clientes profesionales durante sus compras",
+            "Apoyo en la promoción y comercialización de productos nuevos y existentes para aumentar su visibilidad y ventas",
+            "Apoyo en el mantenimiento y la resolución de problemas relacionados con el software de gestión y los equipos informáticos",
+          ],
+        },
+        "2": {
           company: "SW Consulting",
           position: "Desarrollador Full Stack",
-          period: "08/2025 - Actualidad",
+          period: "08/2025 - 12/2025",
           description:
             "Desarrollo de APIs escalables y modernización de la aplicación Credit Win para bancos, aumentando la confiabilidad y rendimiento del sistema.",
           achievements: [
@@ -958,7 +1023,7 @@ export const translations = {
             "Participación en desarrollo ágil usando Jira, Git y revisiones de código para mantener alta calidad de software",
           ],
         },
-        "2": {
+        "3": {
           company: "Medtrust Consulting",
           position: "Becario de desarrollo web",
           period: "12/2024 - 06/2025",
@@ -971,7 +1036,7 @@ export const translations = {
             "Desarrollo de API backend sólida usando Nest.js y PostgreSQL",
           ],
         },
-        "3": {
+        "4": {
           company: "HDM Network",
           position: "Becario de desarrollo web",
           period: "04/2023 - 08/2023",
